@@ -10,17 +10,20 @@ Equilibrium is an open knowledge hub on ponds, water, soil, native plants, food 
 content/
   entries/        one Markdown file per entry: concept, species, technique, problem or field case
   sources.yaml    every source cited, with its DOI, ISBN or URL once verified
+site/
+  styles.css      the preview site's one stylesheet (GRØNN colours and type)
 schema/
   content.ts      the rules every entry and source must follow
 scripts/
   validate.ts     the checks that run on every pull request
   export.ts       exports the corpus as JSON and CSV
+  build-site.ts   builds the static preview site from content/
   resolve-sources.ts  looks up DOIs and ISBNs in open registries
   migrate/        one-off scripts that brought earlier material in, kept as a record
 .github/workflows/  checks on every PR, a manual source resolver, dataset releases
 ```
 
-There is no website in this repository yet. The content comes first; the site is built on top of it once there is enough to show (see [ROADMAP.md](ROADMAP.md)).
+`npm run build:site` turns the content into a small static preview site (`dist/site/`), deployed on Vercel. It shows what exists and nothing more; the full site grows from it in phase 1 (see [ROADMAP.md](ROADMAP.md)).
 
 ## An entry
 
