@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro"
+import EntryCard from "../../components/EntryCard.astro"
+import { entries, relationCount, sources, verifiedCount } from "../../lib/content.ts"
+import { DOMAINS, langPaths, t, type Lang } from "../../lib/i18n.ts"
+
+export const getStaticPaths = langPaths
+const lang = Astro.params.lang as Lang
+const ui = t(lang)
+const problems = entries.filter((e) => e.data.type === "problem")
+const rest = entries.filter((e) => e.data.type !== "problem")
+---
+<Base lang={lang} title={`Equilibrium: ${ui.tagline.toLowerCase()}`} description={ui.description} path="" current="entries">
+  <Fragment slot="head">
+    <!-- Pagefind's index exists only after `npm run build:site`; in `astro dev` the box stays inert. -->
+    <link rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
+    <script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>
+  </Fragment>
+  <section class="hero">
+    <h1>{ui.tagline}</h1>
+    <p class="lead">{ui.lead}</p>
+    <p class="label">{ui.stats(entries.length, relationCount, sources.length, verifiedCount)}</p>
+    <search class="search" aria-label={ui.search}>
+      <pagefind-searchbox placeholder={ui.searchPlaceholder} hide-shortcut></pagefind-searchbox>
+    </search>
+  </section>
+
+  {problems.length > 0 && (
+    <section class="domain">
+      <h2>{ui.problems} <span class="count">{problems.length}</span></h2>
+      <p class="muted">{ui.problemsLead}</p>
+      <ul class="cards">{problems.map((e) => <EntryCard e={e} lang={lang} />)}</ul>
+    </section>
+  )}
+
+  {Object.entries(DOMAINS).map(([d, labels]) => {
+    const list = rest.filter((e) => e.data.domain === d)
+    return list.length > 0 && (
+      <section class="domain">
+        <h2>{labels[lang][0]} <span class="count">{list.length}</span></h2>
+        <p class="muted">{labels[lang][1]}</p>
+        <ul class="cards">{list.map((e) => <EntryCard e={e} lang={lang} />)}</ul>
+      </section>
+    )
+  })}
+</Base>

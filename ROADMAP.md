@@ -22,8 +22,8 @@ One year, October 2026 to October 2027, in four phases. Each phase opens when th
 - [x] Migrate the 12 diagnose problems as draft `problem` entries (reading list only; no relations invented)
 - [ ] Migrate the 4 paths and 3 collections
 - [ ] Reach 50 reviewed entries
-- [x] Static preview site on Vercel (`npm run build:site`)
-- [ ] Design research (owner, 3 Oct 2026): study open-source projects' and NGOs' websites, then decide a future-proof stack and look for the phase 1 site. Record the decision in `docs/decisions/` with the sites studied and why.
+- [x] Static preview site on Vercel (`npm run build:site`), in Dutch and English, with search and an accessibility gate in CI
+- [x] Design research: every gronnstudio repo and 15 open-source and NGO sites studied; stack decided in `docs/decisions/0001-site-stack.md` (Astro, static, Pagefind)
 
 ## Deferred, and what brings each back
 

@@ -1,11 +1,13 @@
 /** Reads content/ into typed entries and sources. Shared by the validator and the export. */
-import { readdirSync, readFileSync } from "node:fs"
+import { existsSync, readdirSync, readFileSync } from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
 import YAML from "yaml"
 import { Entry, Source } from "../schema/content.ts"
 
-export const ROOT = path.resolve(import.meta.dirname, "..")
+// The repo root, found from this file; when a bundler has moved the code (the site build), the working directory.
+const fromFile = path.resolve(import.meta.dirname, "..")
+export const ROOT = existsSync(path.join(fromFile, "content")) ? fromFile : process.cwd()
 export const ENTRIES_DIR = path.join(ROOT, "content/entries")
 export const SOURCES_FILE = path.join(ROOT, "content/sources.yaml")
 

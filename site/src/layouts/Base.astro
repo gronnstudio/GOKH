@@ -1,0 +1,58 @@
+---
+import "@fontsource/syne/600.css"
+import "@fontsource-variable/montserrat/wght.css"
+import "@fontsource/geist-mono/500.css"
+import "../styles/global.css"
+import { t, type Lang } from "../lib/i18n.ts"
+
+interface Props {
+  lang: Lang
+  title: string
+  description: string
+  /** The path after /<lang>/, so the language switch lands on the same page. */
+  path: string
+  current?: "entries" | "sources" | "contribute"
+}
+const { lang, title, description, path, current } = Astro.props
+const ui = t(lang)
+const other: Lang = lang === "nl" ? "en" : "nl"
+const REPO = "https://github.com/gronnstudio/GOKH"
+const navItems = [
+  ["entries", ""],
+  ["sources", "sources/"],
+  ["contribute", "contribute/"],
+] as const
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang={lang} href={`/${lang}/${path}`}>
+<link rel="alternate" hreflang={other} href={`/${other}/${path}`}>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<slot name="head" />
+</head>
+<body>
+<a class="skip" href="#main">{ui.skip}</a>
+<header class="bar">
+  <a class="brand" href={`/${lang}/`}>Equilibrium</a>
+  <nav aria-label={ui.main}>
+    {navItems.map(([key, p]) => (
+      <a href={`/${lang}/${p}`} aria-current={current === key ? "page" : undefined}>{ui.nav[key]}</a>
+    ))}
+    <a class="lang" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>
+  </nav>
+</header>
+<p class="preview">{ui.preview}</p>
+<main id="main">
+<slot />
+</main>
+<footer class="foot">
+  <p>{ui.licence} <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · {ui.code} · {ui.steward} <a href="https://gronn.studio">GRØNN Studio</a> · <a href={REPO}>{ui.sourceOnGithub}</a></p>
+</footer>
+</body>
+</html>

@@ -5,5 +5,22 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/site",
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/e/:id/",
+      "destination": "/nl/e/:id/",
+      "permanent": false
+    },
+    {
+      "source": "/sources/",
+      "destination": "/nl/sources/",
+      "permanent": false
+    },
+    {
+      "source": "/contribute/",
+      "destination": "/nl/contribute/",
+      "permanent": false
+    }
+  ]
 }

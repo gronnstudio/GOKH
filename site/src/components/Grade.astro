@@ -1,0 +1,7 @@
+---
+import { GRADES, type Lang } from "../lib/i18n.ts"
+interface Props { grade: string; lang: Lang }
+const { grade, lang } = Astro.props
+const [label, note] = GRADES[grade][lang]
+---
+<span class={`chip chip-${grade}`} title={note}>{label}</span>

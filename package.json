@@ -4,20 +4,31 @@
   "description": "Equilibrium: the open, evidence-graded knowledge hub for designing with living systems in the Low Countries",
   "scripts": {
     "validate": "tsx scripts/validate.ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && astro check",
     "check": "npm run typecheck && npm run validate",
     "export": "tsx scripts/export.ts",
     "resolve": "tsx scripts/resolve-sources.ts",
-    "build:site": "tsx scripts/build-site.ts",
-    "build": "npm run validate && npm run build:site"
+    "dev": "astro dev",
+    "build:site": "astro build && pagefind --site dist/site",
+    "build": "npm run validate && npm run build:site",
+    "preview": "astro preview",
+    "test:site": "playwright test"
   },
   "license": "MIT",
   "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
     "@types/node": "^22.20.5",
+    "pagefind": "1.5.2",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@fontsource-variable/montserrat": "5.3.0",
+    "@fontsource/geist-mono": "5.3.0",
+    "@fontsource/syne": "5.3.0",
+    "astro": "7.3.5",
     "gray-matter": "^4.0.3",
     "marked": "^14.1.4",
     "yaml": "^2.9.1",

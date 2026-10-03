@@ -24,6 +24,7 @@ The open, evidence-graded knowledge hub for designing with living systems in the
 ## Where things are
 
 - **Live preview:** https://gokh-indol.vercel.app (Vercel project `gokh`, team "gronn"; push to `main` deploys). Vercel Authentication is on for every `.vercel.app` URL, the team default; whether production goes public is the owner's call.
+- **Site stack:** Astro (static, pinned), Pagefind, plain CSS with the GRØNN tokens; it reads content through `scripts/load.ts`. Why: `docs/decisions/0001-site-stack.md`. `npm run build && npm run test:site` before pushing site changes.
 - **Concept and decisions:** the owner's project doc "Equilibrium v2 — Concept & Architecture" on claude.ai (tabs: the plan, Source register of 99 outside sources with licences, NotebookLM pull list — the last one parked by the owner).
 - **Material still to migrate, in the owner's private repos** (read them, never copy client material into this public repo):
   - `gronnstudio/G-eog` `src/lib/knowledge/`: diagnose.ts (12 problems), paths.ts (4), collections.ts (3), seasonal.ts (48 tasks), partners.ts (Grnfix).
