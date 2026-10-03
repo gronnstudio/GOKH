@@ -21,6 +21,17 @@ The open, evidence-graded knowledge hub for designing with living systems in the
 6. Boring and maintainable: no database, accounts or paid services until a trigger in ROADMAP.md fires.
 7. Docs describe what exists. Plans live in ROADMAP.md only.
 
+## Where things are
+
+- **Live preview:** https://gokh-indol.vercel.app (Vercel project `gokh`, team "gronn"; push to `main` deploys). Vercel Authentication is on for every `.vercel.app` URL, the team default; whether production goes public is the owner's call.
+- **Concept and decisions:** the owner's project doc "Equilibrium v2 — Concept & Architecture" on claude.ai (tabs: the plan, Source register of 99 outside sources with licences, NotebookLM pull list — the last one parked by the owner).
+- **Material still to migrate, in the owner's private repos** (read them, never copy client material into this public repo):
+  - `gronnstudio/G-eog` `src/lib/knowledge/`: diagnose.ts (12 problems), paths.ts (4), collections.ts (3), seasonal.ts (48 tasks), partners.ts (Grnfix).
+  - `gronnstudio/equilibrium` `src/lib/`: archive.ts (119 plant profiles), patterns.ts (25), practices.ts (8), calendar.ts; docs/data/candidate-plants.csv (749 names; names only, the attribute data has database rights) and docs/CURATION.md (the curation workflow).
+  - `gronnstudio/gronn-studio` `src/lib/data/`: kennis.ts, kennis-blogs.ts, zelf-doen.ts, seizoen.ts (Nick's own words — the strongest voice). Case studies vijverrenovatie.ts and terras-geulle.ts need the client's written permission first.
+  - `gronnstudio/OKH` duplicates G-eog's content exactly; nothing to take.
+- **Source licences:** reuse (CC0/CC BY/CC BY-SA) e.g. Wikidata, GBIF (not NC datasets), GloBI, NVWA text, KNMI, Klimaateffectatlas, PDOK, Appropedia, PFAF text (not images). Cite-only: STOWA, FLORON, RAVON, Vlinderstichting, Louis Bolk, food-forest networks, anything NC.
+
 ## House rules
 
 - A wrong identifier is worse than none. `verified: true` only after a DOI/ISBN/URL was checked; the resolver needs Crossref and OpenAlex to agree before it sets it, and never sets it for books.
