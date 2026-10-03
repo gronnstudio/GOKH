@@ -13,6 +13,7 @@
   title: Molecular Mechanisms of Photosynthesis
   container: Wiley-Blackwell
   verified: false
+  isbn: "9781118852767"
 - key: brooks-2013-hydrology-and-the-management
   type: book
   authors: Brooks, K. N. et al.
@@ -20,34 +21,38 @@
   title: Hydrology and the Management of Watersheds
   container: Wiley-Blackwell
   verified: false
+  isbn: "9781118459751"
 - key: burghardt-2009-impact-of-native-plants
   type: paper
   authors: Burghardt, K. T., Tallamy, D. W. & Shriver, W. G.
   year: 2009
   title: Impact of native plants on bird and butterfly biodiversity in suburban landscapes
   container: Conservation Biology 23
-  verified: false
+  verified: true
+  doi: 10.1111/j.1523-1739.2008.01076.x
 - key: chiras-2002-the-solar-house-passive
   type: book
   authors: Chiras, D.
   year: 2002
-  title: 'The Solar House: Passive Heating and Cooling'
+  title: "The Solar House: Passive Heating and Cooling"
   container: Chelsea Green Publishing
   verified: false
+  isbn: "9781931498425"
 - key: clark-2013-introducing-urban-food-forestry
   type: paper
   authors: Clark, K. H. & Nicholas, K. A.
   year: 2013
-  title: 'Introducing urban food forestry: A multifunctional approach to increase food security'
+  title: "Introducing urban food forestry: A multifunctional approach to increase food security"
   container: Landscape Ecology 28
   verified: false
 - key: clements-1916-plant-succession-an-analysis
   type: institutional
   authors: Clements, F. E.
   year: 1916
-  title: 'Plant Succession: An Analysis of the Development of Vegetation'
+  title: "Plant Succession: An Analysis of the Development of Vegetation"
   container: Carnegie Institution of Washington
-  verified: false
+  verified: true
+  doi: 10.5962/bhl.title.56234
 - key: connell-1977-mechanisms-of-succession-in
   type: paper
   authors: Connell, J. H. & Slatyer, R. O.
@@ -61,12 +66,13 @@
   year: 1978
   title: Diversity in tropical rain forests and coral reefs
   container: Science 199
-  verified: false
+  verified: true
+  doi: 10.1126/science.199.4335.1302
 - key: crawford-2010-creating-a-forest-garden
   type: book
   authors: Crawford, M.
   year: 2010
-  title: 'Creating a Forest Garden: Working with Nature to Grow Edible Crops'
+  title: "Creating a Forest Garden: Working with Nature to Grow Edible Crops"
   container: Green Books
   verified: false
 - key: defrenne-2019-global-buffering-of-temperatures
@@ -80,7 +86,7 @@
   type: book
   authors: Devall, B. & Sessions, G.
   year: 1985
-  title: 'Deep Ecology: Living as if Nature Mattered'
+  title: "Deep Ecology: Living as if Nature Mattered"
   container: Gibbs Smith
   verified: false
 - key: ellenmacarthurfoundation-2013-towards-the-circular-economy
@@ -94,9 +100,10 @@
   type: paper
   authors: Ellison, D. et al.
   year: 2017
-  title: 'Trees, forests and water: Cool insights for a hot world'
+  title: "Trees, forests and water: Cool insights for a hot world"
   container: Global Environmental Change 43
-  verified: false
+  verified: true
+  doi: 10.1016/j.gloenvcha.2017.01.002
 - key: estes-2011-trophic-downgrading-of-planet
   type: paper
   authors: Estes, J. A. et al.
@@ -123,9 +130,10 @@
   type: paper
   authors: Galloway, J. N. et al.
   year: 2008
-  title: 'Transformation of the nitrogen cycle: Recent trends, questions, and potential solutions'
+  title: "Transformation of the nitrogen cycle: Recent trends, questions, and potential solutions"
   container: Science 320
-  verified: false
+  verified: true
+  doi: 10.1126/science.1136674
 - key: garibaldi-2013-wild-pollinators-enhance-fruit
   type: paper
   authors: Garibaldi, L. A. et al.
@@ -147,25 +155,26 @@
   title: A Sting in the Tale
   container: Jonathan Cape
   verified: false
+  isbn: "9781448130085"
 - key: hart-1996-forest-gardening-cultivating-an
   type: book
   authors: Hart, R.
   year: 1996
-  title: 'Forest Gardening: Cultivating an Edible Landscape'
+  title: "Forest Gardening: Cultivating an Edible Landscape"
   container: Chelsea Green Publishing
   verified: false
 - key: hawken-2017-drawdown-the-most-comprehensive
   type: book
   authors: Hawken, P. (ed.)
   year: 2017
-  title: 'Drawdown: The Most Comprehensive Plan Ever Proposed to Reverse Global Warming'
+  title: "Drawdown: The Most Comprehensive Plan Ever Proposed to Reverse Global Warming"
   container: Penguin Books
   verified: false
 - key: holmgren-2002-permaculture-principles-and-pathways
   type: report
   authors: Holmgren, D.
   year: 2002
-  title: 'Permaculture: Principles and Pathways Beyond Sustainability'
+  title: "Permaculture: Principles and Pathways Beyond Sustainability"
   container: Holmgren Design Services
   verified: false
 - key: howard-1943-an-agricultural-testament
@@ -175,6 +184,7 @@
   title: An Agricultural Testament
   container: Oxford University Press
   verified: false
+  isbn: "9781849027526"
 - key: ingham-2000-the-compost-tea-brewing
   type: institutional
   authors: Ingham, E. R.
@@ -214,7 +224,7 @@
   type: book
   authors: Kellert, S. R. et al.
   year: 2008
-  title: 'Biophilic Design: The Theory, Science and Practice of Bringing Buildings to Life'
+  title: "Biophilic Design: The Theory, Science and Practice of Bringing Buildings to Life"
   container: Wiley
   verified: false
 - key: khoury-2014-increasing-homogeneity-in-global
@@ -223,7 +233,8 @@
   year: 2014
   title: Increasing homogeneity in global food supplies and the implications for food security
   container: Proceedings of the National Academy of Sciences 111
-  verified: false
+  verified: true
+  doi: 10.1073/pnas.1313490111
 - key: lal-2004-soil-carbon-sequestration-impacts
   type: paper
   authors: Lal, R.
@@ -239,11 +250,12 @@
   title: Rainwater Harvesting for Drylands and Beyond
   container: Rainsource Press
   verified: false
+  isbn: "9780977246434"
 - key: lancaster-2008-rainwater-harvesting-for-drylands
   type: book
   authors: Lancaster, B.
   year: 2008
-  title: 'Rainwater Harvesting for Drylands and Beyond, Vol. 2: Water-Harvesting Earthworks'
+  title: "Rainwater Harvesting for Drylands and Beyond, Vol. 2: Water-Harvesting Earthworks"
   container: Rainsource Press
   verified: false
 - key: leopold-1949-a-sand-county-almanac
@@ -253,11 +265,12 @@
   title: A Sand County Almanac
   container: Oxford University Press
   verified: false
+  isbn: "9780195146172"
 - key: lowenfels-2010-teaming-with-microbes-the
   type: book
   authors: Lowenfels, J. & Lewis, W.
   year: 2010
-  title: 'Teaming with Microbes: The Organic Gardener''s Guide to the Soil Food Web'
+  title: "Teaming with Microbes: The Organic Gardener's Guide to the Soil Food Web"
   container: Timber Press
   verified: false
 - key: magdoff-2009-building-soils-for-better
@@ -271,9 +284,10 @@
   type: paper
   authors: Massawe, F., Mayes, S. & Cheng, A.
   year: 2016
-  title: 'Crop diversity: an unexploited treasure trove for food security'
+  title: "Crop diversity: an unexploited treasure trove for food security"
   container: Trends in Plant Science 21
-  verified: false
+  verified: true
+  doi: 10.1016/j.tplants.2016.02.006
 - key: mazria-1979-the-passive-solar-energy
   type: book
   authors: Mazria, E.
@@ -281,18 +295,19 @@
   title: The Passive Solar Energy Book
   container: Rodale Press
   verified: false
+  isbn: "9780878572373"
 - key: mcdonough-2002-cradle-to-cradle-remaking
   type: book
   authors: McDonough, W. & Braungart, M.
   year: 2002
-  title: 'Cradle to Cradle: Remaking the Way We Make Things'
+  title: "Cradle to Cradle: Remaking the Way We Make Things"
   container: North Point Press
   verified: false
 - key: mclain-2012-gathering-in-the-city
   type: report
   authors: McLain, R. et al.
   year: 2012
-  title: 'Gathering in the city: An annotated bibliography and review of urban foraging'
+  title: "Gathering in the city: An annotated bibliography and review of urban foraging"
   container: USDA Forest Service
   verified: false
 - key: meadows-1972-the-limits-to-growth
@@ -302,69 +317,74 @@
   title: The Limits to Growth
   container: Universe Books
   verified: false
+  isbn: "9781849775861"
 - key: miyawaki-1999-creative-ecology-restoration-of
   type: paper
   authors: Miyawaki, A.
   year: 1999
-  title: 'Creative ecology: restoration of native forests by native trees'
+  title: "Creative ecology: restoration of native forests by native trees"
   container: Plant Biotechnology 16
-  verified: false
+  verified: true
+  doi: 10.5511/plantbiotechnology.16.15
 - key: miyawaki-2006-the-healing-power-of
   type: book
   authors: Miyawaki, A. & Box, E. O.
   year: 2006
-  title: 'The Healing Power of Forests: The Philosophy behind Restoring Earth''s Balance with Native Trees'
+  title: "The Healing Power of Forests: The Philosophy behind Restoring Earth's Balance with Native Trees"
   container: Kosei Publishing
   verified: false
 - key: mollison-1988-permaculture-a-designers-manual
   type: institutional
   authors: Mollison, B.
   year: 1988
-  title: 'Permaculture: A Designers'' Manual'
+  title: "Permaculture: A Designers' Manual"
   container: Tagari Publications
   verified: false
 - key: monbiot-2013-feral-searching-for-enchantment
   type: book
   authors: Monbiot, G.
   year: 2013
-  title: 'Feral: Searching for Enchantment on the Frontiers of Rewilding'
+  title: "Feral: Searching for Enchantment on the Frontiers of Rewilding"
   container: Allen Lane
   verified: false
 - key: montgomery-2017-growing-a-revolution-bringing
   type: book
   authors: Montgomery, D. R.
   year: 2017
-  title: 'Growing a Revolution: Bringing Our Soil Back to Life'
+  title: "Growing a Revolution: Bringing Our Soil Back to Life"
   container: W. W. Norton
   verified: false
 - key: morton-2008-eating-the-sun-how
   type: institutional
   authors: Morton, O.
   year: 2008
-  title: 'Eating the Sun: How Plants Power the Planet'
+  title: "Eating the Sun: How Plants Power the Planet"
   container: Harper
   verified: false
 - key: naess-1973-the-shallow-and-the
   type: paper
   authors: Naess, A.
   year: 1973
-  title: 'The shallow and the deep, long-range ecology movement: A summary'
+  title: "The shallow and the deep, long-range ecology movement: A summary"
   container: Inquiry 16
-  verified: false
+  verified: true
+  doi: 10.1080/00201747308601682
 - key: narango-2018-nonnative-plants-reduce-population
   type: paper
   authors: Narango, D. L., Tallamy, D. W. & Marra, P. P.
   year: 2018
   title: Nonnative plants reduce population growth of an insectivorous bird
   container: Proceedings of the National Academy of Sciences 115
-  verified: false
+  verified: true
+  doi: 10.1073/pnas.1809259115
 - key: odum-1969-the-strategy-of-ecosystem
   type: paper
   authors: Odum, E. P.
   year: 1969
   title: The strategy of ecosystem development
   container: Science 164
-  verified: false
+  verified: true
+  doi: 10.1126/science.164.3877.262
 - key: odum-1971-fundamentals-of-ecology
   type: institutional
   authors: Odum, E. P.
@@ -386,14 +406,16 @@
   year: 1969
   title: A note on trophic complexity and community stability
   container: The American Naturalist 103
-  verified: false
+  verified: true
+  doi: 10.1086/282586
 - key: paine-1980-food-webs-linkage-interaction
   type: paper
   authors: Paine, R. T.
   year: 1980
-  title: 'Food webs: Linkage, interaction strength and community infrastructure'
+  title: "Food webs: Linkage, interaction strength and community infrastructure"
   container: Journal of Animal Ecology 49
-  verified: false
+  verified: true
+  doi: 10.2307/4220
 - key: pandey-2003-rainwater-harvesting-as-an
   type: paper
   authors: Pandey, D. N. et al.
@@ -405,7 +427,7 @@
   type: book
   authors: Postel, S. & Richter, B.
   year: 2003
-  title: 'Rivers for Life: Managing Water for People and Nature'
+  title: "Rivers for Life: Managing Water for People and Nature"
   container: Island Press
   verified: false
 - key: power-1996-challenges-in-the-quest
@@ -414,19 +436,20 @@
   year: 1996
   title: Challenges in the quest for keystones
   container: BioScience 46
-  verified: false
+  verified: true
+  doi: 10.2307/1312990
 - key: provenza-2018-nourishment-what-animals-can
   type: book
   authors: Provenza, F.
   year: 2018
-  title: 'Nourishment: What Animals Can Teach Us about Rediscovering Our Nutritional Wisdom'
+  title: "Nourishment: What Animals Can Teach Us about Rediscovering Our Nutritional Wisdom"
   container: Chelsea Green Publishing
   verified: false
 - key: raworth-2017-doughnut-economics-seven-ways
   type: institutional
   authors: Raworth, K.
   year: 2017
-  title: 'Doughnut Economics: Seven Ways to Think Like a 21st-Century Economist'
+  title: "Doughnut Economics: Seven Ways to Think Like a 21st-Century Economist"
   container: Random House
   verified: false
 - key: rillig-2004-arbuscular-mycorrhizae-glomalin-and
@@ -435,7 +458,8 @@
   year: 2004
   title: Arbuscular mycorrhizae, glomalin, and soil aggregation
   container: Canadian Journal of Soil Science 84
-  verified: false
+  verified: true
+  doi: 10.4141/s04-003
 - key: ripple-2004-wolves-and-the-ecology
   type: paper
   authors: Ripple, W. J. & Beschta, R. L.
@@ -462,7 +486,7 @@
   type: book
   authors: Savory, A. & Butterfield, J.
   year: 1999
-  title: 'Holistic Management: A New Framework for Decision Making'
+  title: "Holistic Management: A New Framework for Decision Making"
   container: Island Press
   verified: false
 - key: schirone-2011-effectiveness-of-the-miyawaki
@@ -484,28 +508,28 @@
   type: book
   authors: Simard, S.
   year: 2021
-  title: 'Finding the Mother Tree: Discovering the Wisdom of the Forest'
+  title: "Finding the Mother Tree: Discovering the Wisdom of the Forest"
   container: Alfred A. Knopf
   verified: false
 - key: smil-2001-enriching-the-earth-fritz
   type: book
   authors: Smil, V.
   year: 2001
-  title: 'Enriching the Earth: Fritz Haber, Carl Bosch, and the Transformation of World Food Production'
+  title: "Enriching the Earth: Fritz Haber, Carl Bosch, and the Transformation of World Food Production"
   container: MIT Press
   verified: false
 - key: soule-1998-rewilding-and-biodiversity-complementary
   type: paper
   authors: Soulé, M. & Noss, R.
   year: 1998
-  title: 'Rewilding and biodiversity: Complementary goals for continental conservation'
+  title: "Rewilding and biodiversity: Complementary goals for continental conservation"
   container: Wild Earth 8
   verified: false
 - key: tallamy-2007-bringing-nature-home-how
   type: book
   authors: Tallamy, D. W.
   year: 2007
-  title: 'Bringing Nature Home: How You Can Sustain Wildlife with Native Plants'
+  title: "Bringing Nature Home: How You Can Sustain Wildlife with Native Plants"
   container: Timber Press
   verified: false
 - key: teague-2016-the-role-of-ruminants
@@ -514,12 +538,13 @@
   year: 2016
   title: The role of ruminants in reducing agriculture's carbon footprint in North America
   container: Journal of Soil and Water Conservation 71
-  verified: false
+  verified: true
+  doi: 10.2489/jswc.71.2.156
 - key: tree-2018-wilding-the-return-of
   type: book
   authors: Tree, I.
   year: 2018
-  title: 'Wilding: The Return of Nature to a British Farm'
+  title: "Wilding: The Return of Nature to a British Farm"
   container: Picador
   verified: false
 - key: ulrich-1984-view-through-a-window
@@ -537,6 +562,7 @@
   title: Biophilia
   container: Harvard University Press
   verified: false
+  isbn: "9780674074422"
 - key: wohlleben-2016-the-hidden-life-of
   type: book
   authors: Wohlleben, P.
