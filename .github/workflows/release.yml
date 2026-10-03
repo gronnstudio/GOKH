@@ -1,0 +1,25 @@
+name: Release dataset
+# Tag a release (v0.1.0, …) and the full corpus is attached as JSON and CSV.
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run export
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --title "Equilibrium dataset $GITHUB_REF_NAME" \
+            --notes "The full Equilibrium corpus, licensed CC BY-SA 4.0." \
+            dist/equilibrium.json dist/graph.json dist/entries.csv dist/relations.csv dist/sources.csv

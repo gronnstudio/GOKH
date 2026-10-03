@@ -1,0 +1,25 @@
+{
+  "name": "equilibrium",
+  "version": "0.0.1",
+  "description": "Equilibrium: the open, evidence-graded knowledge hub for designing with living systems in the Low Countries",
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run validate",
+    "export": "tsx scripts/export.ts",
+    "resolve": "tsx scripts/resolve-sources.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "yaml": "^2.9.1",
+    "zod": "^3.25.76"
+  },
+  "private": true,
+  "type": "module"
+}
