@@ -52,6 +52,8 @@ The English text, with ## headings.
 De Nederlandse tekst.
 ```
 
+A `problem` entry starts from what a visitor would say ("my soil is compacted") and carries two extra fields: `start`, the entries to read first (a reading list, not a relation), and `terms`, the words people might type for it.
+
 Entries have no author field. An entry is trusted for its sources and its review status, not for who wrote it; the Git history records every contribution.
 
 ## Working on it

@@ -127,12 +127,13 @@ ${opts.body}
 
 function card(e: LoadedEntry) {
   const n = e.data.relations.length
-  return `<li class="card" data-search="${esc([title(e), summary(e), e.data.tags.join(" "), DOMAIN_LABEL[e.data.domain]].join(" ").toLowerCase())}">
+  const reads = e.data.start.length
+  return `<li class="card" data-search="${esc([title(e), summary(e), e.data.tags.join(" "), e.data.terms.join(" "), DOMAIN_LABEL[e.data.domain]].join(" ").toLowerCase())}">
   <a href="${href(e.data.id)}">
     <span class="label">${esc(DOMAIN_LABEL[e.data.domain])} · ${esc(e.data.type)}</span>
     <span class="card-title">${esc(title(e))}</span>
     <span class="card-text">${esc(summary(e))}</span>
-    <span class="label">${n} connection${n === 1 ? "" : "s"} · ${e.data.sources.length} source${e.data.sources.length === 1 ? "" : "s"}</span>
+    <span class="label">${reads ? `${reads} to read first` : `${n} connection${n === 1 ? "" : "s"}`} · ${e.data.sources.length} source${e.data.sources.length === 1 ? "" : "s"}</span>
   </a>
 </li>`
 }
@@ -181,6 +182,9 @@ q.addEventListener('input', () => {
 })
 
 // --- entry pages
+const startedFrom = new Map<string, LoadedEntry[]>()
+for (const e of entries) for (const k of e.data.start) startedFrom.set(k, [...(startedFrom.get(k) ?? []), e])
+
 const inbound = new Map<string, { from: LoadedEntry; verb: string; why: string; grade: string }[]>()
 for (const e of entries)
   for (const r of e.data.relations) {
@@ -209,6 +213,11 @@ function entryPage(e: LoadedEntry) {
 </li>`,
     )
     .join("\n")
+  const start = e.data.start
+    .map((k) => byId.get(k)!)
+    .map((t) => `<li><a href="${href(t.data.id)}">${esc(title(t))}</a> <span class="muted">${esc(summary(t))}</span></li>`)
+    .join("\n")
+  const problemsHere = (startedFrom.get(e.data.id) ?? []).map((p) => `<li><a href="${href(p.data.id)}">${esc(title(p))}</a></li>`).join("\n")
   const srcs = e.data.sources.map((k) => sourceByKey.get(k)).filter((s): s is Source => Boolean(s))
   const body = e.body.en || e.body.nl
   return page({
@@ -221,8 +230,10 @@ function entryPage(e: LoadedEntry) {
   <p class="lead">${esc(summary(e))}</p>
   <p class="label"><span class="chip chip-warn" title="Not yet reviewed by the steward">${esc(e.data.status)}</span> ${e.data.level ? `· ${esc(e.data.level)}` : ""} · updated ${esc(e.data.updated)} · <a href="${REPO}/blob/main/content/entries/${esc(e.file)}">edit this page</a></p>
   <div class="prose">${marked.parse(body) as string}</div>
+  ${start ? `<section><h2>Read first</h2><ol>${start}</ol></section>` : ""}
   ${out ? `<section><h2>Connections</h2><ul class="rels">${out}</ul></section>` : ""}
   ${inc ? `<section><h2>Connected from</h2><ul class="rels">${inc}</ul></section>` : ""}
+  ${problemsHere ? `<section><h2>A starting point for</h2><ul>${problemsHere}</ul></section>` : ""}
   ${srcs.length ? `<section><h2>Sources</h2><ol class="srcs">${srcs.map((s) => `<li>${sourceLine(s)}</li>`).join("\n")}</ol></section>` : ""}
 </article>`,
   })

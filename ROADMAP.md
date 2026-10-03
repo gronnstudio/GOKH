@@ -15,11 +15,12 @@ One year, October 2026 to October 2027, in four phases. Each phase opens when th
 - [x] 31 G-eog articles migrated as drafts, contributor names removed
 - [x] 97 relations remapped to 7 verbs; 49 marked for review
 - [x] 80 sources moved; 6 verified
-- [ ] Run the source resolver (Actions → Resolve sources) and review its pull request
+- [x] Run the source resolver (Actions → Resolve sources) and review its pull request
 - [ ] Review the 49 remapped relations
 - [ ] Dutch title, summary and text for the first entries
 - [ ] Give nutrient-cycling, photosynthesis, forest-microclimates and regenerative-grazing a second relation
-- [ ] Migrate the 12 diagnose problems, 4 paths and 3 collections
+- [x] Migrate the 12 diagnose problems as draft `problem` entries (reading list only; no relations invented)
+- [ ] Migrate the 4 paths and 3 collections
 - [ ] Reach 50 reviewed entries
 - [x] Static preview site on Vercel (`npm run build:site`)
 - [ ] Design research (owner, 3 Oct 2026): study open-source projects' and NGOs' websites, then decide a future-proof stack and look for the phase 1 site. Record the decision in `docs/decisions/` with the sites studied and why.

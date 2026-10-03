@@ -56,6 +56,13 @@ export const Entry = z
       .strict()
       .optional(),
     relations: z.array(Relation).default([]),
+    /**
+     * Problems only: the entries to read first. A reading list, not a claim;
+     * the mechanisms come from those entries' own relations.
+     */
+    start: z.array(id).default([]),
+    /** Problems only: words a visitor might type for this problem, in either language. */
+    terms: z.array(z.string()).default([]),
     sources: z.array(id).default([]),
     updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     /** Where a migrated entry came from, for the review trail. */
