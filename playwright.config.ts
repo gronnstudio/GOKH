@@ -17,8 +17,6 @@ export default defineConfig({
   reporter: [["list"]],
   use: { baseURL: "http://127.0.0.1:4321" },
   snapshotPathTemplate: "tests/screenshots/{projectName}/{arg}{ext}",
-  // A missing baseline is written, not failed: the "Update screenshots" workflow makes and commits them.
-  updateSnapshots: "missing",
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"], launchOptions } },
     { name: "phone", use: { ...devices["Pixel 7"], launchOptions } },
