@@ -38,8 +38,8 @@ The site's design direction is decision [0002](docs/decisions/0002-design-direct
 - [x] Cross-document view transitions: the card title morphs into the entry title. Speculation Rules prerender on hover.
 - [x] Grade glyph and source seal. Grade explanations open in a native `popover` with anchor positioning.
 - [x] Theme toggle (Golden Hour / Blauwe Uur) with no flash on load.
-- [x] Pagefind modal on ⌘K (Ctrl K), available from every page.
-- [x] Budgets in CI: at most 2 KB of our own JavaScript, 50 KB in total and 30 KB of CSS per page, all gzipped. Playwright visual-regression screenshots of every template.
+- [x] Command palette on ⌘K / Ctrl K from every page (ported from gronn-studio), with Pagefind full text; keyboard shortcuts with a `?` sheet that can switch single keys off.
+- [x] Budgets in CI: at most 6 KB of our own JavaScript, 50 KB in total and 30 KB of CSS per page, all gzipped. Playwright visual-regression screenshots of every template.
 - [ ] Make the first screenshot baselines: Actions → Update screenshots, then merge its PR.
 - [x] Renovate config: weekly grouped dependency updates, with Astro majors as separate PRs.
 - [ ] Install the Renovate GitHub app on the repository (owner).

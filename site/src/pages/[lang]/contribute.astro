@@ -9,13 +9,13 @@ const ui = t(lang)
 const REPO = "https://github.com/gronnstudio/GOKH"
 ---
 <Base lang={lang} title={`${ui.nav.contribute} · Equilibrium`} description={lang === "nl" ? "Hoe kennis in Equilibrium komt." : "How knowledge gets into Equilibrium."} path="contribute/" current="contribute">
-  <h1>{ui.nav.contribute}</h1>
+
   {lang === "nl" ? (
     <>
-      <p class="lead">Iedereen kan een wijziging voorstellen. Een beheerder beslist wat erin komt. Alles wat verschijnt mag je hergebruiken onder CC BY-SA 4.0.</p>
+      <header class="entry-head"><h1>{ui.nav.contribute}</h1><p class="lead">Iedereen kan een wijziging voorstellen. Een beheerder beslist wat erin komt. Alles wat verschijnt mag je hergebruiken onder CC BY-SA 4.0.</p></header>
       <div class="prose">
         <h2>Drie manieren</h2>
-        <ol>
+        <ol class="steps">
           <li><strong>Pas een onderwerp aan.</strong> Elke pagina heeft een link "bewerk deze pagina" naar het bestand op GitHub.</li>
           <li><strong>Stel iets voor.</strong> <a href={`${REPO}/issues/new`}>Open een issue</a>: wat ontbreekt of niet klopt, en waar je het van weet. Geen GitHub-account? Mail <a href="mailto:hello@gronn.studio">hello@gronn.studio</a>.</li>
           <li><strong>Los een bron op.</strong> Kies een <a href="/nl/sources/">niet-geverifieerde bron</a>, zoek de DOI of het ISBN, controleer het en voeg het toe.</li>
@@ -34,10 +34,10 @@ const REPO = "https://github.com/gronnstudio/GOKH"
     </>
   ) : (
     <>
-      <p class="lead">Anyone can propose a change. A steward decides what is merged. Everything published is free to reuse under CC BY-SA 4.0.</p>
+      <header class="entry-head"><h1>{ui.nav.contribute}</h1><p class="lead">Anyone can propose a change. A steward decides what is merged. Everything published is free to reuse under CC BY-SA 4.0.</p></header>
       <div class="prose">
         <h2>Three ways in</h2>
-        <ol>
+        <ol class="steps">
           <li><strong>Edit an entry.</strong> Every page has an "edit this page" link to its file on GitHub.</li>
           <li><strong>Suggest something.</strong> <a href={`${REPO}/issues/new`}>Open an issue</a>: what is missing or wrong, and where you know it from. No GitHub account? Email <a href="mailto:hello@gronn.studio">hello@gronn.studio</a>.</li>
           <li><strong>Resolve a source.</strong> Pick an <a href="/en/sources/">unverified source</a>, find its DOI or ISBN, check it, and add it.</li>

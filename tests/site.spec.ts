@@ -38,11 +38,15 @@ test("an untranslated body says so and is marked English", async ({ page }) => {
   await expect(page.locator(".prose")).toHaveAttribute("lang", "en")
 })
 
-test("search finds an entry", async ({ page }) => {
+test("search finds an entry from the home page", async ({ page }) => {
   await page.goto("/en/")
-  const input = page.locator("pagefind-searchbox input")
-  await input.fill("mycorrhiza")
-  await expect(page.locator("pagefind-searchbox").getByRole("option").first()).toBeVisible()
+  await page.locator(".search-hero").click()
+  const input = page.getByRole("combobox")
+  await expect(input).toBeFocused()
+  await input.fill("myco")
+  await expect(page.getByRole("option").first()).toContainText("Mycorrhizal Networks")
+  await page.keyboard.press("Enter")
+  await expect(page).toHaveURL(/\/en\/e\/mycorrhizal-networks\/$/)
 })
 
 test.describe("dark (Blauwe Uur)", () => {
@@ -82,13 +86,55 @@ test("a grade explains itself in a popover", async ({ page }) => {
   await expect(pop).toHaveCount(0)
 })
 
-test("search opens from the keyboard on any page", async ({ page }) => {
+test("search opens from the keyboard on any page, ranks, and remembers", async ({ page }) => {
   await page.goto("/nl/sources/")
   await page.keyboard.press("Control+k")
-  const input = page.locator("pagefind-modal input")
+  const input = page.getByRole("combobox")
   await expect(input).toBeFocused()
-  await input.fill("compost")
-  await expect(page.locator("pagefind-modal").getByRole("link", { name: "The Science of Compost" })).toBeVisible()
+  await input.fill("water")
+  // A title that starts with the query beats one that only contains it.
+  await expect(page.getByRole("option").first()).toContainText("Water blijft staan")
+  await expect(page.getByRole("option").nth(1)).toBeVisible()
+  await page.keyboard.press("ArrowDown")
+  await expect(page.getByRole("option").nth(1)).toHaveAttribute("aria-selected", "true")
+  // Full text from inside the entries joins after the titles.
+  await input.fill("actinobacteria")
+  await expect(page.locator("#palette-list .pal-kind", { hasText: "In de tekst" }).first()).toBeVisible()
+  await page.keyboard.press("Enter")
+  await expect(page).toHaveURL(/\/e\//)
+  // The pick is remembered on this device.
+  await page.keyboard.press("Control+k")
+  await expect(page.locator("#palette-list .pal-kind").first()).toHaveText("Recent")
+})
+
+test("single-key shortcuts navigate, and can be switched off", async ({ page }) => {
+  await page.goto("/en/")
+  await page.keyboard.press("g")
+  await page.keyboard.press("s")
+  await expect(page).toHaveURL(/\/en\/sources\/$/)
+  await page.keyboard.press("l")
+  await expect(page).toHaveURL(/\/nl\/sources\/$/)
+  await page.keyboard.press("?")
+  const sheet = page.getByRole("dialog", { name: "Sneltoetsen" })
+  await expect(sheet).toBeVisible()
+  await sheet.getByRole("checkbox").uncheck()
+  await page.keyboard.press("Escape")
+  await page.keyboard.press("g")
+  await page.keyboard.press("c")
+  await expect(page).toHaveURL(/\/nl\/sources\/$/)
+  // Ctrl/Cmd K holds a modifier, so it keeps working.
+  await page.keyboard.press("Control+k")
+  await expect(page.getByRole("combobox")).toBeFocused()
+})
+
+test("j and k walk the cards", async ({ page }) => {
+  await page.goto("/en/")
+  await page.keyboard.press("j")
+  await expect(page.locator("main [data-walk]").first()).toBeFocused()
+  await page.keyboard.press("j")
+  await expect(page.locator("main [data-walk]").nth(1)).toBeFocused()
+  await page.keyboard.press("k")
+  await expect(page.locator("main [data-walk]").first()).toBeFocused()
 })
 
 test("a card and its entry share a view-transition name", async ({ page }) => {

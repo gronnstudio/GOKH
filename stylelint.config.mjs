@@ -20,8 +20,11 @@ export default {
           "view-transition-name": ["/^.+$/"],
           "font-synthesis-weight": ["/^.+$/"],
           "translate": ["/^.+$/"],
+          // Cosmetic: without them, a default list marker, scroll chaining, a default checkbox colour.
+          "overscroll-behavior": ["/^.+$/"],
+          "accent-color": ["/^.+$/"],
         },
-        ignoreSelectors: ["view-transition-group", "selection"],
+        ignoreSelectors: ["view-transition-group", "selection", "marker"],
       },
     ],
   },

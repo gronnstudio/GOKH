@@ -1,41 +1,90 @@
 ---
 import Base from "../../layouts/Base.astro"
 import EntryCard from "../../components/EntryCard.astro"
-import { entries, relationCount, sources, verifiedCount } from "../../lib/content.ts"
-import { DOMAINS, langPaths, t, type Lang } from "../../lib/i18n.ts"
+import { entries, pick, relationCount, sources, verifiedCount } from "../../lib/content.ts"
+import { DOMAINS, GRADES, entryHref, langPaths, t, type Lang } from "../../lib/i18n.ts"
 
 export const getStaticPaths = langPaths
 const lang = Astro.params.lang as Lang
 const ui = t(lang)
 const problems = entries.filter((e) => e.data.type === "problem")
 const rest = entries.filter((e) => e.data.type !== "problem")
+const relations = entries.flatMap((e) => e.data.relations)
+const mix = Object.keys(GRADES).map((g) => ({ g, n: relations.filter((r) => r.grade === g).length }))
+const pct = (n: number, of: number) => (of ? Math.round((n / of) * 1000) / 10 : 0)
+const domains = Object.entries(DOMAINS).map(([d, labels]) => ({ d, labels: labels[lang], list: rest.filter((e) => e.data.domain === d) })).filter((x) => x.list.length)
 ---
 <Base lang={lang} title={`Equilibrium: ${ui.tagline.toLowerCase()}`} description={ui.description} path="" current="entries">
   <section class="hero">
-    <h1>{ui.tagline}</h1>
-    <p class="lead">{ui.lead}</p>
-    <p class="label">{ui.stats(entries.length, relationCount, sources.length, verifiedCount)}</p>
-    <search class="search" aria-label={ui.search}>
-      <pagefind-searchbox placeholder={ui.searchPlaceholder} hide-shortcut></pagefind-searchbox>
-    </search>
+    <div class="hero-text">
+      <p class="eyebrow">{ui.eyebrow}</p>
+      <h1>{ui.tagline}</h1>
+      <p class="lead">{ui.lead}</p>
+      <button type="button" class="search-hero" data-open-palette>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+        <span>{ui.searchLaunch}</span><kbd data-mod-k>⌘K</kbd>
+      </button>
+    </div>
+    <aside class="evidence" aria-labelledby="evidence-title">
+      <h2 id="evidence-title" class="label">{ui.evidence}</h2>
+      <dl class="stats">
+        <div><dt>{ui.entriesWord}</dt><dd>{entries.length}</dd></div>
+        <div><dt>{ui.connectionsWord}</dt><dd>{relationCount}</dd></div>
+        <div><dt>{ui.sourcesWord}</dt><dd>{sources.length}</dd></div>
+      </dl>
+      <p class="label">{ui.verifiedOf(verifiedCount, sources.length)}</p>
+      <div class="meter" role="img" aria-label={ui.verifiedOf(verifiedCount, sources.length)}><span style={`inline-size: ${pct(verifiedCount, sources.length)}%`}></span></div>
+      <p class="label">{ui.gradeMix}</p>
+      <div class="mix" role="img" aria-label={mix.map((m) => `${GRADES[m.g][lang][0]} ${m.n}`).join(", ")}>
+        {mix.map((m) => m.n > 0 && <span class={`mix-${m.g}`} style={`flex-grow: ${m.n}`}></span>)}
+      </div>
+      <ul class="mix-legend label">
+        {mix.map((m) => <li><i class={`dot mix-${m.g}`}></i>{GRADES[m.g][lang][0]} <b>{m.n}</b></li>)}
+      </ul>
+      <p class="muted small">{ui.evidenceNote}</p>
+    </aside>
   </section>
 
   {problems.length > 0 && (
-    <section class="domain">
-      <h2>{ui.problems} <span class="count">{problems.length}</span></h2>
-      <p class="muted">{ui.problemsLead}</p>
-      <ul class="cards">{problems.map((e) => <EntryCard e={e} lang={lang} />)}</ul>
+    <section class="band" id="problems">
+      <header class="band-head">
+        <h2>{ui.problems} <span class="count">{problems.length}</span></h2>
+        <p class="muted">{ui.problemsLead}</p>
+      </header>
+      <ol class="problems">
+        {problems.map((e, i) => {
+          const n = pick(e.data.title, lang)
+          return <li><a href={entryHref(lang, e.data.id)} data-walk><span class="num">{String(i + 1).padStart(2, "0")}</span><span lang={n.fallback ? n.lang : undefined} style={`view-transition-name: entry-${e.data.id}`}>{n.text}</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        })}
+      </ol>
     </section>
   )}
 
-  {Object.entries(DOMAINS).map(([d, labels]) => {
-    const list = rest.filter((e) => e.data.domain === d)
-    return list.length > 0 && (
-      <section class="domain">
-        <h2>{labels[lang][0]} <span class="count">{list.length}</span></h2>
-        <p class="muted">{labels[lang][1]}</p>
-        <ul class="cards">{list.map((e) => <EntryCard e={e} lang={lang} />)}</ul>
-      </section>
-    )
-  })}
+  <section class="band">
+    <header class="band-head">
+      <h2>{ui.domainsTitle}</h2>
+      <p class="muted">{ui.domainsLead}</p>
+    </header>
+    <ul class="bento">
+      {domains.map(({ d, labels, list }) => (
+        <li class={`tile tile-${d}`}>
+          <a href={`#${d}`} data-walk>
+            <span class="tile-count">{list.length}</span>
+            <span class="tile-title">{labels[0]}</span>
+            <span class="tile-text">{labels[1]}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {domains.map(({ d, labels, list }) => (
+    <section class="band domain" id={d}>
+      <header class="band-head">
+        <h2>{labels[0]} <span class="count">{list.length}</span></h2>
+        <p class="muted">{labels[1]}</p>
+      </header>
+      <ul class="cards">{list.map((e) => <EntryCard e={e} lang={lang} />)}</ul>
+    </section>
+  ))}
 </Base>

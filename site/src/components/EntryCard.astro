@@ -10,7 +10,7 @@ const summary = pick(e.data.summary, lang)
 const reads = e.data.start.length
 ---
 <li class="card">
-  <a href={entryHref(lang, e.data.id)}>
+  <a href={entryHref(lang, e.data.id)} data-walk>
     <span class="label">{DOMAINS[e.data.domain][lang][0]}</span>
     <span class="card-title" lang={title.fallback ? title.lang : undefined} style={`view-transition-name: entry-${e.data.id}`}>{title.text}</span>
     <span class="card-text" lang={summary.fallback ? summary.lang : undefined}>{summary.text}</span>

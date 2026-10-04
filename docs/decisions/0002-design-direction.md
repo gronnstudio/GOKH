@@ -59,7 +59,8 @@ All of these are build-time or platform features. None is a runtime service.
 | CSS | Native CSS only:<br>- `@layer` (reset, tokens, base, components, utilities)<br>- nesting and `@scope`<br>- container queries and `:has()`<br>- `light-dark()`, `color-mix()` and `@property`<br>Lightning CSS (through Vite) minifies and lowers syntax for older browsers. | Nothing to upgrade. The browser is the framework. |
 | Browser floor | Browserslist `baseline widely available` drives Lightning CSS. Stylelint with `stylelint-plugin-use-baseline` flags any newer feature used outside `@supports` ([web.dev](https://web.dev/articles/use-baseline-with-browserslist)). | We use new features on purpose, never by accident. |
 | Navigation | Native cross-document view transitions (`@view-transition { navigation: auto }`), not Astro's client router. Speculation Rules prerender a link on hover. Chromium acts on that; other browsers ignore it ([Chrome docs](https://developer.chrome.com/docs/web-platform/prerender-pages)). | It stays a multi-page site: no client router to maintain, and every page works without JavaScript. Astro's own docs expect the client router to become unnecessary as browsers catch up ([Astro docs](https://docs.astro.build/en/guides/view-transitions/)). |
-| UI primitives | Native `popover` with anchor positioning for grade explanations, glossary terms and citation previews. `<dialog>` for search (the Pagefind modal, opened with ⌘K or /). `details` for sources. | Anchor positioning reached Baseline in January 2026. No floating-UI library. |
+| UI primitives | Native `popover` with anchor positioning for grade explanations, glossary terms and citation previews. `<dialog>` for the command palette and the shortcut sheet. | Anchor positioning reached Baseline in January 2026. No floating-UI or modal library. |
+| Search and keys | A command palette ported from gronn-studio's: ⌘K / Ctrl K, prefix-then-substring ranking grouped by kind, a keyboard cursor, recent picks kept on the device. Pagefind adds full-text hits, loaded only once someone types. Shortcuts: `/` search, `?` the shortcut sheet, `g h` / `g s` / `g c` go to, `t` theme, `l` language, `j` / `k` walk cards and connections. Single-key shortcuts can be switched off (WCAG 2.1.4). | One small web-standard script (about 3 KB gzipped) instead of Pagefind's 39 KB UI on every page. The search index is a static JSON file per language. |
 | Graph | Neighbourhood layout computed at build with `d3-force` (a dev dependency only) and written out as static SVG | Zero runtime cost. The data comes from the same `scripts/load.ts`. |
 | Social cards | One OG image per entry, rendered at build with Satori and resvg in the brand type | Static files, so they work on any host |
 | Islands (phase 2) | Small web components or Astro `<script>` modules for the diagnose flow. A MapLibre island with PDOK tiles for the map. One graph-explorer island. React only if a piece truly needs it. | Web components are the longest-lived component model there is. |
@@ -70,7 +71,7 @@ All of these are build-time or platform features. None is a runtime service.
 What keeps it future-proof once it is built:
 
 - **Budgets, enforced in CI** (adapted from paddenstoelenbos):
-  - our own JavaScript is at most 2 KB gzipped per page (today only the theme switch, about 0.5 KB)
+  - our own JavaScript is at most 6 KB gzipped per page (today the theme switch, palette and shortcuts: 3.2 KB)
   - no page ships more than 50 KB gzipped JavaScript in total, including search
   - CSS is at most 30 KB gzipped
   - LCP is under 1.5 s on a mid-range phone

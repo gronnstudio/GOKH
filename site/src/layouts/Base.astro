@@ -64,35 +64,83 @@ const speculation = JSON.stringify({
   })()
 </script>
 <script type="speculationrules" is:inline set:html={speculation} />
-<link rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
-<script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>
 <slot name="head" />
 </head>
 <body>
 <a class="skip" href="#main">{ui.skip}</a>
 <header class="bar">
-  <a class="brand" href={`/${lang}/`}>Equilibrium</a>
-  <nav aria-label={ui.main}>
-    {navItems.map(([key, p]) => (
-      <a href={`/${lang}/${p}`} aria-current={current === key ? "page" : undefined}>{ui.nav[key]}</a>
-    ))}
-  </nav>
-  <div class="tools">
-    <pagefind-modal-trigger class="search-trigger" placeholder={ui.searchShort}></pagefind-modal-trigger>
-    <button type="button" class="tool theme" data-theme-toggle data-label={ui.theme} aria-label={`${ui.theme}: ${ui.themes.system}`}>
-      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" /><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" /></svg>
-      <span data-theme-name>{ui.themes.system}</span>
-    </button>
-    <a class="tool" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>
+  <div class="bar-inner">
+    <a class="brand" href={`/${lang}/`}><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-outer" /><circle cx="16" cy="16" r="6" class="brand-inner" /></svg>Equilibrium</a>
+    <nav aria-label={ui.main}>
+      {navItems.map(([key, p]) => (
+        <a href={`/${lang}/${p}`} aria-current={current === key ? "page" : undefined}>{ui.nav[key]}</a>
+      ))}
+    </nav>
+    <div class="tools">
+      <button type="button" class="tool search-launch" data-open-palette aria-keyshortcuts="Control+K Meta+K /">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+        <span>{ui.searchShort}</span><kbd data-mod-k>⌘K</kbd>
+      </button>
+      <button type="button" class="tool icon theme" data-theme-toggle data-label={ui.theme} aria-label={`${ui.theme}: ${ui.themes.system}`}>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" /><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" /></svg>
+        <span data-theme-name>{ui.themes.system}</span>
+      </button>
+      <button type="button" class="tool icon" data-open-keys aria-label={ui.keys.open} aria-keyshortcuts="?"><kbd>?</kbd></button>
+      <a class="tool" href={`/${other}/${path}`} hreflang={other} lang={other} data-lang-switch>{other.toUpperCase()}<span class="sr-only"> {ui.other}</span></a>
+    </div>
   </div>
 </header>
-<pagefind-modal></pagefind-modal>
 <p class="preview">{ui.preview}</p>
 <main id="main">
 <slot />
 </main>
 <footer class="foot">
-  <p>{ui.licence} <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · {ui.code} · {ui.steward} <a href="https://gronn.studio">GRØNN Studio</a> · <a href={REPO}>{ui.sourceOnGithub}</a></p>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-brand">Equilibrium</p>
+      <p>{ui.description}</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        {navItems.map(([key, p]) => <li><a href={`/${lang}/${p}`}>{ui.nav[key]}</a></li>)}
+        <li><a href={REPO}>{ui.sourceOnGithub}</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p>{ui.licence} <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · {ui.code}</p>
+      <p>{ui.steward} <a href="https://gronn.studio">GRØNN Studio</a></p>
+      <p class="label"><button type="button" class="linkish" data-open-keys>{ui.keys.open}</button> · <kbd>?</kbd></p>
+    </div>
+  </div>
 </footer>
+
+<dialog class="palette" aria-label={ui.palette.label} data-labels={JSON.stringify(ui.palette)}>
+  <div class="palette-head">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+    <input type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label={ui.palette.label} placeholder={ui.palette.placeholder} autocomplete="off" spellcheck="false">
+    <kbd>Esc</kbd>
+  </div>
+  <ul id="palette-list" role="listbox" aria-label={ui.palette.label}></ul>
+  <p class="palette-empty">{ui.palette.hint}</p>
+  <p class="palette-foot label"><span><kbd>↑</kbd><kbd>↓</kbd> {ui.palette.move}</span><span><kbd>↵</kbd> {ui.palette.open}</span><span><kbd>Esc</kbd> {ui.palette.close}</span></p>
+</dialog>
+
+<dialog class="keys" aria-labelledby="keys-title">
+  <div class="keys-head">
+    <h2 id="keys-title">{ui.keys.title}</h2>
+    <form method="dialog"><button class="tool icon" aria-label={ui.keys.close}>✕</button></form>
+  </div>
+  {ui.keys.groups.map(([group, rows]) => (
+    <section>
+      <h3 class="label">{group}</h3>
+      <dl>{rows.map(([k, what]) => <div><dt>{what}</dt><dd>{k.split(" ").map((x) => <kbd>{x}</kbd>)}</dd></div>)}</dl>
+    </section>
+  ))}
+  <label class="switch"><input type="checkbox" checked> {ui.keys.singleKeys}</label>
+  <p class="muted">{ui.keys.singleKeysNote}</p>
+</dialog>
+<script>
+  import "../scripts/palette.ts"
+</script>
 </body>
 </html>
