@@ -15,8 +15,10 @@ interface Props {
   /** The path after /<lang>/, so the language switch lands on the same page. */
   path: string
   current?: "entries" | "sources" | "contribute"
+  /** Full-bleed pages lay out their own bands; others sit in the page column. */
+  full?: boolean
 }
-const { lang, title, description, path, current } = Astro.props
+const { lang, title, description, path, current, full = false } = Astro.props
 const ui = t(lang)
 const other: Lang = lang === "nl" ? "en" : "nl"
 const REPO = "https://github.com/gronnstudio/GOKH"
@@ -68,6 +70,7 @@ const speculation = JSON.stringify({
 </head>
 <body>
 <a class="skip" href="#main">{ui.skip}</a>
+<p class="preview"><span>{ui.preview}</span></p>
 <header class="bar">
   <div class="bar-inner">
     <a class="brand" href={`/${lang}/`}><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-outer" /><circle cx="16" cy="16" r="6" class="brand-inner" /></svg>Equilibrium</a>
@@ -90,11 +93,11 @@ const speculation = JSON.stringify({
     </div>
   </div>
 </header>
-<p class="preview">{ui.preview}</p>
 <main id="main">
-<slot />
+{full ? <slot /> : <div class="wrap"><slot /></div>}
 </main>
 <footer class="foot">
+  <p class="foot-mark" aria-hidden="true">Equilibrium</p>
   <div class="foot-inner">
     <div>
       <p class="foot-brand">Equilibrium</p>

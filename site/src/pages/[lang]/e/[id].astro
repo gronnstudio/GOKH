@@ -3,6 +3,8 @@ import { marked } from "marked"
 import Base from "../../../layouts/Base.astro"
 import Grade from "../../../components/Grade.astro"
 import SourceLine from "../../../components/SourceLine.astro"
+import Graph from "../../../components/Graph.astro"
+import { neighbourhood } from "../../../lib/graph.ts"
 import { byId, entries, inbound, pick, sourceByKey, startedFrom, type LoadedEntry, type Source } from "../../../lib/content.ts"
 import { DOMAINS, GRADES, LANGS, VERB_IN, VERB_OUT, entryHref, t, type Lang } from "../../../lib/i18n.ts"
 
@@ -36,13 +38,22 @@ const toc = [
 ]
 const allGrades = [...e.data.relations, ...incoming.map((x) => x.r)]
 const verified = srcs.filter((s) => s.verified).length
+const local = neighbourhood(e)
 ---
 <Base lang={lang} title={`${title.text} · Equilibrium`} description={summary.text} path={`e/${e.data.id}/`}>
   <article class={`entry d-${e.data.domain}`} data-pagefind-body>
     <header class="entry-head">
+      <div class="entry-head-text">
       <p class="crumbs label" data-pagefind-ignore><a href={`/${lang}/`}>{ui.nav.entries}</a><span aria-hidden="true">/</span><a class="crumb-domain" href={`/${lang}/#${e.data.domain}`}><i class="ddot" aria-hidden="true"></i>{DOMAINS[e.data.domain][lang][0]}</a></p>
       <h1 lang={fallbackNote(title)} style={`view-transition-name: entry-${e.data.id}`}>{title.text}</h1>
       <p class="lead" lang={fallbackNote(summary)}>{summary.text}</p>
+      </div>
+      {local.nodes.length > 1 && (
+        <figure class="entry-graph" data-pagefind-ignore>
+          <Graph graph={local} lang={lang} focus={e.data.id} label={ui.localGraph} links />
+          <figcaption class="label">{ui.localGraph}</figcaption>
+        </figure>
+      )}
     </header>
 
     <div class="entry-grid">

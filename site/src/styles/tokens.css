@@ -72,6 +72,9 @@
     --domain-design-practice-tint: light-dark(var(--color-domein-design-practice-tint), var(--color-domein-design-practice-tint-nacht)); /* Domain design-practice: tile and card backgrounds. */
     --domain-systems: light-dark(var(--color-domein-systems), var(--color-domein-systems-nacht)); /* Domain systems: text, marks, fills. */
     --domain-systems-tint: light-dark(var(--color-domein-systems-tint), var(--color-domein-systems-tint-nacht)); /* Domain systems: tile and card backgrounds. */
+    --band: light-dark(var(--color-bosgroen), var(--color-bosgroen)); /* The full-width forest band behind the home hero and the footer, in both themes. */
+    --on-band: light-dark(var(--color-gebroken-wit), var(--color-gebroken-wit)); /* Text on the band. */
+    --on-band-muted: light-dark(var(--color-salie), var(--color-salie)); /* Secondary text and accents on the band. */
     --font-display: Syne, system-ui, sans-serif;
     --font-body: "Montserrat Variable", Montserrat, system-ui, sans-serif;
     --font-mono: "Geist Mono", ui-monospace, monospace;
