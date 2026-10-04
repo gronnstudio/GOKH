@@ -24,7 +24,8 @@ export default {
           "overscroll-behavior": ["/^.+$/"],
           "accent-color": ["/^.+$/"],
         },
-        ignoreSelectors: ["view-transition-group", "selection", "marker"],
+        // popover-open only styles the opening animation of native popovers.
+        ignoreSelectors: ["view-transition-group", "selection", "marker", "popover-open"],
       },
     ],
   },

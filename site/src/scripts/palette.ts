@@ -133,6 +133,9 @@ list.addEventListener("pointermove", (e) => {
 })
 for (const d of [dialog, help]) d.addEventListener("click", (e) => { if (e.target === d) d.close() })
 document.addEventListener("click", (e) => {
+  // A link or action inside a menu popover closes it (same-page anchors would otherwise leave it open).
+  const inMenu = (e.target as HTMLElement).closest("[popover] a, [popover] [data-open-palette], [popover] [data-open-keys]")
+  if (inMenu) (inMenu.closest("[popover]") as HTMLElement | null)?.hidePopover?.()
   const t = (e.target as HTMLElement).closest("[data-open-palette]")
   if (t) { e.preventDefault(); openPalette() }
   if ((e.target as HTMLElement).closest("[data-open-keys]")) help.showModal()

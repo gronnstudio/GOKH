@@ -151,3 +151,23 @@ test("speculation rules are valid JSON", async ({ page }) => {
   const rules = await page.locator('script[type="speculationrules"]').textContent()
   expect(JSON.parse(rules!).prerender[0].eagerness).toBe("moderate")
 })
+
+test("the domains menu opens and takes you to a domain", async ({ page, isMobile }) => {
+  test.skip(isMobile, "on phones the domains live in the menu sheet")
+  await page.goto("/en/sources/")
+  await page.getByRole("button", { name: "Domains" }).click()
+  const panel = page.locator("#domains-menu")
+  await expect(panel).toBeVisible()
+  await panel.getByRole("link", { name: /Water/ }).click()
+  await expect(page).toHaveURL(/\/en\/#water$/)
+})
+
+test("on a phone the menu button opens a full menu", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "the menu button shows on narrow screens")
+  await page.goto("/nl/")
+  await page.getByRole("button", { name: "Menu" }).click()
+  const sheet = page.locator("#site-menu")
+  await expect(sheet).toBeVisible()
+  await sheet.getByRole("link", { name: "Bronnen" }).click()
+  await expect(page).toHaveURL(/\/nl\/sources\/$/)
+})
