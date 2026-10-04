@@ -650,6 +650,21 @@
   .skip:focus { left: var(--space-16); top: var(--space-16); background: var(--surface); padding: var(--space-8) var(--space-12); z-index: 30; }
 }
 
+/* Touch screens: a tap leaves :hover stuck on the last thing touched while scrolling.
+   Hover lifts, shadows and fills are for pointers; keyboard focus keeps its own styles. */
+@layer components {
+  @media (hover: none) {
+    .tile a:hover, .card a:hover, .search-hero:hover, .mega-grid a:hover { translate: none; }
+    .tile a:hover { box-shadow: none; }
+    .tile a:hover::after { scale: none; }
+    .card a:hover { border-color: transparent; box-shadow: inset 0 4px 0 var(--d, transparent); }
+    .mega-grid a:hover:not(:focus-visible) { background: var(--d-tint); color: var(--ink); }
+    .mega-grid a:hover:not(:focus-visible) .mega-count, .mega-grid a:hover:not(:focus-visible) .mega-title { color: var(--d); }
+    .problems a:hover:not(:focus-visible)::before { scale: 0 1; }
+    .problems a:hover:not(:focus-visible) .arrow { translate: none; color: var(--muted); }
+  }
+}
+
 @layer utilities {
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }
