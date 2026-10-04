@@ -1,0 +1,187 @@
+---
+// Latin and Latin Extended cover Dutch, English and the author names in our sources.
+import "@fontsource/syne/latin-600.css"
+import "@fontsource/syne/latin-ext-600.css"
+import "@fontsource-variable/montserrat/wght.css"
+import "@fontsource/geist-mono/latin-500.css"
+import "@fontsource/geist-mono/latin-ext-500.css"
+import "../styles/global.css"
+import { DOMAINS, t, type Lang } from "../lib/i18n.ts"
+import { entries } from "../lib/content.ts"
+
+interface Props {
+  lang: Lang
+  title: string
+  description: string
+  /** The path after /<lang>/, so the language switch lands on the same page. */
+  path: string
+  current?: "entries" | "sources" | "contribute"
+  /** Full-bleed pages lay out their own bands; others sit in the page column. */
+  full?: boolean
+}
+const { lang, title, description, path, current, full = false } = Astro.props
+const ui = t(lang)
+const other: Lang = lang === "nl" ? "en" : "nl"
+const REPO = "https://github.com/gronnstudio/GOKH"
+const domainCounts = Object.keys(DOMAINS).map((d) => ({ d, n: entries.filter((e) => e.data.domain === d && e.data.type !== "problem").length })).filter((x) => x.n)
+const problemCount = entries.filter((e) => e.data.type === "problem").length
+const navItems = [
+  ["entries", ""],
+  ["sources", "sources/"],
+  ["contribute", "contribute/"],
+] as const
+// Prerender a same-site page when the pointer rests on its link. Browsers without the API ignore this.
+const speculation = JSON.stringify({
+  prerender: [{ where: { and: [{ href_matches: "/*" }, { not: { href_matches: "/pagefind/*" } }] }, eagerness: "moderate" }],
+})
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang={lang} href={`/${lang}/${path}`}>
+<link rel="alternate" hreflang={other} href={`/${other}/${path}`}>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script is:inline data-themes={JSON.stringify(ui.themes)}>
+  // Theme: system, light or dark. Set before first paint so there is no flash; the button cycles it.
+  (() => {
+    const root = document.documentElement, names = JSON.parse(document.currentScript.dataset.themes), order = ["system", "light", "dark"]
+    const read = () => { try { return localStorage.getItem("theme") || "system" } catch { return "system" } }
+    const apply = (mode) => {
+      if (mode === "system") root.removeAttribute("data-theme"); else root.dataset.theme = mode
+      for (const b of document.querySelectorAll("[data-theme-toggle]")) {
+        b.querySelector("[data-theme-name]").textContent = names[mode]
+        b.setAttribute("aria-label", `${b.dataset.label}: ${names[mode]}`)
+      }
+    }
+    apply(read())
+    document.addEventListener("DOMContentLoaded", () => apply(read()))
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("[data-theme-toggle]")) return
+      const next = order[(order.indexOf(read()) + 1) % order.length]
+      try { localStorage.setItem("theme", next) } catch {}
+      apply(next)
+    })
+  })()
+</script>
+<script type="speculationrules" is:inline set:html={speculation} />
+<slot name="head" />
+</head>
+<body>
+<a class="skip" href="#main">{ui.skip}</a>
+<p class="preview"><span>{ui.preview}</span></p>
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href={`/${lang}/`}><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-outer" /><circle cx="16" cy="16" r="6" class="brand-inner" /></svg>Equilibrium</a>
+    <nav class="nav-main" aria-label={ui.main}>
+      <a href={`/${lang}/`} aria-current={current === "entries" ? "page" : undefined}>{ui.nav.entries}</a>
+      <button type="button" class="nav-more" popovertarget="domains-menu" style="anchor-name: --domains">{ui.domainsNav}<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" /></svg></button>
+      <a href={`/${lang}/sources/`} aria-current={current === "sources" ? "page" : undefined}>{ui.nav.sources}</a>
+      <a href={`/${lang}/contribute/`} aria-current={current === "contribute" ? "page" : undefined}>{ui.nav.contribute}</a>
+    </nav>
+    <div class="tools">
+      <button type="button" class="tool search-launch" data-open-palette aria-keyshortcuts="Control+K Meta+K /" aria-label={ui.search}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+        <span>{ui.searchShort}</span><kbd data-mod-k>⌘K</kbd>
+      </button>
+      <button type="button" class="tool icon theme" data-theme-toggle data-label={ui.theme} aria-label={`${ui.theme}: ${ui.themes.system}`}>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" /><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" /></svg>
+        <span data-theme-name>{ui.themes.system}</span>
+      </button>
+      <button type="button" class="tool icon keys-btn" data-open-keys aria-label={ui.keys.open} aria-keyshortcuts="?"><kbd>?</kbd></button>
+      <a class="tool icon" href={`/${other}/${path}`} hreflang={other} lang={other} data-lang-switch>{other.toUpperCase()}<span class="sr-only"> {ui.other}</span></a>
+      <button type="button" class="tool icon menu-btn" popovertarget="site-menu" aria-label={ui.menu}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="domains-menu" popover class="mega" style="position-anchor: --domains">
+  <ul class="mega-grid">
+    {domainCounts.map(({ d, n }) => (
+      <li class={`d-${d}`}><a href={`/${lang}/#${d}`}><span class="mega-count">{ui.entriesCount(n)}</span><span class="mega-title">{DOMAINS[d][lang][0]}</span><span class="mega-text">{DOMAINS[d][lang][1]}</span></a></li>
+    ))}
+  </ul>
+  <a class="mega-problems" href={`/${lang}/#problems`}><span>{ui.problemsNav}</span><span class="label">{problemCount} →</span></a>
+</div>
+
+<div id="site-menu" popover class="sheet">
+  <div class="sheet-head">
+    <a class="brand" href={`/${lang}/`}><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" class="brand-outer" /><circle cx="16" cy="16" r="6" class="brand-inner" /></svg>Equilibrium</a>
+    <button type="button" class="tool icon" popovertarget="site-menu" popovertargetaction="hide" aria-label={ui.menuClose}>✕</button>
+  </div>
+  <nav aria-label={ui.menu}>
+    <ul class="sheet-nav">
+      {navItems.map(([key, p], i) => <li style={`--i: ${i}`}><a href={`/${lang}/${p}`} aria-current={current === key ? "page" : undefined}>{ui.nav[key]}</a></li>)}
+    </ul>
+    <p class="label sheet-label">{ui.domainsNav}</p>
+    <ul class="sheet-domains">
+      {domainCounts.map(({ d, n }) => <li class={`d-${d}`}><a href={`/${lang}/#${d}`}><i class="ddot" aria-hidden="true"></i>{DOMAINS[d][lang][0]}<span class="label">{n}</span></a></li>)}
+      <li><a href={`/${lang}/#problems`}><i class="ddot" aria-hidden="true"></i>{ui.problemsNav}<span class="label">{problemCount}</span></a></li>
+    </ul>
+  </nav>
+  <div class="sheet-tools">
+    <button type="button" class="tool" data-open-palette><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>{ui.search}</button>
+    <a class="tool" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>
+    <button type="button" class="tool" data-open-keys>{ui.keys.open}</button>
+  </div>
+</div>
+<main id="main">
+{full ? <slot /> : <div class="wrap"><slot /></div>}
+</main>
+<footer class="foot">
+  <p class="foot-mark" aria-hidden="true">Equilibrium</p>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-brand">Equilibrium</p>
+      <p>{ui.description}</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        {navItems.map(([key, p]) => <li><a href={`/${lang}/${p}`}>{ui.nav[key]}</a></li>)}
+        <li><a href={REPO}>{ui.sourceOnGithub}</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p>{ui.licence} <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · {ui.code}</p>
+      <p>{ui.steward} <a href="https://gronn.studio">GRØNN Studio</a></p>
+      <p class="label"><button type="button" class="linkish" data-open-keys>{ui.keys.open}</button> · <kbd>?</kbd></p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="palette" aria-label={ui.palette.label} data-labels={JSON.stringify(ui.palette)}>
+  <div class="palette-head">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+    <input type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label={ui.palette.label} placeholder={ui.palette.placeholder} autocomplete="off" spellcheck="false">
+    <kbd>Esc</kbd>
+  </div>
+  <ul id="palette-list" role="listbox" aria-label={ui.palette.label}></ul>
+  <p class="palette-empty">{ui.palette.hint}</p>
+  <p class="palette-foot label"><span><kbd>↑</kbd><kbd>↓</kbd> {ui.palette.move}</span><span><kbd>↵</kbd> {ui.palette.open}</span><span><kbd>Esc</kbd> {ui.palette.close}</span></p>
+</dialog>
+
+<dialog class="keys" aria-labelledby="keys-title">
+  <div class="keys-head">
+    <h2 id="keys-title">{ui.keys.title}</h2>
+    <form method="dialog"><button class="tool icon" aria-label={ui.keys.close}>✕</button></form>
+  </div>
+  {ui.keys.groups.map(([group, rows]) => (
+    <section>
+      <h3 class="label">{group}</h3>
+      <dl>{rows.map(([k, what]) => <div><dt>{what}</dt><dd>{k.split(" ").map((x) => <kbd>{x}</kbd>)}</dd></div>)}</dl>
+    </section>
+  ))}
+  <label class="switch"><input type="checkbox" checked> {ui.keys.singleKeys}</label>
+  <p class="muted">{ui.keys.singleKeysNote}</p>
+</dialog>
+<script>
+  import "../scripts/palette.ts"
+</script>
+</body>
+</html>

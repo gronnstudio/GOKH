@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro"
+import { t } from "../lib/i18n.ts"
+const nl = t("nl"), en = t("en")
+---
+<Base lang="nl" title="Niet gevonden · Equilibrium" description="" path="">
+  <h1>{nl.notFound}</h1>
+  <p class="lead">{nl.notFoundLead} <a href="/nl/">{nl.back}</a>.</p>
+  <p lang="en">{en.notFoundLead} <a href="/en/">{en.back}</a>.</p>
+</Base>

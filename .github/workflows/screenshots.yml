@@ -1,0 +1,33 @@
+name: Update screenshots
+# Run by hand from the Actions tab after an intended visual change (or once, to make the first baselines).
+# Takes fresh screenshots of every page template in CI's browser and opens a pull request with them.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: npx playwright test tests/visual.spec.ts --update-snapshots
+        env:
+          VISUAL: "1"
+          UPDATE_SCREENSHOTS: "1"
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update-screenshots
+          title: "Site: updated visual-regression screenshots"
+          body: |
+            Fresh screenshots of every page template, both themes, desktop and phone, taken in CI's browser.
+            Look at the changed images before merging: every difference should be one you meant.
+          commit-message: "Site: update visual-regression screenshots"
+          add-paths: tests/screenshots/

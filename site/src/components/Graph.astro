@@ -1,0 +1,50 @@
+---
+/**
+ * The knowledge graph, drawn at build time. On the home page it is the whole
+ * corpus as one picture; on an entry page it is the entry and its neighbours,
+ * each a link. Lines draw in once on load; reduced motion shows them at rest.
+ */
+import { byId, pick } from "../lib/content.ts"
+import { entryHref, type Lang } from "../lib/i18n.ts"
+import type { GEdge, GNode } from "../lib/graph.ts"
+
+interface Props { graph: { nodes: GNode[]; edges: GEdge[]; w: number; h: number }; lang: Lang; focus?: string; label: string; links?: boolean }
+const { graph, lang, focus, label, links = false } = Astro.props
+const at = new Map(graph.nodes.map((n) => [n.id, n]))
+const name = (id: string) => pick(byId.get(id)!.data.title, lang).text
+// a soft curve instead of a straight line: reads as growth, not wiring
+const curve = (a: GNode, b: GNode) => {
+  const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2
+  const dx = b.x - a.x, dy = b.y - a.y
+  return `M${a.x.toFixed(1)},${a.y.toFixed(1)} Q${(mx - dy * 0.15).toFixed(1)},${(my + dx * 0.15).toFixed(1)} ${b.x.toFixed(1)},${b.y.toFixed(1)}`
+}
+---
+<svg class={`graph ${links ? "graph-local" : "graph-whole"}`} viewBox={`0 0 ${graph.w} ${graph.h}`} role={links ? "group" : "img"} aria-label={label}>
+  <g class="edges" aria-hidden="true">
+    {graph.edges.map((e, i) => {
+      const a = at.get(e.from), b = at.get(e.to)
+      return a && b && <path d={curve(a, b)} class={`edge edge-${e.grade}`} pathLength="1" style={`--i: ${i}`} />
+    })}
+  </g>
+  <g class="nodes">
+    {graph.nodes.map((n, i) => {
+      const dot = <circle cx={n.x.toFixed(1)} cy={n.y.toFixed(1)} r={n.r.toFixed(1)} class={`node d-${n.domain}${n.id === focus ? " node-focus" : ""}`} style={`--i: ${i}`} />
+      if (!links) return dot
+      // labels point away from the centre: right, left, or above and below
+      const cx = graph.w / 2, cy = graph.h / 2
+      const dx = (n.x - cx) / graph.w, dy = (n.y - cy) / graph.h
+      const side = n.id === focus ? "below" : Math.abs(dx) > 0.03 ? (dx > 0 ? "right" : "left") : dy < 0 ? "above" : "below"
+      const lx = side === "right" ? n.x + n.r + 6 : side === "left" ? n.x - n.r - 6 : n.x
+      const ly = side === "above" ? n.y - n.r - 8 : side === "below" ? n.y + n.r + 16 : n.y + 4
+      const anchor = side === "right" ? "start" : side === "left" ? "end" : "middle"
+      const text = name(n.id).length > 22 ? name(n.id).slice(0, 20) + "…" : name(n.id)
+      return (
+        <a href={entryHref(lang, n.id)} class="node-link">
+          <title>{name(n.id)}</title>
+          {dot}
+          <text x={lx.toFixed(1)} y={ly.toFixed(1)} text-anchor={anchor} class={n.id === focus ? "node-label focus" : "node-label"}>{text}</text>
+        </a>
+      )
+    })}
+  </g>
+</svg>

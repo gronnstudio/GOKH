@@ -1,0 +1,158 @@
+---
+import { marked } from "marked"
+import Base from "../../../layouts/Base.astro"
+import Grade from "../../../components/Grade.astro"
+import SourceLine from "../../../components/SourceLine.astro"
+import Graph from "../../../components/Graph.astro"
+import { neighbourhood } from "../../../lib/graph.ts"
+import { byId, entries, inbound, pick, sourceByKey, startedFrom, type LoadedEntry, type Source } from "../../../lib/content.ts"
+import { DOMAINS, GRADES, LANGS, VERB_IN, VERB_OUT, entryHref, t, type Lang } from "../../../lib/i18n.ts"
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => entries.map((e) => ({ params: { lang, id: e.data.id } })))
+}
+const lang = Astro.params.lang as Lang
+const e = byId.get(Astro.params.id!)!
+const ui = t(lang)
+const REPO = "https://github.com/gronnstudio/GOKH"
+const title = pick(e.data.title, lang)
+const summary = pick(e.data.summary, lang)
+const body = pick(e.body, lang)
+const name = (x: LoadedEntry) => pick(x.data.title, lang)
+const srcs = e.data.sources.map((k) => sourceByKey.get(k)).filter((s): s is Source => Boolean(s))
+const fallbackNote = (x: { fallback: boolean; lang: Lang }) => (x.fallback ? x.lang : undefined)
+const incoming = inbound.get(e.data.id) ?? []
+const starts = startedFrom.get(e.data.id) ?? []
+
+// Section headings in the body get ids, so the table of contents can link to them.
+const slug = (s: string) => s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-")
+const headings = [...body.text.matchAll(/^## (.+)$/gm)].map((m) => ({ text: m[1].trim(), id: slug(m[1]) }))
+let html = marked.parse(body.text) as string
+for (const h of headings) html = html.replace(`<h2>${h.text}</h2>`, `<h2 id="${h.id}">${h.text}</h2>`)
+const toc = [
+  ...headings,
+  ...(e.data.start.length ? [{ text: ui.readFirst, id: "read-first" }] : []),
+  ...(e.data.relations.length ? [{ text: ui.connectionsTitle, id: "connections" }] : []),
+  ...(incoming.length ? [{ text: ui.connectedFrom, id: "connected-from" }] : []),
+  ...(srcs.length ? [{ text: ui.sourcesTitle, id: "sources" }] : []),
+]
+const allGrades = [...e.data.relations, ...incoming.map((x) => x.r)]
+const verified = srcs.filter((s) => s.verified).length
+const local = neighbourhood(e)
+---
+<Base lang={lang} title={`${title.text} · Equilibrium`} description={summary.text} path={`e/${e.data.id}/`}>
+  <article class={`entry d-${e.data.domain}`} data-pagefind-body>
+    <header class="entry-head">
+      <div class="entry-head-text">
+      <p class="crumbs label" data-pagefind-ignore><a href={`/${lang}/`}>{ui.nav.entries}</a><span aria-hidden="true">/</span><a class="crumb-domain" href={`/${lang}/#${e.data.domain}`}><i class="ddot" aria-hidden="true"></i>{DOMAINS[e.data.domain][lang][0]}</a></p>
+      <h1 lang={fallbackNote(title)} style={`view-transition-name: entry-${e.data.id}`}>{title.text}</h1>
+      <p class="lead" lang={fallbackNote(summary)}>{summary.text}</p>
+      </div>
+      {local.nodes.length > 1 && (
+        <figure class="entry-graph" data-pagefind-ignore>
+          <Graph graph={local} lang={lang} focus={e.data.id} label={ui.localGraph} links />
+          <figcaption class="label">{ui.localGraph}</figcaption>
+        </figure>
+      )}
+    </header>
+
+    <div class="entry-grid">
+      <div class="entry-main">
+        {body.text && (
+          <>
+            {body.fallback && <p class="note" data-pagefind-ignore>{ui.notTranslated}</p>}
+            <div class="prose" lang={fallbackNote(body)} set:html={html} />
+          </>
+        )}
+
+        {e.data.start.length > 0 && (
+          <section id="read-first">
+            <h2>{ui.readFirst}</h2>
+            <ol class="reads">
+              {e.data.start.map((k) => byId.get(k)!).map((x) => {
+                const n = name(x), s = pick(x.data.summary, lang)
+                return <li><a href={entryHref(lang, x.data.id)} lang={fallbackNote(n)} data-walk>{n.text}</a><span class="muted" lang={fallbackNote(s)}>{s.text}</span></li>
+              })}
+            </ol>
+          </section>
+        )}
+
+        {e.data.relations.length > 0 && (
+          <section id="connections" data-pagefind-ignore>
+            <h2>{ui.connectionsTitle}</h2>
+            <ul class="rels">
+              {e.data.relations.map((r) => {
+                const to = byId.get(r.to)!, n = name(to), why = pick(r.why, lang)
+                return (
+                  <li class="rel">
+                    <p class="rel-head"><span class="verb">{VERB_OUT[r.verb][lang]}</span><a href={entryHref(lang, to.data.id)} lang={fallbackNote(n)} data-walk>{n.text}</a></p>
+                    <p lang={fallbackNote(why)}>{why.text}</p>
+                    <div class="rel-foot"><Grade grade={r.grade} lang={lang} id={`out-${r.to}`} />{r.review && <span class="chip chip-contested" title={ui.verbNotReviewedNote}>{ui.verbNotReviewed}</span>}</div>
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+        )}
+
+        {incoming.length > 0 && (
+          <section id="connected-from" data-pagefind-ignore>
+            <h2>{ui.connectedFrom}</h2>
+            <ul class="rels">
+              {incoming.map(({ from, r }) => {
+                const n = name(from), why = pick(r.why, lang)
+                return (
+                  <li class="rel rel-in">
+                    <p class="rel-head"><span class="verb">{VERB_IN[r.verb][lang]}</span><a href={entryHref(lang, from.data.id)} lang={fallbackNote(n)} data-walk>{n.text}</a></p>
+                    <p lang={fallbackNote(why)}>{why.text}</p>
+                    <div class="rel-foot"><Grade grade={r.grade} lang={lang} id={`in-${from.data.id}`} /></div>
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+        )}
+
+        {starts.length > 0 && (
+          <section data-pagefind-ignore>
+            <h2>{ui.startingPointFor}</h2>
+            <ul class="pills">{starts.map((p) => { const n = name(p); return <li><a href={entryHref(lang, p.data.id)} lang={fallbackNote(n)} data-walk>{n.text}</a></li> })}</ul>
+          </section>
+        )}
+
+        {srcs.length > 0 && (
+          <section id="sources" data-pagefind-ignore>
+            <h2>{ui.sourcesTitle}</h2>
+            <ol class="srcs">{srcs.map((s) => <li><SourceLine s={s} lang={lang} /></li>)}</ol>
+          </section>
+        )}
+      </div>
+
+      <aside class="glance" data-pagefind-ignore aria-labelledby="glance-title">
+        <div class="glance-card">
+          <h2 id="glance-title" class="label">{ui.glance}</h2>
+          <dl>
+            <div><dt>{ui.statusWord}</dt><dd><span class="chip chip-contested">{ui.status[e.data.status]}</span></dd></div>
+            <div><dt>{ui.levelWord}</dt><dd>{e.data.level ? ui.level[e.data.level] : "–"}</dd></div>
+            <div><dt>{ui.connectionsOut}</dt><dd>{e.data.relations.length}</dd></div>
+            <div><dt>{ui.connectionsIn}</dt><dd>{incoming.length}</dd></div>
+            <div><dt>{ui.sourcesTitle.toLowerCase()}</dt><dd>{srcs.length ? ui.sourcesVerified(verified, srcs.length) : "–"}</dd></div>
+            <div><dt>{ui.updated}</dt><dd>{e.data.updated}</dd></div>
+          </dl>
+          {allGrades.length > 0 && (
+            <div class="mix mix-small" role="img" aria-label={Object.keys(GRADES).map((g) => `${GRADES[g][lang][0]} ${allGrades.filter((r) => r.grade === g).length}`).join(", ")}>
+              {Object.keys(GRADES).map((g) => { const n = allGrades.filter((r) => r.grade === g).length; return n > 0 && <span class={`mix-${g}`} style={`flex-grow: ${n}`}></span> })}
+            </div>
+          )}
+          <p class="label"><a href={`${REPO}/blob/main/content/entries/${e.file}`}>{ui.edit} ↗</a></p>
+        </div>
+        {toc.length > 1 && (
+          <nav class="toc" aria-labelledby="toc-title">
+            <h2 id="toc-title" class="label">{ui.onThisPage}</h2>
+            <ol>{toc.map((h) => <li><a href={`#${h.id}`}>{h.text}</a></li>)}</ol>
+          </nav>
+        )}
+      </aside>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,30 @@
+---
+import Base from "../../layouts/Base.astro"
+import SourceLine from "../../components/SourceLine.astro"
+import { citedBy, pick, sources, verifiedCount } from "../../lib/content.ts"
+import { entryHref, langPaths, t, type Lang } from "../../lib/i18n.ts"
+
+export const getStaticPaths = langPaths
+const lang = Astro.params.lang as Lang
+const ui = t(lang)
+const sorted = [...sources].sort((a, b) => Number(a.verified) - Number(b.verified) || a.authors.localeCompare(b.authors))
+---
+<Base lang={lang} title={`${ui.sourcesTitle} · Equilibrium`} description={ui.sourcesLead(sources.length, verifiedCount)} path="sources/" current="sources">
+  <header class="entry-head">
+    <h1>{ui.sourcesTitle}</h1>
+    <p class="lead">{ui.sourcesLead(sources.length, verifiedCount)}</p>
+    <div class="meter page-meter" role="img" aria-label={ui.verifiedOf(verifiedCount, sources.length)}><span style={`inline-size: ${Math.round((verifiedCount / sources.length) * 1000) / 10}%`}></span></div>
+    <p class="label">{ui.verifiedOf(verifiedCount, sources.length)}</p>
+  </header>
+  <ol class="srcs">
+    {sorted.map((s) => {
+      const by = citedBy.get(s.key) ?? []
+      return (
+        <li id={s.key}>
+          <SourceLine s={s} lang={lang} /><br>
+          <span class="label">{ui.citedBy} {by.length ? by.map((e, i) => { const n = pick(e.data.title, lang); return <>{i > 0 && ", "}<a href={entryHref(lang, e.data.id)} lang={n.fallback ? n.lang : undefined}>{n.text}</a></> }) : ui.noEntryYet}</span>
+        </li>
+      )
+    })}
+  </ol>
+</Base>

@@ -44,6 +44,15 @@ for (const { file, data: e, body } of entries) {
     }
     if (r.review && e.status !== "draft") err(file, `relation ${r.verb} → ${r.to} is still marked for review, so the entry must stay a draft`)
   }
+  // problems: a reading list and search words
+  if (e.type !== "problem" && (e.start.length || e.terms.length)) err(file, "only problem entries carry start or terms")
+  for (const k of e.start) {
+    if (k === e.id) err(file, "a problem cannot start from itself")
+    if (!entryIds.has(k)) err(file, `start "${k}" points at no entry`)
+    inbound.set(k, (inbound.get(k) ?? 0) + 1)
+  }
+  if (e.type === "problem" && e.start.length === 0) err(file, "problem entries need at least one start entry")
+
   if (e.relations.length < 2) warn(file, `has ${e.relations.length} outbound relation(s); aim for at least 2`)
 
   // sources
@@ -70,7 +79,7 @@ for (const { file, data: e, body } of entries) {
 
 // orphans: no relation in or out
 for (const { file, data: e } of entries) {
-  if (e.relations.length === 0 && !inbound.get(e.id)) err(file, "is an orphan: no relation in or out")
+  if (e.relations.length === 0 && e.start.length === 0 && !inbound.get(e.id)) err(file, "is an orphan: no relation in or out")
 }
 
 for (const s of sources) if (!citedSources.has(s.key)) warn("sources.yaml", `source "${s.key}" is cited by no entry`)

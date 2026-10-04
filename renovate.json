@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Weekly grouped updates; Astro majors alone, so each is checked by the full site gate (decision 0002).",
+  "extends": ["config:recommended"],
+  "schedule": ["before 6am on monday"],
+  "timezone": "Europe/Amsterdam",
+  "rangeStrategy": "pin",
+  "packageRules": [
+    { "matchUpdateTypes": ["minor", "patch"], "groupName": "minor and patch updates" },
+    { "matchPackageNames": ["astro", "@astrojs/check"], "matchUpdateTypes": ["major"], "groupName": "Astro major" },
+    { "matchManagers": ["github-actions"], "groupName": "GitHub Actions" }
+  ]
+}

@@ -1,0 +1,109 @@
+---
+import Base from "../../layouts/Base.astro"
+import EntryCard from "../../components/EntryCard.astro"
+import Graph from "../../components/Graph.astro"
+import { entries, pick, relationCount, sources, verifiedCount } from "../../lib/content.ts"
+import { wholeGraph } from "../../lib/graph.ts"
+import { DOMAINS, GRADES, entryHref, langPaths, t, type Lang } from "../../lib/i18n.ts"
+
+export const getStaticPaths = langPaths
+const lang = Astro.params.lang as Lang
+const ui = t(lang)
+const problems = entries.filter((e) => e.data.type === "problem")
+const rest = entries.filter((e) => e.data.type !== "problem")
+const relations = entries.flatMap((e) => e.data.relations)
+const mix = Object.keys(GRADES).map((g) => ({ g, n: relations.filter((r) => r.grade === g).length }))
+const pct = (n: number, of: number) => (of ? Math.round((n / of) * 1000) / 10 : 0)
+const domains = Object.entries(DOMAINS).map(([d, labels]) => ({ d, labels: labels[lang], list: rest.filter((e) => e.data.domain === d) })).filter((x) => x.list.length)
+const graph = wholeGraph()
+const ticker = rest.map((e) => ({ id: e.data.id, d: e.data.domain, t: pick(e.data.title, lang) }))
+---
+<Base lang={lang} title={`Equilibrium: ${ui.tagline.toLowerCase()}`} description={ui.description} path="" current="entries" full>
+  <section class="hero on-band">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">{ui.eyebrow}</p>
+        <h1><span>{ui.heroA}</span> <em>{ui.heroB}</em></h1>
+        <p class="lead">{ui.lead}</p>
+        <button type="button" class="search-hero" data-open-palette>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+          <span>{ui.searchLaunch}</span><kbd data-mod-k>⌘K</kbd>
+        </button>
+      </div>
+      <figure class="hero-graph">
+        <Graph graph={graph} lang={lang} label={ui.graphLabel(entries.length, relationCount)} />
+        <figcaption class="legend">
+          {domains.map(({ d, labels }) => <span class={`d-${d}`}><i class="ddot" aria-hidden="true"></i>{labels[0]}</span>)}
+        </figcaption>
+      </figure>
+    </div>
+    <dl class="hero-stats" aria-label={ui.evidence}>
+      <div><dt>{ui.entriesWord}</dt><dd>{entries.length}</dd></div>
+      <div><dt>{ui.connectionsWord}</dt><dd>{relationCount}</dd></div>
+      <div><dt>{ui.sourcesWord}</dt><dd>{sources.length}</dd></div>
+      <div class="hero-evidence">
+        <dt>{ui.verifiedOf(verifiedCount, sources.length)}</dt>
+        <dd>
+          <div class="meter" role="img" aria-label={ui.verifiedOf(verifiedCount, sources.length)}><span style={`inline-size: ${pct(verifiedCount, sources.length)}%`}></span></div>
+          <div class="mix" role="img" aria-label={`${ui.gradeMix}: ${mix.map((m) => `${GRADES[m.g][lang][0]} ${m.n}`).join(", ")}`}>
+            {mix.map((m) => m.n > 0 && <span class={`mix-${m.g}`} style={`flex-grow: ${m.n}`} title={`${GRADES[m.g][lang][0]}: ${m.n}`}></span>)}
+          </div>
+          <span class="mix-caption">{ui.gradeMix}: {mix.filter((m) => m.n).map((m) => `${GRADES[m.g][lang][0]} ${m.n}`).join(" · ")}</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <div class="ticker" aria-label={ui.tickerLabel} role="region">
+    <ul class="ticker-track">
+      {ticker.map((x) => <li class={`d-${x.d}`}><a href={entryHref(lang, x.id)} lang={x.t.fallback ? x.t.lang : undefined}><i class="ddot" aria-hidden="true"></i>{x.t.text}</a></li>)}
+      {ticker.map((x) => <li class={`d-${x.d}`} aria-hidden="true"><a href={entryHref(lang, x.id)} tabindex="-1"><i class="ddot"></i>{x.t.text}</a></li>)}
+    </ul>
+  </div>
+
+  {problems.length > 0 && (
+    <section class="wrap split" id="problems">
+      <header class="split-head">
+        <p class="eyebrow">{problems.length} · {ui.problems}</p>
+        <h2>{ui.problems}</h2>
+        <p class="muted">{ui.problemsLead}</p>
+      </header>
+      <ol class="problems">
+        {problems.map((e, i) => {
+          const n = pick(e.data.title, lang)
+          return <li class={`d-${e.data.domain}`}><a href={entryHref(lang, e.data.id)} data-walk><span class="num">{String(i + 1).padStart(2, "0")}</span><span class="ptitle" lang={n.fallback ? n.lang : undefined} style={`view-transition-name: entry-${e.data.id}`}>{n.text}</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        })}
+      </ol>
+    </section>
+  )}
+
+  <section class="wrap band">
+    <header class="band-head">
+      <h2>{ui.domainsTitle}</h2>
+      <p class="muted">{ui.domainsLead}</p>
+    </header>
+    <ul class="bento">
+      {domains.map(({ d, labels, list }) => (
+        <li class={`tile d-${d}`}>
+          <a href={`#${d}`} data-walk>
+            <span class="tile-count">{list.length}<small>{ui.entriesCount(list.length).replace(/^\d+\s*/, "")}</small></span>
+            <span class="tile-title">{labels[0]}</span>
+            <span class="tile-text">{labels[1]}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {domains.map(({ d, labels, list }) => (
+    <section class={`domain d-${d}`} id={d}>
+      <header class="wrap band-head">
+        <h2>{labels[0]} <span class="count">{list.length}</span></h2>
+        <p class="muted">{labels[1]}</p>
+      </header>
+      <div class="rail" role="region" tabindex="0" aria-label={`${labels[0]}: ${ui.scrollHint}`}>
+        <ul class="cards">{list.map((e) => <EntryCard e={e} lang={lang} />)}</ul>
+      </div>
+    </section>
+  ))}
+</Base>

@@ -1,0 +1,19 @@
+---
+import { pick, type LoadedEntry } from "../lib/content.ts"
+import { DOMAINS, entryHref, t, type Lang } from "../lib/i18n.ts"
+
+interface Props { e: LoadedEntry; lang: Lang }
+const { e, lang } = Astro.props
+const ui = t(lang)
+const title = pick(e.data.title, lang)
+const summary = pick(e.data.summary, lang)
+const reads = e.data.start.length
+---
+<li class={`card d-${e.data.domain}`}>
+  <a href={entryHref(lang, e.data.id)} data-walk>
+    <span class="label card-domain"><i class="ddot" aria-hidden="true"></i>{DOMAINS[e.data.domain][lang][0]}</span>
+    <span class="card-title" lang={title.fallback ? title.lang : undefined} style={`view-transition-name: entry-${e.data.id}`}>{title.text}</span>
+    <span class="card-text" lang={summary.fallback ? summary.lang : undefined}>{summary.text}</span>
+    <span class="label">{reads ? ui.readFirstCount(reads) : ui.connections(e.data.relations.length)} · {ui.sourcesCount(e.data.sources.length)}</span>
+  </a>
+</li>
