@@ -46,6 +46,7 @@
     --color-domein-systems-tint: oklch(0.935 0.028 310);
     --color-domein-systems-nacht: oklch(0.79 0.075 310);
     --color-domein-systems-tint-nacht: oklch(0.315 0.03 310);
+    --color-aarde-oranje-licht: oklch(0.74 0.13 52);
     --paper: light-dark(var(--color-gebroken-wit), var(--color-antraciet)); /* Page background. */
     --surface: light-dark(var(--color-papier-licht), var(--color-antraciet-licht)); /* Cards, inputs, popovers. */
     --ink: light-dark(var(--color-antraciet), var(--color-gebroken-wit)); /* Body text. */
@@ -75,6 +76,7 @@
     --band: light-dark(var(--color-bosgroen), var(--color-bosgroen)); /* The full-width forest band behind the home hero and the footer, in both themes. */
     --on-band: light-dark(var(--color-gebroken-wit), var(--color-gebroken-wit)); /* Text on the band. */
     --on-band-muted: light-dark(var(--color-salie), var(--color-salie)); /* Secondary text and accents on the band. */
+    --heading-warm: light-dark(var(--color-aarde-oranje-sterk), var(--color-aarde-oranje-licht)); /* The orange stop of the heading gradient. */
     --font-display: Syne, system-ui, sans-serif;
     --font-body: "Montserrat Variable", Montserrat, system-ui, sans-serif;
     --font-mono: "Geist Mono", ui-monospace, monospace;

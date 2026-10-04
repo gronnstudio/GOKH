@@ -28,7 +28,7 @@ The earlier hub attempts spent their effort on interface: WebGL heroes, GSAP, Le
    - Each entry page gets a small constellation of its neighbours: one and two hops away, each line in its verb's style and its grade's weight.
    - It is drawn as SVG at build time, with the layout computed once and seeded so it never jumps between builds. The page ships no JavaScript for it.
    - The full interactive graph comes later, as one island (see the roadmap gate).
-3. **Type does the heavy lifting.**
+3. **Type does the heavy lifting.** Every heading carries the living-systems gradient (earth, orange, ochre, moss, water): deep tones on light ground, light tones on Blauwe Uur, each stop audited as plain text on every ground it meets (owner's request, 4 Oct 2026).
    - Syne at display size, about 88px, for page titles. Montserrat variable for reading, with `text-wrap: pretty` and `balance`. Geist Mono for every piece of metadata: grades, dates, counts, identifiers.
    - The hierarchy is legible without colour.
 4. **Each domain gets a hue.** Soil, water, plants and fungi, animals, design practice and systems each get a hue derived in OKLCH from the botanical palette. Each is contrast-checked against both themes and used on tiles, graph nodes and chips.

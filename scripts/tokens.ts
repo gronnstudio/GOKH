@@ -81,6 +81,10 @@ for (const dark of [false, true]) {
   for (const k of Object.keys(tokens.theme).filter((k) => /^domain-[a-z-]+$/.test(k) && !k.endsWith("-tint"))) {
     pairs.push([k, "paper"], [k, "surface"], [k, `${k}-tint`], ["ink", `${k}-tint`], ["paper", k])
   }
+  // The heading gradient's stops, on every ground a heading sits on: the page, cards and each domain tint.
+  const stops = ["domain-soil", "heading-warm", "domain-animals-biodiversity", "domain-plants-fungi", "domain-water"]
+  const grounds = ["paper", "surface", ...Object.keys(tokens.theme).filter((k) => /^domain-.*-tint$/.test(k))]
+  for (const fg of stops) for (const bg of grounds) pairs.push([fg, bg])
   for (const [fg, bg] of pairs) {
     const ratio = contrast(theme(fg, dark), theme(bg, dark))
     checked++
