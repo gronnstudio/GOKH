@@ -47,7 +47,7 @@ The site's design direction is decision [0002](docs/decisions/0002-design-direct
 ### Step B · Character (opens at the Phase 0 gate: 50 reviewed entries)
 
 - [ ] Neighbourhood graph per entry: SVG built at build time, with lines styled by verb and weighted by grade.
-- [ ] Domain hues in OKLCH, contrast-checked, used on tiles, nodes and chips.
+- [x] Domain hues in OKLCH, contrast-checked, used on tiles, cards and entry pages (brought forward from Step B on the owner's choice, 4 Oct 2026); graph nodes follow with the graph.
 - [ ] Bento home: problems, domains, latest reviewed entries, and the graph.
 - [ ] An OG image per entry, built at build time in the brand type.
 - [ ] Licensed images only (CC0, CC BY, CC BY-SA), with their attribution stored in `content/`, served as AVIF.

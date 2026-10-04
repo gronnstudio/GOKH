@@ -54,7 +54,7 @@ const domains = Object.entries(DOMAINS).map(([d, labels]) => ({ d, labels: label
       <ol class="problems">
         {problems.map((e, i) => {
           const n = pick(e.data.title, lang)
-          return <li><a href={entryHref(lang, e.data.id)} data-walk><span class="num">{String(i + 1).padStart(2, "0")}</span><span lang={n.fallback ? n.lang : undefined} style={`view-transition-name: entry-${e.data.id}`}>{n.text}</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          return <li class={`d-${e.data.domain}`}><a href={entryHref(lang, e.data.id)} data-walk><span class="num">{String(i + 1).padStart(2, "0")}</span><span lang={n.fallback ? n.lang : undefined} style={`view-transition-name: entry-${e.data.id}`}>{n.text}</span><span class="arrow" aria-hidden="true">→</span></a></li>
         })}
       </ol>
     </section>
@@ -67,7 +67,7 @@ const domains = Object.entries(DOMAINS).map(([d, labels]) => ({ d, labels: label
     </header>
     <ul class="bento">
       {domains.map(({ d, labels, list }) => (
-        <li class={`tile tile-${d}`}>
+        <li class={`tile d-${d}`}>
           <a href={`#${d}`} data-walk>
             <span class="tile-count">{list.length}</span>
             <span class="tile-title">{labels[0]}</span>
@@ -79,7 +79,7 @@ const domains = Object.entries(DOMAINS).map(([d, labels]) => ({ d, labels: label
   </section>
 
   {domains.map(({ d, labels, list }) => (
-    <section class="band domain" id={d}>
+    <section class={`band domain d-${d}`} id={d}>
       <header class="band-head">
         <h2>{labels[0]} <span class="count">{list.length}</span></h2>
         <p class="muted">{labels[1]}</p>

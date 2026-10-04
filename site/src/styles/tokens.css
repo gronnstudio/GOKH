@@ -22,6 +22,30 @@
     --color-groei-nacht: oklch(0.7995 0.0894 154.52);
     --color-oker: oklch(0.5078 0.108 73.3);
     --color-oker-nacht: oklch(0.8072 0.1135 80.48);
+    --color-domein-soil: oklch(0.47 0.085 50);
+    --color-domein-soil-tint: oklch(0.935 0.028 50);
+    --color-domein-soil-nacht: oklch(0.79 0.075 50);
+    --color-domein-soil-tint-nacht: oklch(0.315 0.03 50);
+    --color-domein-water: oklch(0.47 0.085 235);
+    --color-domein-water-tint: oklch(0.935 0.028 235);
+    --color-domein-water-nacht: oklch(0.79 0.075 235);
+    --color-domein-water-tint-nacht: oklch(0.315 0.03 235);
+    --color-domein-plants-fungi: oklch(0.47 0.085 140);
+    --color-domein-plants-fungi-tint: oklch(0.935 0.028 140);
+    --color-domein-plants-fungi-nacht: oklch(0.79 0.075 140);
+    --color-domein-plants-fungi-tint-nacht: oklch(0.315 0.03 140);
+    --color-domein-animals-biodiversity: oklch(0.47 0.085 85);
+    --color-domein-animals-biodiversity-tint: oklch(0.935 0.028 85);
+    --color-domein-animals-biodiversity-nacht: oklch(0.79 0.075 85);
+    --color-domein-animals-biodiversity-tint-nacht: oklch(0.315 0.03 85);
+    --color-domein-design-practice: oklch(0.47 0.085 170);
+    --color-domein-design-practice-tint: oklch(0.935 0.028 170);
+    --color-domein-design-practice-nacht: oklch(0.79 0.075 170);
+    --color-domein-design-practice-tint-nacht: oklch(0.315 0.03 170);
+    --color-domein-systems: oklch(0.47 0.085 310);
+    --color-domein-systems-tint: oklch(0.935 0.028 310);
+    --color-domein-systems-nacht: oklch(0.79 0.075 310);
+    --color-domein-systems-tint-nacht: oklch(0.315 0.03 310);
     --paper: light-dark(var(--color-gebroken-wit), var(--color-antraciet)); /* Page background. */
     --surface: light-dark(var(--color-papier-licht), var(--color-antraciet-licht)); /* Cards, inputs, popovers. */
     --ink: light-dark(var(--color-antraciet), var(--color-gebroken-wit)); /* Body text. */
@@ -36,6 +60,18 @@
     --emerging: light-dark(var(--color-steen), var(--color-steen-nacht)); /* Grade: emerging. */
     --contested: light-dark(var(--color-oker), var(--color-oker-nacht)); /* Grade: contested. Also unverified sources and drafts. */
     --rule: light-dark(var(--color-salie), var(--color-mosgroen)); /* The left rule on relations. */
+    --domain-soil: light-dark(var(--color-domein-soil), var(--color-domein-soil-nacht)); /* Domain soil: text, marks, fills. */
+    --domain-soil-tint: light-dark(var(--color-domein-soil-tint), var(--color-domein-soil-tint-nacht)); /* Domain soil: tile and card backgrounds. */
+    --domain-water: light-dark(var(--color-domein-water), var(--color-domein-water-nacht)); /* Domain water: text, marks, fills. */
+    --domain-water-tint: light-dark(var(--color-domein-water-tint), var(--color-domein-water-tint-nacht)); /* Domain water: tile and card backgrounds. */
+    --domain-plants-fungi: light-dark(var(--color-domein-plants-fungi), var(--color-domein-plants-fungi-nacht)); /* Domain plants-fungi: text, marks, fills. */
+    --domain-plants-fungi-tint: light-dark(var(--color-domein-plants-fungi-tint), var(--color-domein-plants-fungi-tint-nacht)); /* Domain plants-fungi: tile and card backgrounds. */
+    --domain-animals-biodiversity: light-dark(var(--color-domein-animals-biodiversity), var(--color-domein-animals-biodiversity-nacht)); /* Domain animals-biodiversity: text, marks, fills. */
+    --domain-animals-biodiversity-tint: light-dark(var(--color-domein-animals-biodiversity-tint), var(--color-domein-animals-biodiversity-tint-nacht)); /* Domain animals-biodiversity: tile and card backgrounds. */
+    --domain-design-practice: light-dark(var(--color-domein-design-practice), var(--color-domein-design-practice-nacht)); /* Domain design-practice: text, marks, fills. */
+    --domain-design-practice-tint: light-dark(var(--color-domein-design-practice-tint), var(--color-domein-design-practice-tint-nacht)); /* Domain design-practice: tile and card backgrounds. */
+    --domain-systems: light-dark(var(--color-domein-systems), var(--color-domein-systems-nacht)); /* Domain systems: text, marks, fills. */
+    --domain-systems-tint: light-dark(var(--color-domein-systems-tint), var(--color-domein-systems-tint-nacht)); /* Domain systems: tile and card backgrounds. */
     --font-display: Syne, system-ui, sans-serif;
     --font-body: "Montserrat Variable", Montserrat, system-ui, sans-serif;
     --font-mono: "Geist Mono", ui-monospace, monospace;

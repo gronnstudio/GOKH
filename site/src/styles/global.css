@@ -109,6 +109,15 @@
   .label { font: 500 var(--text-annotation) / 1.6 var(--font-mono); color: var(--muted); letter-spacing: 0.02em; }
   .count { font: 500 0.45em var(--font-mono); color: var(--muted); vertical-align: super; margin-inline-start: 4px; }
 
+  /* ---------- domain hues: one OKLCH lightness and chroma, six hues (decision 0002) ---------- */
+  .d-soil { --d: var(--domain-soil); --d-tint: var(--domain-soil-tint); }
+  .d-water { --d: var(--domain-water); --d-tint: var(--domain-water-tint); }
+  .d-plants-fungi { --d: var(--domain-plants-fungi); --d-tint: var(--domain-plants-fungi-tint); }
+  .d-animals-biodiversity { --d: var(--domain-animals-biodiversity); --d-tint: var(--domain-animals-biodiversity-tint); }
+  .d-design-practice { --d: var(--domain-design-practice); --d-tint: var(--domain-design-practice-tint); }
+  .d-systems { --d: var(--domain-systems); --d-tint: var(--domain-systems-tint); }
+  .ddot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--d, var(--muted)); flex: none; }
+
   /* ---------- home ---------- */
   .hero {
     display: grid; gap: var(--space-48); align-items: end;
@@ -159,6 +168,8 @@
   }
   .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
 
+  .domain .band-head h2 { display: flex; align-items: center; gap: var(--space-12); }
+  .domain .band-head h2::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--d); flex: none; }
   .band { padding-block: var(--space-48) var(--space-16); scroll-margin-top: 80px; }
   .band-head {
     display: grid; gap: var(--space-8); margin-bottom: var(--space-24);
@@ -182,7 +193,7 @@
       &:hover { background: var(--surface); color: var(--heading); }
       &:hover .arrow { translate: 4px 0; color: var(--link); }
     }
-    & .num { font: 500 var(--text-annotation) var(--font-mono); color: var(--muted); }
+    & .num { font: 500 var(--text-annotation) var(--font-mono); color: var(--d, var(--muted)); }
     & .arrow { color: var(--muted); transition: translate var(--duration-dock) var(--ease-out-expo); }
   }
   @container main (min-width: 760px) {
@@ -201,14 +212,14 @@
   .tile a {
     display: flex; flex-direction: column; gap: var(--space-8); height: 100%; min-height: 180px;
     padding: var(--space-24); border-radius: var(--radius-card); text-decoration: none;
-    background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+    background: var(--d-tint, var(--surface)); color: var(--ink); border: 1px solid transparent;
     transition: border-color var(--duration-tap), translate var(--duration-dock) var(--ease-out-expo);
     &:hover { border-color: var(--link); translate: 0 -3px; }
   }
-  .tile:first-child a { background: var(--heading); color: var(--paper); border-color: transparent; }
+  .tile:first-child a { background: var(--d, var(--heading)); color: var(--paper); }
   .tile:first-child .tile-title, .tile:first-child .tile-count { color: var(--paper); }
-  .tile-count { font: 600 64px / 0.9 var(--font-display); color: var(--heading); margin-bottom: auto; font-variant-numeric: tabular-nums; }
-  .tile-title { font: 600 var(--text-h3) / 1.2 var(--font-display); color: var(--heading); }
+  .tile-count { font: 600 64px / 0.9 var(--font-display); color: var(--d, var(--heading)); margin-bottom: auto; font-variant-numeric: tabular-nums; }
+  .tile-title { font: 600 var(--text-h3) / 1.2 var(--font-display); color: var(--d, var(--heading)); }
   .tile-text { font-size: var(--text-small); opacity: 0.85; }
 
   /* cards: each lays itself out for its own width */
@@ -223,9 +234,11 @@
     padding: var(--space-24) var(--space-24) var(--space-16);
     border: 1px solid var(--line); border-radius: var(--radius-card);
     background: var(--surface); color: var(--ink); text-decoration: none;
+    box-shadow: inset 0 4px 0 var(--d, transparent);
     transition: border-color var(--duration-tap) var(--ease-out-expo), translate var(--duration-dock) var(--ease-out-expo), box-shadow var(--duration-dock);
-    &:hover { border-color: var(--link); translate: 0 -3px; box-shadow: 0 18px 40px -28px color-mix(in oklch, var(--color-antraciet) 45%, transparent); }
+    &:hover { border-color: var(--d, var(--link)); translate: 0 -3px; box-shadow: inset 0 4px 0 var(--d, transparent), 0 18px 40px -28px color-mix(in oklch, var(--color-antraciet) 45%, transparent); }
   }
+  .card-domain { display: inline-flex; align-items: center; gap: 6px; color: var(--d, var(--muted)); }
   .card-title { font: 600 21px / 1.18 var(--font-display); color: var(--heading); text-wrap: balance; }
   .card-text { flex: 1; font-size: var(--text-small); color: var(--muted); }
   @container card (min-width: 420px) {
@@ -238,7 +251,8 @@
     & h1 { font-size: var(--text-display); line-height: 1.02; letter-spacing: -0.03em; max-width: 16ch; }
     & .lead { font-size: var(--text-h3); color: var(--ink); max-width: 46ch; margin: 0; }
   }
-  .crumbs { display: flex; gap: 8px; margin: 0 0 var(--space-16); & a { color: var(--muted); } }
+  .crumbs { display: flex; align-items: center; gap: 8px; margin: 0 0 var(--space-16); & a { color: var(--muted); } & .crumb-domain { display: inline-flex; align-items: center; gap: 6px; color: var(--d, var(--muted)); } }
+  .entry-head { border-bottom: 3px solid var(--d, var(--line)); }
   .entry-grid { display: grid; gap: var(--space-48); }
   @container main (min-width: 1000px) {
     .entry-grid { grid-template-columns: minmax(0, 1fr) 300px; }

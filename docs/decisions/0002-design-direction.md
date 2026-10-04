@@ -92,4 +92,4 @@ What keeps it future-proof once it is built:
 
 1. ~~**Styling across sites:** plain modern CSS or Tailwind v4?~~ **Answered (owner, 4 Oct 2026): plain CSS.**
 2. **The grade glyph:** four steps on one axis (today's grades), or two axes (effect × certainty) like Conservation Evidence? Two axes would need a schema change.
-3. **Domain hues:** derived from the botanical palette as proposed, or should GRØNN's brand guide fix six colours?
+3. ~~**Domain hues:** botanical palette, matching OKLCH hues, or icons only?~~ **Answered (owner, 4 Oct 2026): matching hues.** Six hues (soil 50, water 235, plants and fungi 140, animals 85, design 170, systems 310) share one OKLCH lightness and chroma per tone, so they carry equal weight and equal contrast. Each has a strong tone and a tint, in both themes, in `design/tokens.json`. Domains use them as fills, tints, dots and accents. Grades keep their glyph and word, so colour is never the only signal.

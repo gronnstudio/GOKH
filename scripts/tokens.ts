@@ -77,6 +77,10 @@ let checked = 0
 for (const dark of [false, true]) {
   const pairs: [string, string][] = TEXT.flatMap((fg) => GROUNDS.map((bg) => [fg, bg] as [string, string]))
   pairs.push(["on-accent", "accent-fill"])
+  // Domain hues: as text on the page, as text on their own tint, and as a fill under paper-coloured text.
+  for (const k of Object.keys(tokens.theme).filter((k) => /^domain-[a-z-]+$/.test(k) && !k.endsWith("-tint"))) {
+    pairs.push([k, "paper"], [k, "surface"], [k, `${k}-tint`], ["ink", `${k}-tint`], ["paper", k])
+  }
   for (const [fg, bg] of pairs) {
     const ratio = contrast(theme(fg, dark), theme(bg, dark))
     checked++

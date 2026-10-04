@@ -38,9 +38,9 @@ const allGrades = [...e.data.relations, ...incoming.map((x) => x.r)]
 const verified = srcs.filter((s) => s.verified).length
 ---
 <Base lang={lang} title={`${title.text} · Equilibrium`} description={summary.text} path={`e/${e.data.id}/`}>
-  <article class="entry" data-pagefind-body>
+  <article class={`entry d-${e.data.domain}`} data-pagefind-body>
     <header class="entry-head">
-      <p class="crumbs label" data-pagefind-ignore><a href={`/${lang}/`}>{ui.nav.entries}</a><span aria-hidden="true">/</span><a href={`/${lang}/#${e.data.domain}`}>{DOMAINS[e.data.domain][lang][0]}</a></p>
+      <p class="crumbs label" data-pagefind-ignore><a href={`/${lang}/`}>{ui.nav.entries}</a><span aria-hidden="true">/</span><a class="crumb-domain" href={`/${lang}/#${e.data.domain}`}><i class="ddot" aria-hidden="true"></i>{DOMAINS[e.data.domain][lang][0]}</a></p>
       <h1 lang={fallbackNote(title)} style={`view-transition-name: entry-${e.data.id}`}>{title.text}</h1>
       <p class="lead" lang={fallbackNote(summary)}>{summary.text}</p>
     </header>
