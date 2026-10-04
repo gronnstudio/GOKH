@@ -4,11 +4,11 @@ type: concept
 domain: systems
 title:
   en: Biophilia
-  nl: ''
+  nl: 'Biofilie'
 summary:
   en: The hypothesis that humans carry an innate affinity for life and living systems, shaping our health,
     our wellbeing and how we ought to design our world.
-  nl: ''
+  nl: 'De hypothese dat mensen een aangeboren verwantschap voelen met het leven en met levende systemen, en dat die verwantschap onze gezondheid, ons welzijn en de manier waarop we onze wereld zouden moeten inrichten mee bepaalt.'
 status: draft
 level: foundational
 tags:
@@ -23,7 +23,7 @@ relations:
   verb: enables
   why:
     en: Biophilia is the felt affinity; deep ecology is the ethical position built on top of it.
-    nl: ''
+    nl: 'Biofilie is de gevoelde verwantschap; diepe ecologie is de ethische positie die daarop voortbouwt.'
   grade: supported
   sources: []
   was: precedes
@@ -32,7 +32,7 @@ relations:
   verb: applies-to
   why:
     en: The measurable human response to green space is most of the political argument for planting cities.
-    nl: ''
+    nl: 'De meetbare reactie van mensen op groen vormt het grootste deel van het politieke argument om steden te beplanten.'
   grade: established
   sources: []
   was: influences
@@ -42,7 +42,7 @@ relations:
   why:
     en: The conditions people describe as restorative are largely the physical conditions of a forest
       interior.
-    nl: ''
+    nl: 'De omstandigheden die mensen als herstellend omschrijven, zijn grotendeels de fysieke omstandigheden van het binnenste van een bos.'
   grade: supported
   sources: []
   was: associated_with
@@ -80,3 +80,25 @@ Biophilia also carries a moral charge. If we are bound to the living world by ev
 The idea thus links personal wellbeing to ecological ethics, and resonates with deep ecology's insistence that human and natural welfare are, in the end, inseparable.
 
 <!-- nl -->
+
+Biofilie, letterlijk liefde voor het leven, is de hypothese dat mensen een aangeboren, in de evolutie ontstane neiging hebben om verbinding te zoeken met de natuur en met andere levende wezens. Het idee werd bekend gemaakt door de bioloog E. O. Wilson. Volgens hem heeft onze lange geschiedenis als wezens van de wildernis een emotionele afdruk achtergelaten die we nog steeds meenemen naar onze steden.
+
+Als dat klopt, is onze aantrekking tot tuinen, dieren, water en groen uitzicht geen gewone voorkeur maar een diepgewortelde behoefte, en kost het ons echt iets, psychisch, als we ons van de natuur afsnijden.
+
+## Het bewijs voor een behoefte
+
+Onderzoek ondersteunt het idee in belangrijke mate. In een baanbrekende studie herstelden ziekenhuispatiënten met uitzicht op bomen sneller en hadden ze minder pijnstillers nodig dan patiënten die op een bakstenen muur uitkeken. Tijd in de natuur is sindsdien in verband gebracht met minder stresshormonen, een lagere bloeddruk en een betere stemming en concentratie.
+
+Zelfs een glimp van natuur helpt. Uitzicht op groen, daglicht en het geluid van water kalmeren het zenuwstelsel aantoonbaar. Dat wijst erop dat ons lichaam nog altijd een levende omgeving verwacht, en geen steriele.
+
+## Ontwerpen met het leven
+
+Uit deze bevindingen ontstond biofilisch ontwerpen: een benadering van architectuur en ruimtelijke planning die natuurlijke elementen bewust verweeft met de plekken waar mensen wonen en werken: daglicht, planten, water, natuurlijke materialen, organische vormen en uitzicht naar buiten.
+
+Het doel is geen decoratie maar welzijn: gebouwen en steden die zo zijn vormgegeven dat ze tegemoetkomen aan onze verwantschap met het leven, zijn doorgaans gezonder en rustiger om in te verblijven, en je bent er productiever.
+
+## Een ethische dimensie
+
+Biofilie heeft ook een morele lading. Als we door evolutie en emotie met de levende wereld verbonden zijn, dan is de natuur beschermen niet alleen verstandig, maar ook een uiting van ons eigen gedijen.
+
+Zo verbindt het idee persoonlijk welzijn met ecologische ethiek. Het sluit aan bij de overtuiging van de diepe ecologie dat het welzijn van mens en natuur uiteindelijk onlosmakelijk met elkaar verbonden is.

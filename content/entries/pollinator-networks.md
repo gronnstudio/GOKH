@@ -4,11 +4,11 @@ type: concept
 domain: animals-biodiversity
 title:
   en: Pollinator Networks
-  nl: ''
+  nl: 'Bestuiversnetwerken'
 summary:
   en: The intricate web of relationships between flowering plants and the animals that pollinate them
     sustains most of the world's crops and the fabric of terrestrial ecosystems.
-  nl: ''
+  nl: 'Het fijnmazige web van relaties tussen bloeiende planten en de dieren die ze bestuiven, houdt de meeste gewassen ter wereld in stand, en ook het weefsel van de ecosystemen op het land.'
 status: draft
 level: foundational
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: Pollinator recovery is both an outcome of rewilding and one of the mechanisms that carries it
       forward.
-    nl: ''
+    nl: 'Het herstel van bestuivers is zowel een resultaat van rewilding als een van de mechanismen die het verder brengen.'
   grade: established
   sources: []
   was: contributes_to
@@ -34,7 +34,7 @@ relations:
   why:
     en: Specialist pollinators can only use the plants they co-evolved with — ornamental nectar is no
       substitute.
-    nl: ''
+    nl: 'Gespecialiseerde bestuivers kunnen alleen de planten gebruiken waarmee ze samen zijn geëvolueerd — nectar van sierplanten is geen vervanging.'
   grade: established
   sources: []
   was: depends_on
@@ -42,7 +42,7 @@ relations:
   verb: improves
   why:
     en: Most urban fruit set depends on wild pollinators, not managed hives.
-    nl: ''
+    nl: 'De meeste vruchtzetting in de stad hangt af van wilde bestuivers, niet van gehouden bijenvolken.'
   grade: established
   sources: []
   was: supports
@@ -79,3 +79,25 @@ Reversing the decline is unusually tractable. Planting diverse, season-long flow
 Food forests, hedgerows and flower-rich margins act as refuges and corridors, stitching fragmented habitat back into functioning networks that sustain both wild nature and human harvests.
 
 <!-- nl -->
+
+Ongeveer negen op de tien soorten bloeiende planten zijn afhankelijk van dieren om hun stuifmeel over te brengen, en ongeveer driekwart van de gewassen die mensen eten, heeft baat bij bestuiving door dieren. Achter elke appel, amandel en koffieboon zit een bij, vlieg, mot, vogel of vleermuis.
+
+Deze relaties vormen enorme netwerken, geen keurige één-op-éénkoppels. Eén weide kan tientallen planten en bestuivers verweven tot een web waarvan de overlappende verbindingen het veerkracht geven: als één partner het laat afweten, kunnen anderen het gat opvullen.
+
+## Meer dan de honingbij
+
+De gedomesticeerde honingbij overheerst het beeld dat mensen hebben, maar ze is maar één van zo'n twintigduizend bijensoorten, waarvan de meeste solitair leven. Daarnaast is er een heel leger aan zweefvliegen, vlinders, kevers, wespen en, in de tropen, kolibries en nectarvleermuizen.
+
+Die verscheidenheid doet ertoe. Wilde bestuivers presteren vaak beter dan gehouden bijenvolken: ze bezoeken bloemen die honingbijen links laten liggen en bestuiven bij weer waarin de bijen in de kast blijven. Een landschap dat rijk is aan wilde bestuivers, is productiever en zekerder.
+
+## Netwerken onder druk
+
+Bestuiverspopulaties gaan wereldwijd achteruit, door verlies van leefgebied, bestrijdingsmiddelen, ziektes en klimaatverandering. Als soorten wegvallen, worden de netwerken eenvoudiger en zwakker, en zetten de planten die van verdwenen partners afhingen minder zaad.
+
+Omdat het web onderling verbonden is, kunnen die verliezen doorwerken als een kettingreactie: minder bloemen betekent minder bestuivers, en dat betekent weer nog minder bloemen. Zo ontstaat een neerwaartse spiraal die hele levensgemeenschappen verarmt.
+
+## Het web herstellen
+
+Het tij keren is opvallend goed haalbaar. Plant gevarieerde bloemen die samen het hele seizoen bloeien, laat nestplekken over in de vorm van kale grond en holle stengels, en gebruik minder bestrijdingsmiddelen: zo kun je het aantal bestuivers snel weer laten groeien, zelfs in de stad.
+
+Voedselbossen, heggen en bloemrijke randen werken als toevluchtsoorden en verbindingszones. Ze naaien versnipperd leefgebied weer aan elkaar tot werkende netwerken die zowel de wilde natuur als de oogst van mensen in stand houden.

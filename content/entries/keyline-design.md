@@ -4,11 +4,11 @@ type: concept
 domain: design-practice
 title:
   en: Keyline Design
-  nl: ''
+  nl: 'Keylineontwerp'
 summary:
   en: A geometry of the land developed by P. A. Yeomans that reads the contours of hills to harvest, store
     and evenly distribute rainfall while building deep, fertile soil.
-  nl: ''
+  nl: 'Een manier om het land geometrisch te lezen, ontwikkeld door P. A. Yeomans, die de hoogtelijnen van heuvels gebruikt om regenwater op te vangen, op te slaan en gelijkmatig te verdelen, terwijl er diepe, vruchtbare grond ontstaat.'
 status: draft
 level: advanced
 tags:
@@ -23,7 +23,7 @@ relations:
   verb: needs
   why:
     en: The whole method starts by reading the land as ridges and valleys and finding the keypoint.
-    nl: ''
+    nl: 'De hele methode begint met het lezen van het land als ruggen en dalen, en met het vinden van het keypoint.'
   grade: established
   sources: []
   was: depends_on
@@ -32,7 +32,7 @@ relations:
   why:
     en: Keyline pattern moves water from valleys onto dry ridges, storing it in the soil rather than a
       tank.
-    nl: ''
+    nl: 'Het keylinepatroon leidt water van de dalen naar de droge ruggen en slaat het op in de bodem in plaats van in een tank.'
   grade: established
   sources: []
   was: contributes_to
@@ -42,7 +42,7 @@ relations:
   why:
     en: The pattern and planned grazing were developed together, each depending on the other to build
       pasture soil.
-    nl: ''
+    nl: 'Het patroon en gepland begrazen zijn samen ontwikkeld; elk van de twee heeft het andere nodig om de bodem van grasland op te bouwen.'
   grade: supported
   sources: []
   was: interacts_with
@@ -52,7 +52,7 @@ relations:
   why:
     en: Shallow keyline subsoiling aerates and drains without inverting, so fungal networks survive the
       pass.
-    nl: ''
+    nl: 'Ondiep keyline-woelen belucht en draineert zonder de grond te keren, zodat schimmelnetwerken de bewerking overleven.'
   grade: supported
   sources: []
   was: supports
@@ -89,3 +89,25 @@ Keyline thinking extends beyond the plough into a full landscape hierarchy: clim
 Because it works with, rather than against, the existing geometry of a place, keyline design remains a foundational influence on permaculture and holistic land planning worldwide.
 
 <!-- nl -->
+
+Keylineontwerp is een planningssysteem dat de vorm van het land gebruikt als belangrijkste blauwdruk voor waterbeheer. Het werd in de jaren 1950 ontwikkeld door de Australische ingenieur en boer P. A. Yeomans, en kwam voort uit zijn overtuiging dat de meeste landschappen hun regenwater te snel kwijtraken en in plaats daarvan zo gevormd kunnen worden dat ze het vasthouden.
+
+De methode draait om een punt dat Yeomans het keypoint noemde: de plek in een dal waar een steile bovenhelling overgaat in een flauwere onderhelling. De hoogtelijn door dit punt, de keyline, wordt de referentiegeometrie waarvan alle grondbewerkings- en plantpatronen worden afgeleid.
+
+## De stroming omleiden
+
+Water verzamelt zich vanzelf in dalen en loopt weg van ruggen, waardoor dalen nat en uitgesleten blijven en ruggen uitgedroogd. Keylinebewerking — ploegen op lijnen die net iets van de hoogtelijn afwijken — leidt het water subtiel naar buiten, van de natte dalen naar de droge ruggen.
+
+Het effect is dat regenwater gelijkmatig over een helling wordt verdeeld, in plaats van zich te verzamelen en geulen uit te slijten. In de loop van jaren krijgt de hele heuvel gelijkmatiger water, en wordt de neiging tot geulvorming omgekeerd.
+
+## Bodem opbouwen van onderaf
+
+Yeomans koppelde dit waterplan aan een eigen manier van grondbewerking met een woeler, de Yeomans-ploeg, die verdichte ondergrond openbreekt zonder hem te keren. Lucht, water en wortels dringen dieper door, en het bodemleven volgt.
+
+Hij beweerde, en liet op zijn boerderijen zien, dat diepe, vruchtbare bovengrond in een paar jaar kon ontstaan in plaats van in de eeuwen die geologen aannamen, door wortels en microben te prikkelen om naar beneden toe structuur op te bouwen. De aanpak liep vooruit op veel van wat de regeneratieve landbouw nu vanzelfsprekend vindt.
+
+## Een plan op de schaal van het hele bedrijf
+
+Keylinedenken reikt verder dan de ploeg, tot een volledige rangorde in het landschap: klimaat, landvorm, water, wegen, bomen, gebouwen en bodem, bekeken in die volgorde van blijvendheid. Dammen op keypoints slaan overtollig water op, en kanalen die op zwaartekracht werken, verdelen het in droge periodes.
+
+Omdat het werkt met de bestaande geometrie van een plek in plaats van ertegenin, blijft keylineontwerp wereldwijd een fundamentele invloed op permacultuur en holistische landschapsplanning.

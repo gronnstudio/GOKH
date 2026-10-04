@@ -4,11 +4,11 @@ type: concept
 domain: plants-fungi
 title:
   en: How Trees Communicate
-  nl: ''
+  nl: 'Hoe bomen communiceren'
 summary:
   en: Through the air and through the soil, trees exchange chemical signals and resources, behaving less
     like isolated individuals than members of a cooperative community.
-  nl: ''
+  nl: 'Via de lucht en via de bodem wisselen bomen chemische signalen en voedingsstoffen uit. Ze gedragen zich minder als losse individuen en meer als leden van een gemeenschap die samenwerkt.'
 status: draft
 level: intermediate
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: The stable, humid interior of a closed forest is the condition under which below-ground networks
       stay connected.
-    nl: ''
+    nl: 'Het stabiele, vochtige binnenklimaat van een gesloten bos is de voorwaarde waaronder ondergrondse netwerken verbonden blijven.'
   grade: emerging
   sources: []
   was: interacts_with
@@ -33,7 +33,7 @@ relations:
   verb: needs
   why:
     en: Whatever is shared between trees was paid for in fixed carbon first.
-    nl: ''
+    nl: 'Alles wat bomen met elkaar delen, is eerst betaald met vastgelegde koolstof.'
   grade: established
   sources: []
   was: depends_on
@@ -41,7 +41,7 @@ relations:
   verb: applies-to
   why:
     en: If established trees subsidise seedlings, they help decide which species reach the next generation.
-    nl: ''
+    nl: 'Als gevestigde bomen zaailingen ondersteunen, bepalen ze mee welke soorten de volgende generatie halen.'
   grade: emerging
   sources: []
   was: influences
@@ -51,7 +51,7 @@ relations:
   why:
     en: The idea that forests are social has done more to change public feeling about trees than any timber
       statistic.
-    nl: ''
+    nl: 'Het idee dat bossen sociaal zijn, heeft het gevoel van het publiek over bomen meer veranderd dan welk houtcijfer ook.'
   grade: emerging
   sources: []
   was: influences
@@ -89,3 +89,25 @@ These findings blur the boundary of the organism. A forest begins to look less l
 The idea has captured public imagination, popularised by writers such as Peter Wohlleben, while ecologists continue to debate how far to push the metaphor of a talking, feeling forest.
 
 <!-- nl -->
+
+Het idee dat bomen communiceren klonk ooit als fantasie. Tientallen jaren onderzoek hebben er serieuze wetenschap van gemaakt: bomen wisselen informatie en voedingsstoffen uit via de lucht, via hun wortels en via de schimmelnetwerken die ze ondergronds met elkaar verbinden.
+
+Dat betekent niet dat bomen denken of praten zoals mensen dat doen. Het betekent dat ze hun omgeving en hun buren waarnemen en daarop reageren op een manier die het gedrag in een heel bos op elkaar afstemt: een verspreide intelligentie, geschreven in chemie in plaats van zenuwen.
+
+## Berichten op de wind
+
+Als insecten aan de bladeren van een boom beginnen te knagen, kan die boom vluchtige organische stoffen in de lucht afgeven. Naburige bomen vangen die signalen op en voeren alvast hun eigen chemische verdediging op, looistoffen en gifstoffen, nog voordat de plaagdieren bij hen zijn.
+
+In een beroemd voorbeeld geven acacia's waarvan antilopen eten ethyleen af. Dat waarschuwt bomen in de buurt om hun bladeren vol te stoppen met bittere, giftige looistoffen, waarna de grazers tegen de wind in trekken naar planten die nog niet gewaarschuwd zijn.
+
+## Praten onder de grond
+
+Het rijkste kanaal loopt onder de grond, via mycorrhizanetwerken die wortel met wortel verbinden. Langs die schimmeldraden stromen niet alleen suikers en voedingsstoffen, maar ook waarschuwingssignalen; een boom die door plaagdieren wordt aangevallen, kan zijn verbonden buren via het gedeelde mycelium alvast in de verdediging zetten.
+
+Oudere, goed verbonden centrale bomen, soms moederbomen genoemd, lijken als knooppunten in dit netwerk te werken. Ze sluizen koolstof naar beschaduwde zaailingen en herkennen zelfs hun eigen nakomelingen en bevoordelen die.
+
+## Het individu opnieuw bekeken
+
+Deze bevindingen vervagen de grens van het organisme. Een bos lijkt dan minder op een menigte concurrenten en meer op een coöperatie, waarin overleven afhangt van de gezondheid van het geheel.
+
+Het idee heeft de verbeelding van het publiek gegrepen, mede door schrijvers als Peter Wohlleben, terwijl ecologen nog steeds discussiëren over hoe ver je de beeldspraak van een pratend, voelend bos kunt doortrekken.

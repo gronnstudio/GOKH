@@ -42,6 +42,10 @@
     --color-domein-design-practice-tint: oklch(0.935 0.028 170);
     --color-domein-design-practice-nacht: oklch(0.79 0.075 170);
     --color-domein-design-practice-tint-nacht: oklch(0.315 0.03 170);
+    --color-domein-food-self-reliance: oklch(0.47 0.085 355);
+    --color-domein-food-self-reliance-tint: oklch(0.935 0.028 355);
+    --color-domein-food-self-reliance-nacht: oklch(0.79 0.075 355);
+    --color-domein-food-self-reliance-tint-nacht: oklch(0.315 0.03 355);
     --color-domein-systems: oklch(0.47 0.085 310);
     --color-domein-systems-tint: oklch(0.935 0.028 310);
     --color-domein-systems-nacht: oklch(0.79 0.075 310);
@@ -71,6 +75,8 @@
     --domain-animals-biodiversity-tint: light-dark(var(--color-domein-animals-biodiversity-tint), var(--color-domein-animals-biodiversity-tint-nacht)); /* Domain animals-biodiversity: tile and card backgrounds. */
     --domain-design-practice: light-dark(var(--color-domein-design-practice), var(--color-domein-design-practice-nacht)); /* Domain design-practice: text, marks, fills. */
     --domain-design-practice-tint: light-dark(var(--color-domein-design-practice-tint), var(--color-domein-design-practice-tint-nacht)); /* Domain design-practice: tile and card backgrounds. */
+    --domain-food-self-reliance: light-dark(var(--color-domein-food-self-reliance), var(--color-domein-food-self-reliance-nacht)); /* Domain food-self-reliance: text, marks, fills. */
+    --domain-food-self-reliance-tint: light-dark(var(--color-domein-food-self-reliance-tint), var(--color-domein-food-self-reliance-tint-nacht)); /* Domain food-self-reliance: tile and card backgrounds. */
     --domain-systems: light-dark(var(--color-domein-systems), var(--color-domein-systems-nacht)); /* Domain systems: text, marks, fills. */
     --domain-systems-tint: light-dark(var(--color-domein-systems-tint), var(--color-domein-systems-tint-nacht)); /* Domain systems: tile and card backgrounds. */
     --band: light-dark(var(--color-bosgroen), var(--color-bosgroen)); /* The full-width forest band behind the home hero and the footer, in both themes. */

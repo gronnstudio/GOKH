@@ -1,5 +1,5 @@
 /**
- * Every page, both languages, desktop and phone: it loads, it has one h1,
+ * Every page, desktop and phone: it loads, it has one h1,
  * nothing scrolls sideways, and axe finds no WCAG 2.2 A/AA violation.
  */
 import { readdirSync } from "node:fs"
@@ -7,7 +7,8 @@ import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "@playwright/test"
 
 const ids = readdirSync("content/entries").filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, ""))
-const pages = ["nl", "en"].flatMap((lang) => [`/${lang}/`, `/${lang}/sources/`, `/${lang}/contribute/`, ...ids.map((id) => `/${lang}/e/${id}/`)])
+// Dutch only for now (owner, 4 Oct 2026); add a language here when the site publishes it.
+const pages = ["nl"].flatMap((lang) => [`/${lang}/`, `/${lang}/sources/`, `/${lang}/contribute/`, ...ids.map((id) => `/${lang}/e/${id}/`)])
 
 for (const path of pages) {
   test(`${path} is accessible`, async ({ page }) => {
@@ -25,33 +26,34 @@ test("the root sends visitors to Dutch", async ({ page }) => {
   await expect(page).toHaveURL(/\/nl\/$/)
 })
 
-test("the language switch keeps the page", async ({ page }) => {
+test("the site is Dutch only for now: no English pages, no language switch", async ({ page }) => {
   await page.goto("/nl/e/soil-food-web/")
-  await page.getByRole("link", { name: "English" }).click()
-  await expect(page).toHaveURL(/\/en\/e\/soil-food-web\/$/)
-  await expect(page.locator("html")).toHaveAttribute("lang", "en")
+  await expect(page.locator("html")).toHaveAttribute("lang", "nl")
+  await expect(page.locator("[data-lang-switch]")).toHaveCount(0)
+  const res = await page.goto("/en/")
+  expect(res?.status()).toBe(404)
 })
 
-test("an untranslated body says so and is marked English", async ({ page }) => {
+test("an entry reads in Dutch", async ({ page }) => {
   await page.goto("/nl/e/soil-food-web/")
-  await expect(page.locator(".note")).toBeVisible()
-  await expect(page.locator(".prose")).toHaveAttribute("lang", "en")
+  await expect(page.locator(".note")).toHaveCount(0)
+  await expect(page.locator(".prose")).not.toHaveAttribute("lang", "en")
 })
 
 test("search finds an entry from the home page", async ({ page }) => {
-  await page.goto("/en/")
+  await page.goto("/nl/")
   await page.locator(".search-hero").click()
   const input = page.getByRole("combobox")
   await expect(input).toBeFocused()
   await input.fill("myco")
-  await expect(page.getByRole("option").first()).toContainText("Mycorrhizal Networks")
+  await expect(page.getByRole("option").first()).toContainText("Mycorrhiza")
   await page.keyboard.press("Enter")
-  await expect(page).toHaveURL(/\/en\/e\/mycorrhizal-networks\/$/)
+  await expect(page).toHaveURL(/\/nl\/e\/mycorrhizal-networks\/$/)
 })
 
 test.describe("dark (Blauwe Uur)", () => {
   test.use({ colorScheme: "dark" })
-  for (const path of ["/nl/", "/en/sources/", "/nl/e/soil-food-web/", "/en/e/compacted-soil/"]) {
+  for (const path of ["/nl/", "/nl/sources/", "/nl/e/soil-food-web/", "/nl/e/compacted-soil/"]) {
     test(`${path} keeps contrast in dark`, async ({ page }) => {
       await page.goto(path)
       const axe = await new AxeBuilder({ page }).withTags(["wcag2aa"]).analyze()
@@ -70,18 +72,18 @@ test("the theme switch cycles and survives a reload without a flash", async ({ p
   await expect(html).toHaveAttribute("data-theme", "dark")
   await expect(page.locator("[data-theme-toggle]")).toHaveAttribute("aria-label", "Thema: donker")
   // The theme is set by a script in <head>, before the body exists.
-  await page.goto("/en/sources/", { waitUntil: "commit" })
+  await page.goto("/nl/sources/", { waitUntil: "commit" })
   await page.waitForSelector("html[data-theme]", { state: "attached" })
   await expect(html).toHaveAttribute("data-theme", "dark")
 })
 
 test("a grade explains itself in a popover", async ({ page }) => {
-  await page.goto("/en/e/soil-food-web/")
+  await page.goto("/nl/e/soil-food-web/")
   const grade = page.locator("button.grade").first()
   await grade.click()
   const pop = page.locator(".pop:popover-open")
   await expect(pop).toBeVisible()
-  await expect(pop).toContainText("How sure are we?")
+  await expect(pop).toContainText("Hoe zeker zijn we?")
   await page.keyboard.press("Escape")
   await expect(pop).toHaveCount(0)
 })
@@ -98,7 +100,7 @@ test("search opens from the keyboard on any page, ranks, and remembers", async (
   await page.keyboard.press("ArrowDown")
   await expect(page.getByRole("option").nth(1)).toHaveAttribute("aria-selected", "true")
   // Full text from inside the entries joins after the titles.
-  await input.fill("actinobacteria")
+  await input.fill("actinobacteriën")
   await expect(page.locator("#palette-list .pal-kind", { hasText: "In de tekst" }).first()).toBeVisible()
   await page.keyboard.press("Enter")
   await expect(page).toHaveURL(/\/e\//)
@@ -108,11 +110,9 @@ test("search opens from the keyboard on any page, ranks, and remembers", async (
 })
 
 test("single-key shortcuts navigate, and can be switched off", async ({ page }) => {
-  await page.goto("/en/")
+  await page.goto("/nl/")
   await page.keyboard.press("g")
   await page.keyboard.press("s")
-  await expect(page).toHaveURL(/\/en\/sources\/$/)
-  await page.keyboard.press("l")
   await expect(page).toHaveURL(/\/nl\/sources\/$/)
   await page.keyboard.press("?")
   const sheet = page.getByRole("dialog", { name: "Sneltoetsen" })
@@ -128,7 +128,7 @@ test("single-key shortcuts navigate, and can be switched off", async ({ page }) 
 })
 
 test("j and k walk the cards", async ({ page }) => {
-  await page.goto("/en/")
+  await page.goto("/nl/")
   await page.keyboard.press("j")
   await expect(page.locator("main [data-walk]").first()).toBeFocused()
   await page.keyboard.press("j")
@@ -147,19 +147,19 @@ test("a card and its entry share a view-transition name", async ({ page }) => {
 })
 
 test("speculation rules are valid JSON", async ({ page }) => {
-  await page.goto("/en/")
+  await page.goto("/nl/")
   const rules = await page.locator('script[type="speculationrules"]').textContent()
   expect(JSON.parse(rules!).prerender[0].eagerness).toBe("moderate")
 })
 
 test("the domains menu opens and takes you to a domain", async ({ page, isMobile }) => {
   test.skip(isMobile, "on phones the domains live in the menu sheet")
-  await page.goto("/en/sources/")
-  await page.getByRole("button", { name: "Domains" }).click()
+  await page.goto("/nl/sources/")
+  await page.getByRole("button", { name: "Domeinen" }).click()
   const panel = page.locator("#domains-menu")
   await expect(panel).toBeVisible()
   await panel.getByRole("link", { name: /Water/ }).click()
-  await expect(page).toHaveURL(/\/en\/#water$/)
+  await expect(page).toHaveURL(/\/nl\/#water$/)
 })
 
 test("on a phone the menu button opens a full menu", async ({ page, isMobile }) => {

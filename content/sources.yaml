@@ -591,3 +591,195 @@
   title: The Challenge of Landscape
   container: Keyline Publishing
   verified: false
+- key: landis-2021-the-diversity-and-function
+  type: paper
+  authors: Landis, E. A. et al.
+  year: 2021
+  title: The diversity and function of sourdough starter microbiomes
+  container: eLife 10
+  doi: 10.7554/eLife.61644
+  verified: true
+- key: oshiro-2021-mechanistic-insight-into-yeast
+  type: paper
+  authors: Oshiro, M., Tanaka, M., Momoda, R., Zendo, T. & Nakayama, J.
+  year: 2021
+  title: Mechanistic insight into yeast bloom in a lactic acid bacteria relaying-community in the start of sourdough microbiota evolution
+  container: Microbiology Spectrum 9
+  doi: 10.1128/Spectrum.00662-21
+  verified: true
+- key: ganzle-2014-enzymatic-and-bacterial-conversions
+  type: paper
+  authors: Gänzle, M. G.
+  year: 2014
+  title: Enzymatic and bacterial conversions during sourdough fermentation
+  container: Food Microbiology 37
+  doi: 10.1016/j.fm.2013.04.007
+  verified: true
+- key: plengvidhya-2007-dna-fingerprinting-of-lactic
+  type: paper
+  authors: Plengvidhya, V., Breidt, F., Lu, Z. & Fleming, H. P.
+  year: 2007
+  title: DNA fingerprinting of lactic acid bacteria in sauerkraut fermentations
+  container: Applied and Environmental Microbiology 73
+  doi: 10.1128/AEM.01342-07
+  verified: true
+- key: marco-2017-health-benefits-of-fermented
+  type: paper
+  authors: Marco, M. L. et al.
+  year: 2017
+  title: 'Health benefits of fermented foods: microbiota and beyond'
+  container: Current Opinion in Biotechnology 44
+  doi: 10.1016/j.copbio.2016.11.010
+  verified: true
+- key: di-cagno-2013-exploitation-of-vegetables-and
+  type: paper
+  authors: Di Cagno, R., Coda, R., De Angelis, M. & Gobbetti, M.
+  year: 2013
+  title: Exploitation of vegetables and fruits through lactic acid fermentation
+  container: Food Microbiology 33
+  doi: 10.1016/j.fm.2012.09.003
+  verified: true
+- key: bullock-1992-crop-rotation
+  type: paper
+  authors: Bullock, D. G.
+  year: 1992
+  title: Crop rotation
+  container: Critical Reviews in Plant Sciences 11
+  doi: 10.1080/07352689209382349
+  verified: true
+- key: tiemann-2015-crop-rotational-diversity-enhances
+  type: paper
+  authors: Tiemann, L. K., Grandy, A. S., Atkinson, E. E., Marin-Spiotta, E. & McDaniel, M. D.
+  year: 2015
+  title: Crop rotational diversity enhances belowground communities and functions in an agroecosystem
+  container: Ecology Letters 18
+  doi: 10.1111/ele.12453
+  verified: true
+- key: wieser-2007-chemistry-of-gluten-proteins
+  type: paper
+  authors: Wieser, H.
+  year: 2007
+  title: Chemistry of gluten proteins
+  container: Food Microbiology 24
+  doi: 10.1016/j.fm.2006.07.004
+  verified: true
+- key: purlis-2010-browning-development-in-bakery
+  type: paper
+  authors: Purlis, E.
+  year: 2010
+  title: Browning development in bakery products – A review
+  container: Journal of Food Engineering 99
+  doi: 10.1016/j.jfoodeng.2010.03.008
+  verified: true
+- key: struyf-2017-bread-dough-and-bakers
+  type: paper
+  authors: Struyf, N., Van der Maelen, E., Hemdane, S., Verspreet, J., Verstrepen, K. J. & Courtin, C. M.
+  year: 2017
+  title: 'Bread dough and baker''s yeast: an uplifting synergy'
+  container: Comprehensive Reviews in Food Science and Food Safety 16
+  doi: 10.1111/1541-4337.12282
+  verified: true
+- key: voedingscentrum-2026-brood
+  type: institutional
+  authors: Voedingscentrum
+  year: 2026
+  title: Brood
+  container: Voedingscentrum Encyclopedie
+  url: https://www.voedingscentrum.nl/encyclopedie/brood.aspx
+  verified: true
+- key: voedingscentrum-2026-fermentatie
+  type: institutional
+  authors: Voedingscentrum
+  year: 2026
+  title: Fermentatie
+  container: Voedingscentrum Encyclopedie
+  url: https://www.voedingscentrum.nl/encyclopedie/fermentatie.aspx
+  verified: true
+- key: voedingscentrum-2026-conserveren
+  type: institutional
+  authors: Voedingscentrum
+  year: 2026
+  title: Conserveren
+  container: Voedingscentrum Encyclopedie
+  url: https://www.voedingscentrum.nl/encyclopedie/conserveren.aspx
+  verified: true
+- key: rijksoverheid-2025-overheid-start-campagne-denk
+  type: institutional
+  authors: Rijksoverheid, Ministerie van Justitie en Veiligheid
+  year: 2025
+  title: 'Overheid start campagne Denk vooruit: voorbereiden op noodsituatie steeds belangrijker'
+  url: https://www.rijksoverheid.nl/ministeries/ministerie-van-justitie-en-veiligheid/nieuws/2025/11/03/overheid-start-campagne-denk-vooruit-voorbereiden-op-noodsituatie-steeds-belangrijker
+  verified: true
+- key: denk-vooruit-2026-stel-je-noodpakket
+  type: institutional
+  authors: Rijksoverheid (Denk vooruit)
+  year: 2026
+  title: Stel je noodpakket samen
+  container: denkvooruit.nl
+  url: https://www.denkvooruit.nl/bereid-je-voor/stel-je-noodpakket-samen
+  verified: true
+- key: crisiscentrum-2026-een-noodpakket-bij-je
+  type: institutional
+  authors: Nationaal Crisiscentrum (België)
+  year: 2026
+  title: Een noodpakket bij je thuis
+  container: crisiscentrum.be
+  url: https://crisiscentrum.be/nl/wat-kan-jij-doen/maak-een-noodpakket/een-noodpakket-bij-je-thuis
+  verified: true
+- key: leefmilieu-brussel-2018-mijn-natuurlijke-moestuin
+  type: institutional
+  authors: Leefmilieu Brussel
+  year: 2018
+  title: Mijn natuurlijke moestuin zonder pesticiden
+  container: Infofiches over de moestuin
+  url: https://document.environnement.brussels/opac_css/elecfile/IF_Potager_Potagernaturel_Moestuin0pesticiden_NL
+  verified: true
+- key: rhs-2026-getting-started-with-vegetables
+  type: web
+  authors: Royal Horticultural Society
+  year: 2026
+  title: Getting started with vegetables (positioning vegetables)
+  url: https://www.rhs.org.uk/advice/beginners-guide/vegetable-basics/positioning-vegetables
+  verified: true
+- key: rhs-2026-crop-rotation
+  type: web
+  authors: Royal Horticultural Society
+  year: 2026
+  title: Crop rotation
+  url: https://www.rhs.org.uk/vegetables/crop-rotation
+  verified: true
+- key: rhs-2026-seed-collecting-and-storing
+  type: web
+  authors: Royal Horticultural Society
+  year: 2026
+  title: 'Seed: collecting and storing'
+  url: https://www.rhs.org.uk/propagation/seed-collecting-storing
+  verified: true
+- key: rhs-2026-f1-hybrids-explained
+  type: web
+  authors: Royal Horticultural Society
+  year: 2026
+  title: F1 hybrids explained
+  url: https://www.rhs.org.uk/vegetables/f1-hybrids
+  verified: true
+- key: wur-2025-het-cgn-waarborgt-de
+  type: institutional
+  authors: Wageningen University & Research
+  year: 2025
+  title: Het CGN waarborgt de diversiteit van onze sla, varkens, appelbomen – en nu ook paling
+  url: https://www.wur.nl/nl/longread/het-cgn-waarborgt-de-diversiteit-van-onze-sla-varkens-appelbomen-en-nu-ook-paling
+  verified: true
+- key: nchfp-2026-sauerkraut
+  type: institutional
+  authors: National Center for Home Food Preservation (University of Georgia)
+  year: 2026
+  title: Sauerkraut
+  url: https://nchfp.uga.edu/how/ferment/sauerkraut/
+  verified: true
+- key: departement-omgeving-2024-meer-gezondheid-minder
+  type: institutional
+  authors: Vlaamse overheid, Departement Omgeving
+  year: 2024
+  title: 'Meer gezondheid, minder zware metalen: brochure over het verminderen van contact met zware metalen'
+  url: https://publicaties.vlaanderen.be/view-file/68845
+  verified: true

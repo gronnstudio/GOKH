@@ -11,13 +11,19 @@ The open, evidence-graded knowledge hub for designing with living systems in the
 - **No membership or premium.** Partners who help the hub grow and stay maintained are welcome; they never buy content, placement, grades or verification.
 - **One-year plan**, Oct 2026 – Oct 2027, in gated phases (ROADMAP.md).
 
+## Owner decisions, 4 Oct 2026 (docs/decisions/0003)
+
+- **Dutch only for now.** The site publishes Dutch; more languages once the Dutch audience is reached. Keep `en` in the schema and interface text so adding a language stays a one-line change (`LANGS` in site/src/lib/i18n.ts).
+- **Wider scope:** self-reliance, vegetable gardening, seed saving, bread baking, fermenting: the domain `food-self-reliance` ("Voedsel en zelfredzaamheid").
+- **Free knowledge, beyond Wikipedia:** graded claims, explained relations, practical and local, open data, every change visible. Built to change with the times.
+
 ## Principles
 
 1. Content before chrome: no page or feature before the content it shows exists.
 2. Files are the database: `content/` is the only source of truth.
 3. Nothing invented: no made-up people, numbers, sources or results. Unverified stays visibly unverified.
 4. Every relation has a verb, a reason, a grade and ideally a source.
-5. Dutch and English for the content itself.
+5. Dutch first: the content and the site are Dutch for now; other languages follow (owner, 4 Oct 2026).
 6. Boring and maintainable: no database, accounts or paid services until a trigger in ROADMAP.md fires.
 7. Docs describe what exists. Plans live in ROADMAP.md only.
 

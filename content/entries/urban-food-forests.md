@@ -4,11 +4,11 @@ type: concept
 domain: design-practice
 title:
   en: Urban Food Forests
-  nl: ''
+  nl: 'Stadsvoedselbossen'
 summary:
   en: Cities can grow food, cool their streets and rebuild biodiversity by planting layered, edible woodlands
     in parks, verges and vacant lots.
-  nl: ''
+  nl: 'Steden kunnen voedsel telen, hun straten koelen en biodiversiteit herstellen door gelaagde, eetbare bosjes te planten in parken, bermen en braakliggende terreinen.'
 status: draft
 level: foundational
 tags:
@@ -23,7 +23,7 @@ relations:
   verb: applies-to
   why:
     en: 'Two answers to the same question: what is the most life you can fit into a neglected urban parcel?'
-    nl: ''
+    nl: 'Twee antwoorden op dezelfde vraag: hoeveel leven krijg je op een verwaarloosd stukje stad?'
   grade: established
   sources: []
   was: associated_with
@@ -32,7 +32,7 @@ relations:
   verb: applies-to
   why:
     en: City organic waste becomes the fertility source, closing a loop that normally ends at a landfill.
-    nl: ''
+    nl: 'Organisch afval uit de stad wordt de bron van vruchtbaarheid, en zo sluit zich een kringloop die normaal op de vuilstort eindigt.'
   grade: supported
   sources: []
   was: applied_in
@@ -68,3 +68,25 @@ Urban food forests demand attention to their particular setting: soils may need 
 Handled well, they turn under-used land into abundant commons, and offer a hopeful glimpse of cities that feed and cool themselves while giving space back to the wild.
 
 <!-- nl -->
+
+Een stadsvoedselbos brengt het gelaagde, eetbare bos van de permacultuur naar het hart van de stad. Parken, bermen, schoolpleinen en verwaarloosde terreinen worden productieve, zichzelf in stand houdende bosjes met fruit- en notenbomen, bessenstruiken, kruiden en groenten.
+
+Het geeft stedelijk groen een nieuwe betekenis, als meer dan versiering. Waar een gewoon park gemaaid gras en schaduw biedt, biedt een voedselbos oogst, leefgebied en een levende demonstratie van hoe ecosystemen werken, allemaal op loopafstand van huis.
+
+## Veel opbrengsten tegelijk
+
+Zulke beplantingen leveren een hele stapel voordelen tegelijk op. Ze produceren gratis, vers voedsel in buurten waar dat vaak ontbreekt; hun kronendak koelt de straten en gaat het hitte-eilandeffect van de stad tegen; hun bodem en wortels nemen regenwater op dat anders het riool zou overbelasten.
+
+Tegelijk scheppen ze leefgebied. Ze bloeien en dragen vrucht door de seizoenen heen en voeden zo de bijen, vogels en vlinders waarvan de netwerken het versnipperde stadsgroen weer aan elkaar rijgen.
+
+## Gemeenschap laten groeien
+
+Misschien is hun grootste opbrengst sociaal. Het Beacon Food Forest in Seattle, een van de grootste openbare voorbeelden, is aangelegd en wordt onderhouden door vrijwilligers, en het samen planten, oogsten en delen brengt buren samen in een gezamenlijk project.
+
+Deze plekken verbinden stadsbewoners opnieuw met de herkomst van hun voedsel en met de seizoenen. Ze voeden de biofiele band die het stadsleven zo vaak doorsnijdt en bouwen het vertrouwen op dat gemeenschappen bij elkaar houdt.
+
+## Ontwerpen voor de stad
+
+Stadsvoedselbossen vragen aandacht voor hun specifieke omgeving: de bodem moet misschien worden onderzocht op vervuiling, de soorten moeten passen bij kleine en beschaduwde plekken, en er moeten afspraken zijn over wie plant, wie oogst en wie onderhoudt.
+
+Goed aangepakt maken ze van onderbenutte grond een overvloedig gemeengoed, en bieden ze een hoopvolle blik op steden die zichzelf voeden en koelen en tegelijk ruimte teruggeven aan de wilde natuur.

@@ -4,12 +4,12 @@ type: concept
 domain: design-practice
 title:
   en: Forgotten Vegetables & Crop Diversity
-  nl: ''
+  nl: 'Vergeten groenten en gewasdiversiteit'
 summary:
   en: Sixteen species now supply most of the calories humanity eats. The thousands of edible plants we
     have set aside are not quaint relics — they are the genetic insurance a changing climate will make
     us wish we had kept.
-  nl: ''
+  nl: 'Zestien soorten leveren nu het grootste deel van de calorieën die de mensheid eet. De duizenden eetbare planten die we opzij hebben gezet, zijn geen schattige relikwieën — ze zijn de genetische verzekering waarvan we in een veranderend klimaat zullen wensen dat we die hadden bewaard.'
 status: draft
 level: intermediate
 tags:
@@ -26,7 +26,7 @@ relations:
   why:
     en: Perennial and shade-tolerant crops that industrial agriculture abandoned are exactly what the
       lower layers need.
-    nl: ''
+    nl: 'Vaste en schaduwverdragende gewassen die de industriële landbouw heeft laten vallen, zijn precies wat de onderste lagen nodig hebben.'
   grade: established
   sources: []
   was: contains
@@ -35,7 +35,7 @@ relations:
   why:
     en: Shade-tolerant, perennial and forgotten crops are the ones that actually thrive in a layered city
       planting.
-    nl: ''
+    nl: 'Schaduwverdragende, vaste en vergeten gewassen zijn de gewassen die echt gedijen in een gelaagde beplanting in de stad.'
   grade: supported
   sources: []
   was: applied_in
@@ -43,7 +43,7 @@ relations:
   verb: partners-with
   why:
     en: Deep-rooted heritage crops reach nutrients that shallow modern annuals never touch.
-    nl: ''
+    nl: 'Diepwortelende oude gewassen bereiken voedingsstoffen waar ondiep wortelende moderne eenjarigen nooit bij komen.'
   grade: supported
   sources: []
   was: interacts_with
@@ -52,7 +52,7 @@ relations:
   verb: applies-to
   why:
     en: Perennial and self-seeding crops make sense precisely where the ground is never turned over.
-    nl: ''
+    nl: 'Vaste en zelfuitzaaiende gewassen zijn juist zinvol waar de grond nooit wordt omgekeerd.'
   grade: supported
   sources: []
   was: associated_with
@@ -62,7 +62,7 @@ relations:
   why:
     en: Crops allowed to flower and set seed feed pollinators; crops harvested before flowering never
       do.
-    nl: ''
+    nl: 'Gewassen die mogen bloeien en zaad zetten, voeden bestuivers; gewassen die vóór de bloei worden geoogst, doen dat nooit.'
   grade: established
   sources: []
   was: supports
@@ -99,3 +99,25 @@ A diverse plate is grown by a diverse landscape. Polycultures, food forests and 
 Rebuilding crop diversity is unglamorous work — saving seed, trialling odd varieties, learning to cook unfamiliar greens — but it is among the most practical forms of climate insurance a grower can practise, one forgotten vegetable at a time.
 
 <!-- nl -->
+
+Mensen hebben in de loop van hun geschiedenis meer dan zevenduizend plantensoorten gegeten, en er meer dan vierhonderd als gewas geteeld. Vandaag leveren slechts zestien soorten tot tachtig procent van de calorieën die de wereld eet, en maar drie — tarwe, maïs en rijst — overheersen bijna overal het bord.
+
+Die versmalling is een van de stilste risico's in het voedselsysteem. Een handvol genetisch eenvormige basisgewassen, geteeld op enorme oppervlakten, is efficiënt in een stabiel klimaat en gevaarlijk broos in een onstabiel klimaat: één nieuwe plaag, ziekte of droogtepatroon kan een gewas op meerdere continenten tegelijk bedreigen.
+
+## Genetische erosie
+
+Toen commerciële rassen in de twintigste eeuw de lokale rassen verdrongen, ging een enorme bibliotheek aan gewasgenetica verloren — landrassen en oude rassen die zich generaties lang hadden aangepast aan een bepaalde bodem, bepaalde seizoenen en bepaalde plagen. Die genetische erosie blijft onzichtbaar tot je haar nodig hebt: de eigenschappen om een nieuwe hittegolf of plantenziekte te overleven, zaten misschien alleen in een ras dat niemand meer teelt.
+
+De vergeten groenten en wilde verwanten die overleven in kleine kwekerijen, zaadbanken en de tuinen van wildplukkers, zijn dus geen nostalgie. Ze vormen een reservoir aan aanpassingen — een reservekopie van mogelijkheden waar veredelaars juist op teruggrijpen wanneer de dominante gewassen het laten afweten.
+
+## Het wilde en het verwaarloosde
+
+Voorbij de oude cultivars ligt een nog diepere bron: wilde eetbare planten en verwaarloosde regionale gewassen. Soorten die de wereldmarkt lang over het hoofd zag — de Afrikaanse spinnenplant en fonio, de Aziatische bittere meloen, de Pacifische 'slippery cabbage', en talloze wilde bladgroenten die al millennia als voedsel worden verzameld — zijn vaak taaier, voedzamer en beter geschikt voor schrale omstandigheden dan de basisgewassen die hun plaats innamen.
+
+Ze terugbrengen is zowel een ecologische als een culturele daad. Elk vergeten gewas draagt een web van teeltpraktijken, recepten en kennis met zich mee dat samen met de plant is weggesleten; wie de groente terugbrengt, kan dat bioculturele erfgoed mee terugbrengen.
+
+## Diversiteit als veerkracht
+
+Een gevarieerd bord groeit in een gevarieerd landschap. Mengteelten, voedselbossen en tuinen die veel soorten combineren — oud, wild en modern — spreiden het risico zoals een gevarieerd ecosysteem dat doet: als één gewas het moeilijk heeft, dragen andere het seizoen. Diversiteit boven de grond voedt ook diversiteit eronder, en ondersteunt de bestuivers waar het hele systeem van afhangt.
+
+Gewasdiversiteit herstellen is weinig glamoureus werk — zaad winnen, vreemde rassen uitproberen, leren koken met onbekende bladgroenten — maar het is een van de meest praktische vormen van klimaatverzekering die een teler kan toepassen, één vergeten groente tegelijk.

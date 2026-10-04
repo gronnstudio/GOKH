@@ -4,11 +4,11 @@ type: concept
 domain: systems
 title:
   en: Deep Ecology
-  nl: ''
+  nl: 'Diepe ecologie'
 summary:
   en: A philosophy that grants intrinsic worth to all living things and calls for a profound shift in
     how humans see their place within, not above, the web of life.
-  nl: ''
+  nl: 'Een filosofie die alle levende wezens een eigen waarde toekent en oproept tot een diepgaande verschuiving in hoe mensen hun plek zien: binnen het web van het leven, niet erboven.'
 status: draft
 level: advanced
 tags:
@@ -23,7 +23,7 @@ relations:
   verb: applies-to
   why:
     en: Rewilding's willingness to hand control back to a landscape comes straight out of this ethic.
-    nl: ''
+    nl: 'De bereidheid van rewilding om de regie terug te geven aan een landschap komt rechtstreeks voort uit deze ethiek.'
   grade: supported
   sources: []
   was: influences
@@ -33,7 +33,7 @@ relations:
   why:
     en: A worldview where nothing is waste and everything is somebody's input has an obvious material
       analogue.
-    nl: ''
+    nl: 'Een wereldbeeld waarin niets afval is en alles grondstof is voor iemand anders, heeft een voor de hand liggende materiële tegenhanger.'
   grade: emerging
   sources: []
   was: associated_with
@@ -42,7 +42,7 @@ relations:
   verb: applies-to
   why:
     en: It reframes a species as valuable in itself, not for the ecosystem services it renders us.
-    nl: ''
+    nl: 'Het ziet een soort als waardevol op zich, niet om de ecosysteemdiensten die die soort ons levert.'
   grade: emerging
   sources: []
   was: influences
@@ -80,3 +80,25 @@ Deep ecology has profoundly shaped the environmental movement, inspiring rewildi
 Yet its core provocation endures: that the ecological crisis is at root a crisis of worldview, and that lasting change requires not only better technology but a humbler, more kinship-minded way of belonging to the Earth.
 
 <!-- nl -->
+
+Diepe ecologie is een milieufilosofie die ons vraagt niet alleen anders na te denken over hoe we met de natuur omgaan, maar ook over hoe we onszelf zien in relatie tot de natuur. De Noorse filosoof Arne Naess bedacht de term in 1973. Hij zette een oppervlakkige milieubeweging, die zich vooral bezighoudt met vervuiling en uitputting van grondstoffen voor zover die mensen raken, tegenover een diepere bevraging van de plek van de mens in de wereld.
+
+De kern is dat de levende wereld intrinsieke waarde heeft: waarde op zich, los van enig nut voor mensen. Een bos, een rivier, een soort doet ertoe, niet alleen als hulpbron maar als uiting van leven met een eigen recht om te gedijen.
+
+## Voorbij de mens als middelpunt
+
+Het meeste westerse denken is antropocentrisch: het behandelt de natuur als decor en als voorraadkast voor menselijke doelen. Diepe ecologie wijst die rangorde af en kiest voor een ecocentrische kijk, waarin de mens één draad is in een groot web, niet erboven en niet erbuiten.
+
+Vanuit dit standpunt heeft het gedijen van zowel menselijk als niet-menselijk leven waarde, en hebben mensen niet het recht de rijkdom en diversiteit van het leven te verminderen, behalve om in hun vitale behoeften te voorzien.
+
+## Het ecologische zelf
+
+Naess introduceerde het idee van het ecologische zelf: een verruimd gevoel van identiteit, waarin je de bredere natuurlijke wereld gaat ervaren als deel van jezelf. Wie een rivier of een bos schade toebrengt, beschadigt in deze opvatting iets van zichzelf.
+
+Dit is geen sentimentaliteit, maar een herschikking van waarden, waaruit zorg voor de natuur vanzelf voortkomt in plaats van als onwillige plicht. Het sluit sterk aan bij de biofiliehypothese: dat onze band met het leven dieper gaat dan het verstand.
+
+## Invloed en kritiek
+
+Diepe ecologie heeft de milieubeweging diepgaand gevormd en inspireerde rewilding, dierethiek en radicaal natuurbehoud. Critici werpen tegen dat ze vaag kan zijn, de wildernis romantiseert, of mensvijandig dreigt te worden als menselijke behoeften worden weggewuifd.
+
+Toch blijft de kern van haar uitdaging overeind: dat de ecologische crisis in de grond een crisis van wereldbeeld is, en dat blijvende verandering niet alleen betere technologie vraagt, maar ook een bescheidener manier om bij de aarde te horen, met meer gevoel voor verwantschap.

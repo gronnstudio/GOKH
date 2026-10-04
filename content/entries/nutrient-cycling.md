@@ -4,11 +4,11 @@ type: concept
 domain: systems
 title:
   en: Nutrient Cycling and Circular Systems
-  nl: ''
+  nl: 'Kringlopen van voedingsstoffen en circulaire systemen'
 summary:
   en: In nature there is no waste; every output becomes another organism's input. Designing human systems
     to close these loops is the essence of a circular economy.
-  nl: ''
+  nl: 'In de natuur bestaat geen afval; wat het ene organisme afgeeft, neemt een ander op. Menselijke systemen zo ontwerpen dat ze deze kringlopen sluiten, is de kern van een circulaire economie.'
 status: draft
 level: intermediate
 tags:
@@ -52,3 +52,25 @@ The remedy is to redesign human systems in nature's circular image. Composting r
 This principle, that waste equals food, links soil science to economics and underpins visions such as doughnut economics of a regenerative human presence that gives back as much as it takes.
 
 <!-- nl -->
+
+In een natuurlijk ecosysteem bestaat er niet zoiets als afval. Het gevallen blad, het dode dier, de uitgeademde lucht: elk ervan is een hulpbron die een ander organisme opneemt en omzet. Materie draait eindeloos rond, en die kringloop is het diepe geheim van de duurzaamheid van de natuur.
+
+Nutriëntenkringloop is de naam voor deze kringlopen: de herhaalde beweging van elementen zoals koolstof, stikstof, fosfor en water door levende wezens, de bodem, de lucht en weer terug. Ecologie begrijpen is grotendeels deze kringlopen begrijpen.
+
+## Hoe de kringlopen draaien
+
+Neem stikstof. Door bacteriën uit de lucht gebonden, door planten opgenomen, door dieren gegeten, vrijgegeven in hun uitwerpselen en bij hun dood, afgebroken door afbrekers en uiteindelijk teruggegeven aan de atmosfeer: stikstof legt een gesloten circuit af dat geen enkele stap op zichzelf in stand zou kunnen houden.
+
+Afbrekers — de schimmels, bacteriën en detritivoren die dood materiaal afbreken — zijn de onbezongen helden van deze kringlopen. Zonder hen zouden voedingsstoffen opgesloten blijven in kadavers en strooisel, en zou de levende wereld tot stilstand komen onder haar eigen opgehoopte resten.
+
+## De gebroken kringloop van de mens
+
+De industriële samenleving werkt daarentegen grotendeels in een rechte lijn: winnen, gebruiken, weggooien. We delven fosfaat en pompen stikstof op akkers, oogsten de gewassen, sturen de voedingsstoffen naar verre steden en spoelen ze als rioolwater door naar zee — een stroom in één richting die aan het ene eind uitput en aan het andere eind vervuilt.
+
+Deze lineaire stofwisseling is in wezen niet duurzaam. Dezelfde voedingsstoffen die dode zones in de oceaan veroorzaken, zijn de stoffen die boerderijen steeds opnieuw moeten kopen, omdat ze nooit naar het land terugkeren.
+
+## De cirkel sluiten
+
+De oplossing is om menselijke systemen opnieuw te ontwerpen naar het circulaire voorbeeld van de natuur. Composteren brengt keuken- en gewasresten terug naar de bodem; voedingsstoffen terugwinnen uit afvalstromen sluit de kringloop van de stad terug naar de boerderij; en een circulaire economie probeert in bredere zin van elke output een bruikbare input te maken.
+
+Dit principe, afval is voedsel, verbindt bodemkunde met economie en ligt ten grondslag aan visies zoals de donuteconomie: visies op een regeneratieve menselijke aanwezigheid die evenveel teruggeeft als ze neemt.

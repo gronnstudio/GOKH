@@ -4,11 +4,11 @@ type: concept
 domain: animals-biodiversity
 title:
   en: Regenerative Grazing
-  nl: ''
+  nl: 'Regeneratief begrazen'
 summary:
   en: Managed to mimic wild herds, grazing animals can build soil, sequester carbon and restore grasslands,
     turning livestock from a problem into a tool of repair.
-  nl: ''
+  nl: 'Grazers die zo worden beheerd dat ze wilde kuddes nabootsen, kunnen bodem opbouwen, koolstof vastleggen en graslanden herstellen. Zo wordt vee van een probleem een middel voor herstel.'
 status: draft
 level: advanced
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: Short, intense grazing followed by long rest lets roots regrow deeply, pumping fresh carbon into
       the soil biology.
-    nl: ''
+    nl: 'Kort en intensief begrazen, gevolgd door een lange rustperiode, laat wortels diep teruggroeien en pompt verse koolstof in het bodemleven.'
   grade: supported
   sources: []
   was: supports
@@ -61,3 +61,25 @@ Regenerative grazing is not a licence for unlimited beef. Its benefits depend on
 Still, on the world's vast rangelands, much of it unsuited to crops, well-managed herbivores may be the most practical way to keep soils covered, cycle nutrients and hold carbon, integrating animals into a regenerative whole rather than banishing them.
 
 <!-- nl -->
+
+Grazend vee wordt vaak neergezet als boosdoener in de klimaat- en biodiversiteitscrisis, en industriële vetmesterijen (feedlots) verdienen een groot deel van die schuld. Regeneratief begrazen vertelt een genuanceerder verhaal: dat planteneters, als ze goed worden beheerd, juist de graslanden kunnen genezen die de gangbare praktijk aantast.
+
+Het inzicht is dat graslanden en grazers samen zijn geëvolueerd. Miljoenen jaren lang trokken enorme kuddes over de vlakten. Ze graasden, vertrapten en bemestten, en lieten het land daarna herstellen. De graslanden verdroegen dit niet alleen; ze waren ervan afhankelijk.
+
+## De wilde kudde nabootsen
+
+Bij continu begrazen, waarbij dieren onbeperkt in een weide blijven rondlopen, knabbelen ze hun favoriete planten kapot en laten ze andere staan, waardoor de grasmat achteruitgaat. Bij regeneratief begrazen worden de dieren juist in dichte groepen bij elkaar gehouden, die een klein stuk intensief begrazen en dan verder trekken.
+
+Dit bootst de kuddes van vroeger na, die door roofdieren in beweging werden gehouden. De planten worden één keer stevig begraasd en krijgen dan weken of maanden rust om volledig terug te groeien. Zo gaan de wortels dieper en pompen ze bij elke cyclus van begrazen en herstel koolstof de bodem in.
+
+## Bodem opbouwen met hoeven
+
+Terwijl de dieren verder trekken, trappen ze oude begroeiing plat tot een mulchlaag die het bodemleven voedt, breken ze dichtgeslagen oppervlakken open zodat water de grond in kan, en verspreiden ze mest en urine die de grond bemesten en beënten met bodemleven. Hun impact, geconcentreerd en kort, wordt zo een middel om bodem op te bouwen.
+
+Voorstanders zoals Allan Savory stellen dat dit holistisch beheer woestijnvorming op aangetaste weidegronden kan terugdraaien. Onderzoekers debatteren over hoe groot de koolstofwinst is, maar de verbeteringen in bodembedekking, waterinfiltratie en biodiversiteit zijn breed gedocumenteerd.
+
+## Context en controverse
+
+Regeneratief begrazen is geen vrijbrief voor onbeperkt rundvlees. De voordelen hangen af van vakkundig beheer en passen bij graslanden die samen met begrazing zijn geëvolueerd. De resultaten verschillen met klimaat, bodem en veebezetting, en grote beweringen verdienen een kritische blik.
+
+Toch kunnen goed beheerde planteneters op de enorme weidegronden van de wereld, die grotendeels ongeschikt zijn voor akkerbouw, de meest praktische manier zijn om bodems bedekt te houden, voedingsstoffen te laten rondgaan en koolstof vast te houden. Zo worden dieren deel van een regeneratief geheel, in plaats van dat ze worden verbannen.

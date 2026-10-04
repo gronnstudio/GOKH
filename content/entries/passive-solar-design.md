@@ -4,11 +4,11 @@ type: concept
 domain: design-practice
 title:
   en: Passive Solar Design
-  nl: ''
+  nl: 'Passief zonne-ontwerp'
 summary:
   en: By orienting and shaping a building to the sun's path, passive solar design heats and cools with
     almost no energy, working with the seasons rather than against them.
-  nl: ''
+  nl: 'Door een gebouw in ligging en vorm af te stemmen op de baan van de zon, verwarmt en koelt passief zonne-ontwerp met bijna geen energie. Het werkt mee met de seizoenen in plaats van ertegenin.'
 status: draft
 level: intermediate
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: 'The same physics at different scales: shade, thermal mass and air movement, whether the structure
       is a wall or a canopy.'
-    nl: ''
+    nl: 'Dezelfde natuurkunde op verschillende schaal: schaduw, thermische massa en luchtbeweging, of de structuur nu een muur is of een bladerdak.'
   grade: supported
   sources: []
   was: associated_with
@@ -34,7 +34,7 @@ relations:
   why:
     en: Roofs, hard surfaces and planting decide how much of a site's rainfall infiltrates and how much
       runs off.
-    nl: ''
+    nl: 'Daken, verharding en beplanting bepalen hoeveel van de regen op een terrein in de grond zakt en hoeveel er wegstroomt.'
   grade: established
   sources: []
   was: interacts_with
@@ -44,7 +44,7 @@ relations:
   why:
     en: Buildings that need almost no bought energy are one of the clearest ways to live inside the ecological
       ceiling.
-    nl: ''
+    nl: 'Gebouwen die bijna geen ingekochte energie nodig hebben, zijn een van de duidelijkste manieren om binnen het ecologische plafond te leven.'
   grade: supported
   sources: []
   was: contributes_to
@@ -54,7 +54,7 @@ relations:
   why:
     en: Daylight, outlook and thermal comfort are also the conditions people consistently report as feeling
       good.
-    nl: ''
+    nl: 'Daglicht, uitzicht en thermisch comfort zijn ook de omstandigheden waarbij mensen steeds weer zeggen dat ze zich goed voelen.'
   grade: supported
   sources: []
   was: interacts_with
@@ -91,3 +91,25 @@ These elements only work in concert with a well-insulated, airtight envelope tha
 The payoff is a building that stays comfortable on a fraction of the energy, cheaper to run, resilient to power cuts and fuel prices, and a natural companion to earthen construction and other regenerative building methods.
 
 <!-- nl -->
+
+Passief zonne-ontwerp gebruikt de ligging, de vorm en de materialen van een gebouw om de energie van de zon op te vangen, op te slaan en te verdelen, zonder mechanische systemen. In plaats van het klimaat te bestrijden met kachels en airco's, geeft het het gebouw zo vorm dat de zon het meeste verwarmingswerk doet en de nachtelijke hemel een groot deel van de koeling.
+
+De principes zijn eeuwenoud. Romeinse en Chinese bouwers kenden ze al, net als de Anasazi in het zuidwesten van Amerika. Toch horen ze nog altijd bij de meest kosteneffectieve middelen voor comfortabele gebouwen die weinig energie gebruiken.
+
+## Ligging en beglazing
+
+De basis is de oriëntatie. Op het noordelijk halfrond wijzen de lange gevel en de grote ramen naar het zuiden (op het zuidelijk halfrond naar het noorden), zodat de lage winterzon diep in de kamers kan schijnen. Weinig glas aan de koude, beschaduwde kanten beperkt het warmteverlies.
+
+Omdat de zomerzon hoog staat en de winterzon laag blijft, kan een goed afgemeten overstek het glas in de zomer beschaduwen en in de winter de zon juist binnenlaten. Dat gaat helemaal met vaste geometrie, zonder bewegende delen.
+
+## Thermische massa
+
+Zonlicht dat door het glas binnenkomt, moet worden opgeslagen. Dat is de taak van thermische massa: zware, dichte materialen zoals natuursteen, baksteen, beton of leem, die overdag warmte opnemen en die na het donker langzaam weer afgeven.
+
+Goed afgestemde massa vlakt het temperatuurverschil over de dag af. Ze neemt het warmteoverschot van het middaguur op en geeft het in de koude nacht terug, zodat het binnen comfortabel blijft zonder thermostaat.
+
+## Het geheel
+
+Deze onderdelen werken alleen samen met een goed geïsoleerde, luchtdichte schil die de opgevangen warmte vasthoudt, en met ventilatie die de zomerwarmte afvoert, vaak door koele nachtlucht langs de massa te laten stromen.
+
+Wat het oplevert, is een gebouw dat comfortabel blijft met een fractie van de energie: goedkoper in gebruik, bestand tegen stroomuitval en brandstofprijzen, en een vanzelfsprekende partner van bouwen met leem en andere regeneratieve bouwmethoden.

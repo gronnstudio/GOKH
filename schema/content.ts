@@ -5,8 +5,8 @@
  */
 import { z } from "zod"
 
-/** Six domains. Former categories survive as tags, so no shelf is ever empty. */
-export const DOMAINS = ["soil", "water", "plants-fungi", "animals-biodiversity", "design-practice", "systems"] as const
+/** Seven domains. Former categories survive as tags, so no shelf is ever empty. */
+export const DOMAINS = ["soil", "water", "plants-fungi", "animals-biodiversity", "design-practice", "food-self-reliance", "systems"] as const
 
 export const ENTRY_TYPES = ["concept", "species", "technique", "problem", "field-case"] as const
 
