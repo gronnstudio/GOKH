@@ -104,7 +104,7 @@ const speculation = JSON.stringify({
 <div id="domains-menu" popover class="mega" style="position-anchor: --domains">
   <ul class="mega-grid">
     {domainCounts.map(({ d, n }) => (
-      <li class={`d-${d}`}><a href={`/${lang}/#${d}`}><span class="mega-count">{String(n).padStart(2, "0")}</span><span class="mega-title">{DOMAINS[d][lang][0]}</span><span class="mega-text">{DOMAINS[d][lang][1]}</span></a></li>
+      <li class={`d-${d}`}><a href={`/${lang}/#${d}`}><span class="mega-count">{ui.entriesCount(n)}</span><span class="mega-title">{DOMAINS[d][lang][0]}</span><span class="mega-text">{DOMAINS[d][lang][1]}</span></a></li>
     ))}
   </ul>
   <a class="mega-problems" href={`/${lang}/#problems`}><span>{ui.problemsNav}</span><span class="label">{problemCount} →</span></a>

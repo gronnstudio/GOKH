@@ -86,7 +86,7 @@ const ticker = rest.map((e) => ({ id: e.data.id, d: e.data.domain, t: pick(e.dat
       {domains.map(({ d, labels, list }) => (
         <li class={`tile d-${d}`}>
           <a href={`#${d}`} data-walk>
-            <span class="tile-count">{String(list.length).padStart(2, "0")}</span>
+            <span class="tile-count">{list.length}<small>{ui.entriesCount(list.length).replace(/^\d+\s*/, "")}</small></span>
             <span class="tile-title">{labels[0]}</span>
             <span class="tile-text">{labels[1]}</span>
           </a>
