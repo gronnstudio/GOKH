@@ -23,7 +23,41 @@ One year, October 2026 to October 2027, in four phases. Each phase opens when th
 - [ ] Migrate the 4 paths and 3 collections
 - [ ] Reach 50 reviewed entries
 - [x] Static preview site on Vercel (`npm run build:site`), in Dutch and English, with search and an accessibility gate in CI
+- [x] Design direction proposed in `docs/decisions/0002-design-direction.md`; steps under Site plan below
 - [x] Design research: every gronnstudio repo and 15 open-source and NGO sites studied; stack decided in `docs/decisions/0001-site-stack.md` (Astro, static, Pagefind)
+
+## Site plan
+
+The site's design direction is decision [0002](docs/decisions/0002-design-direction.md): modern through the web platform, every new feature added as progressive enhancement, and the evidence itself as the visual language. Each step opens at its gate, so no feature arrives before the content it shows.
+
+### Step A · Foundation (Phase 0, no new content needed)
+
+- [ ] Tokens in `design/tokens.json` (W3C Design Tokens format 2025.10), with colours in OKLCH. A script turns them into CSS custom properties, using `light-dark()`.
+- [ ] Contrast audit read from the tokens: every colour pair, in both themes, run in CI.
+- [ ] Rewrite the stylesheet as native CSS: `@layer`, nesting, container queries, `text-wrap`. Lightning CSS with `baseline widely available` targets, and Stylelint with `use-baseline`.
+- [ ] Cross-document view transitions: the card title morphs into the entry title. Speculation Rules prerender on hover.
+- [ ] Grade glyph and source seal. Grade explanations open in a native `popover` with anchor positioning.
+- [ ] Theme toggle (Golden Hour / Blauwe Uur) with no flash on load.
+- [ ] Pagefind modal on ⌘K or /, available from every page.
+- [ ] Budgets in CI: 0 KB of our own JavaScript on content pages, at most 50 KB in total, CSS at most 30 KB. Playwright visual-regression screenshots of every template.
+- [ ] Renovate: weekly grouped dependency updates, with Astro majors as separate PRs.
+
+### Step B · Character (opens at the Phase 0 gate: 50 reviewed entries)
+
+- [ ] Neighbourhood graph per entry: SVG built at build time, with lines styled by verb and weighted by grade.
+- [ ] Domain hues in OKLCH, contrast-checked, used on tiles, nodes and chips.
+- [ ] Bento home: problems, domains, latest reviewed entries, and the graph.
+- [ ] An OG image per entry, built at build time in the brand type.
+- [ ] Licensed images only (CC0, CC BY, CC BY-SA), with their attribution stored in `content/`, served as AVIF.
+- [ ] "This month" tile, once the 48 seasonal tasks are migrated.
+
+### Step C · Interaction (Phase 2: 300 explained relations)
+
+- [ ] Diagnose flow as one small island (a web component or an Astro script).
+- [ ] Routes in the GOV.UK step-by-step pattern.
+- [ ] Map island: MapLibre with PDOK tiles; Belgium needs its own base map.
+- [ ] Full graph explorer as one island.
+- [ ] Offline reading: a service worker that caches read pages.
 
 ## Deferred, and what brings each back
 
