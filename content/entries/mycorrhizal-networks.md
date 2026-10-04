@@ -4,11 +4,11 @@ type: concept
 domain: plants-fungi
 title:
   en: Mycorrhizal Networks
-  nl: ''
+  nl: 'Mycorrhizanetwerken'
 summary:
   en: Fungal threads weave individual plants into a shared underground marketplace, moving carbon, nutrients
     and even chemical warnings between neighbours.
-  nl: ''
+  nl: 'Schimmeldraden weven afzonderlijke planten samen tot een gedeelde ondergrondse marktplaats, waarover koolstof, voedingsstoffen en zelfs chemische waarschuwingen tussen buren worden doorgegeven.'
 status: draft
 level: intermediate
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: Mycorrhizal fungi are one guild within the wider soil economy — the part that plugs directly into
       living roots.
-    nl: ''
+    nl: 'Mycorrhizaschimmels zijn één gilde binnen de bredere bodemeconomie — het deel dat rechtstreeks aansluit op levende wortels.'
   grade: established
   sources: []
   was: contains
@@ -33,7 +33,7 @@ relations:
   why:
     en: The fungal network is the physical medium along which signals and resources are proposed to travel
       between trees.
-    nl: ''
+    nl: 'Het schimmelnetwerk is het fysieke medium waarlangs signalen en hulpbronnen tussen bomen zouden reizen, zo luidt de hypothese.'
   grade: emerging
   sources: []
   was: enables
@@ -42,7 +42,7 @@ relations:
   why:
     en: Better-supplied trees hold fuller canopies, and canopy is what buffers the temperature and humidity
       beneath it.
-    nl: ''
+    nl: 'Beter bevoorrade bomen houden een vollere kroon, en juist het bladerdak buffert de temperatuur en luchtvochtigheid eronder.'
   grade: supported
   sources: []
   was: contributes_to
@@ -52,7 +52,7 @@ relations:
   why:
     en: 'A direct trade: photosynthetic sugars out of the plant, fungal-mined phosphorus and water back
       in.'
-    nl: ''
+    nl: 'Een directe ruil: suikers uit de fotosynthese gaan de plant uit, fosfor en water die de schimmel uit de bodem haalt, gaan de plant weer in.'
   grade: established
   sources: []
   was: exchanges
@@ -61,7 +61,7 @@ relations:
   verb: improves
   why:
     en: Hyphae extend the effective absorbing surface of a root system by orders of magnitude.
-    nl: ''
+    nl: 'Schimmeldraden (hyfen) vergroten het werkzame opnameoppervlak van een wortelstelsel met ordes van grootte.'
   grade: established
   sources: []
   was: increases
@@ -98,3 +98,25 @@ Ecologists distinguish two main forms. Arbuscular mycorrhizae penetrate root cel
 Understanding which guild a plant favours matters for restoration and agriculture alike. Ploughing and fungicides devastate these fragile threads, which is why no-till and perennial systems, where the network is left intact, so often outperform disturbed ground.
 
 <!-- nl -->
+
+Ongeveer negentig procent van de landplanten gaat een samenwerking aan met mycorrhizaschimmels, symbionten waarvan de naam letterlijk schimmelwortel betekent. De schimmel strekt haar microscopisch fijne draden, de hyfen, ver voorbij het bereik van de wortels uit en zoekt naar water en fosfor in een hoeveelheid bodem die een plant in haar eentje nooit zou kunnen verkennen.
+
+In ruil betaalt de plant met suiker, de vastgelegde koolstof die ze via fotosynthese uit de atmosfeer haalt. Dit is een van de oudste en meest succesvolle handelsovereenkomsten in de geschiedenis van het leven: ze gaat zo'n 450 miljoen jaar terug, tot de allereerste kolonisatie van het land.
+
+## Het wood wide web
+
+Omdat één schimmelindividu veel planten tegelijk kan koloniseren, knopen deze schimmels hele gemeenschappen aan elkaar tot gedeelde netwerken. In de veldexperimenten van Suzanne Simard in Brits-Columbia werden radioactieve en stabiele isotopen als merkstof gebruikt om te laten zien dat koolstof via deze verbindingen van boom naar boom stroomt, soms van volwassen bomen in de zon naar beschaduwde zaailingen van dezelfde soort.
+
+Het populaire label wood wide web vat de bevinding samen dat een bos minder een verzameling concurrerende individuen is dan een samenwerkend, onderling verbonden superorganisme. Oudere knooppuntbomen, die Simard moederbomen noemde, lijken bijzonder goed verbonden en ondersteunen mogelijk bij voorkeur hun eigen verwanten.
+
+## Meer dan voedingsstoffen
+
+De netwerken vervoeren naast hulpbronnen ook informatie. Wanneer een plant wordt aangevallen door bladluizen of ziekteverwekkers, kunnen signaalstoffen voor de afweer door het gedeelde mycelium reizen. Daardoor zetten onaangetaste buren hun chemische afweer al in gereedheid voordat de bedreiging aankomt.
+
+Dat vervaagt de grens van het individu. Het fenotype van een plant, haar vermogen om zich te verdedigen en te groeien, is deels een eigenschap van het netwerk waartoe ze behoort, en niet alleen van het organisme zelf.
+
+## Twee grote gilden
+
+Ecologen onderscheiden twee hoofdvormen. Arbusculaire mycorrhiza dringt de wortelcellen binnen en overheerst in graslanden en bij de meeste landbouwgewassen; ectomycorrhiza vormt een mantel om de wortels en heeft de overhand bij de bomen van gematigde en boreale streken — eiken, dennen, berken — die de bekende paddenstoelen in het bos voortbrengen.
+
+Weten welk gilde een plant verkiest, is belangrijk voor zowel natuurherstel als landbouw. Ploegen en fungiciden verwoesten deze kwetsbare draden, en daarom doen niet-kerende en meerjarige systemen, waarin het netwerk intact blijft, het zo vaak beter dan verstoorde grond.

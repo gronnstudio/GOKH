@@ -4,11 +4,11 @@ type: concept
 domain: water
 title:
   en: Rainwater Harvesting
-  nl: ''
+  nl: 'Regenwater opvangen'
 summary:
   en: Capturing rain where it falls, in tanks, soils and earthworks, is among the oldest and most effective
     ways to secure water and drought-proof a landscape.
-  nl: ''
+  nl: 'Regen opvangen waar hij valt, in tanks, in de bodem en met grondwerk, is een van de oudste en doeltreffendste manieren om water veilig te stellen en een landschap bestand te maken tegen droogte.'
 status: draft
 level: foundational
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: Tanks catch roof water; swales catch everything else. Most sites need both, sized against each
       other.
-    nl: ''
+    nl: 'Tanks vangen het water van het dak op; swales vangen al het andere op. De meeste terreinen hebben beide nodig, in omvang op elkaar afgestemd.'
   grade: established
   sources: []
   was: interacts_with
@@ -34,7 +34,7 @@ relations:
   why:
     en: Both are decided in the same moment of siting a building — where it sits determines both sun and
       water.
-    nl: ''
+    nl: 'Over allebei wordt beslist op hetzelfde moment, als je de plek voor een gebouw kiest — waar het staat, bepaalt zowel de zon als het water.'
   grade: supported
   sources: []
   was: associated_with
@@ -71,3 +71,25 @@ Good harvesting follows a few rules: start at the top of the catchment, keep wat
 Combined with mulch and vegetation to cut evaporation, these principles let even arid places retain enough of their scarce rain to sustain abundant life.
 
 <!-- nl -->
+
+Regenwater opvangen betekent regen verzamelen en bewaren voor later gebruik, in plaats van hem weg te laten stromen. Dat kan zo klein zijn als een regenton onder een regenpijp en zo groot als grondwerk op landschapsschaal dat hele watervoerende lagen aanvult. Het is een van de oudste technieken van de mensheid.
+
+De logica is eenvoudig: regen is gratis, valt overal en is overvloedig, maar vluchtig. Wie hem opvangt wanneer hij valt, hoeft hem later niet uit een put, een rivier of een ver stuwmeer te halen.
+
+## Tanks en daken
+
+De bekendste vorm vangt regen van daken op in tanks en regenwaterputten. Er is verrassend veel beschikbaar: zelfs bescheiden regenval op een gemiddeld dak levert tienduizenden liters per jaar op. Dat is genoeg voor de tuin van een huishouden en, met filtering, ook voor het huis zelf.
+
+Opgeslagen dakwater overbrugt droge periodes, verlaagt de vraag naar water uit een overbelast leidingnet en vermindert de plotselinge wateroverlast die ontstaat wanneer steden de regen van hectares verharding allemaal tegelijk afvoeren.
+
+## Opvangen in de bodem
+
+Het grootste en goedkoopste reservoir is de bodem zelf. Grondwerk, swales, kommen en terrassen remmen afstromend water af, zodat het in de grond zakt in plaats van weg te lopen. Zo vullen ze het grondwater aan en houden ze de wortelzone tot ver in het droge seizoen vochtig.
+
+Het baanbrekende werk van de Zimbabwaanse boer Zephaniah Phiri en de Indiase waterbeschermer Rajendra Singh liet zien dat zulke eenvoudige constructies drooggevallen putten weer tot leven kunnen brengen en hele aangetaste dalen opnieuw groen kunnen maken.
+
+## Ontwerpprincipes
+
+Goed regenwater opvangen volgt een paar regels: begin bovenaan het stroomgebied, houd water hoog in het landschap, vertraag het en spreid het, en sla het laag op, waar de zwaartekracht het later kan aanvoeren. De overloop van de ene opslag moet de volgende voeden, zodat er niets verloren gaat.
+
+Samen met mulch en begroeiing om verdamping te beperken, zorgen deze principes ervoor dat zelfs dorre streken genoeg van hun schaarse regen vasthouden om overvloedig leven te dragen.

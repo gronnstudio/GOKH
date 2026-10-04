@@ -4,11 +4,11 @@ type: concept
 domain: animals-biodiversity
 title:
   en: Rewilding
-  nl: ''
+  nl: 'Rewilding'
 summary:
   en: Rewilding restores natural processes and lets ecosystems shape themselves, often by returning missing
     keystone species and stepping back from micromanagement.
-  nl: ''
+  nl: 'Rewilding herstelt natuurlijke processen en laat ecosystemen zichzelf vormgeven, vaak door ontbrekende sleutelsoorten terug te brengen en een stap terug te doen van het beheer tot in de details.'
 status: draft
 level: intermediate
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: Without the species that structure the system, rewilding produces scrub rather than a functioning
       ecosystem.
-    nl: ''
+    nl: 'Zonder de soorten die het systeem structuur geven, levert rewilding struweel op in plaats van een werkend ecosysteem.'
   grade: supported
   sources: []
   was: requires
@@ -32,7 +32,7 @@ relations:
   verb: applies-to
   why:
     en: The Miyawaki method is rewilding at the smallest workable scale — a car park's worth at a time.
-    nl: ''
+    nl: 'De Miyawaki-methode is rewilding op de kleinste schaal die nog werkt — telkens een stuk zo groot als een parkeerterrein.'
   grade: supported
   sources: []
   was: applied_in
@@ -69,3 +69,25 @@ Rewilding is not without conflict. Returning predators unsettles farmers, and le
 Yet at a time of accelerating extinction and climate stress, rewilding offers a hopeful, cost-effective path: restore the living processes, protect enough connected space, and let ecosystems heal themselves.
 
 <!-- nl -->
+
+Rewilding is een vorm van natuurherstel die zelfstandige natuurlijke systemen weer wil opbouwen, in plaats van landschappen bij te schaven naar een vast einddoel. Het leidende instinct is om de processen terug te brengen, zoals begrazing, predatie, overstroming en verstoring, en de natuur daarna de leiding te laten nemen.
+
+Het markeert een verschuiving in natuurbescherming: van de natuur beheersen naar de natuur vertrouwen, van reservaten aanharken naar vaste idealen naar ecosystemen de vrijheid geven om ons te verrassen.
+
+## De spelers terugbrengen
+
+Centraal in rewilding staat de terugkeer van ontbrekende soorten, vooral de sleutelsoorten onder de dieren, wier afwezigheid hele systemen laat uiteenvallen. Teruggebrachte roofdieren kunnen trofische cascades in gang zetten; grote planteneters kunnen het mozaïek van begraasde en beboste grond herscheppen dat veel soorten nodig hebben.
+
+Waar een uitgestorven soort niet terug kan komen, gebruiken ecologen soms vervangers, zoals robuuste runderen en pony's in de plaats van verdwenen wilde grazers, om de ecologische functie te herstellen in plaats van precies dezelfde soort.
+
+## Loslaten
+
+Het bekende landgoed Knepp in Engeland stopte met intensieve landbouw, liet vrij rondlopende grazers los en keek gewoon toe. Binnen twee decennia vormden struweel, hooiland en boomweide zich vanzelf, en kwamen zeldzame nachtegalen, tortelduiven en grote weerschijnvlinders ongevraagd aanwaaien.
+
+De les was bescheidenheid: met de juiste processen en genoeg ruimte bouwt de natuur complexiteit sneller en rijker op dan welk beplantingsplan ook zou kunnen ontwerpen.
+
+## Spanningen en belofte
+
+Rewilding gaat niet zonder conflict. Terugkerende roofdieren maken boeren onrustig, en land laten verwilderen kan botsen met voedselproductie en met cultuurlandschappen waar mensen aan gehecht zijn. De onvoorspelbaarheid, ecologisch gezien een kracht, maakt mensen die zekerheid willen ongerust.
+
+Toch biedt rewilding, in een tijd van versnellend uitsterven en klimaatstress, een hoopvolle en kosteneffectieve weg: herstel de levende processen, bescherm genoeg verbonden ruimte en laat ecosystemen zichzelf genezen.

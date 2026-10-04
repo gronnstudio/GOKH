@@ -100,7 +100,7 @@ test("search opens from the keyboard on any page, ranks, and remembers", async (
   await page.keyboard.press("ArrowDown")
   await expect(page.getByRole("option").nth(1)).toHaveAttribute("aria-selected", "true")
   // Full text from inside the entries joins after the titles.
-  await input.fill("actinobacteria")
+  await input.fill("actinobacteriën")
   await expect(page.locator("#palette-list .pal-kind", { hasText: "In de tekst" }).first()).toBeVisible()
   await page.keyboard.press("Enter")
   await expect(page).toHaveURL(/\/e\//)

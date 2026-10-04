@@ -4,11 +4,11 @@ type: concept
 domain: plants-fungi
 title:
   en: Forest Microclimates
-  nl: ''
+  nl: 'Het microklimaat van het bos'
 summary:
   en: 'A forest creates its own weather: cooler, wetter and more stable than the open land around it.
     This self-made climate shelters life and buffers a warming world.'
-  nl: ''
+  nl: 'Een bos maakt zijn eigen weer: koeler, natter en stabieler dan het open land eromheen. Dit zelfgemaakte klimaat beschut het leven en vormt een buffer in een opwarmende wereld.'
 status: draft
 level: intermediate
 tags:
@@ -24,7 +24,7 @@ relations:
   why:
     en: Restoring canopy restores the cool, damp interior conditions that specialist woodland species
       need to return.
-    nl: ''
+    nl: 'Wie het kronendak herstelt, herstelt de koele, vochtige omstandigheden binnen in het bos die gespecialiseerde bossoorten nodig hebben om terug te keren.'
   grade: established
   sources: []
   was: contributes_to
@@ -61,3 +61,25 @@ As climate warms, forest microclimates take on new importance as thermal refuges
 This buffering is one more reason to protect closed-canopy forests and to design food forests and shelterbelts that recreate their sheltering effect, a living air-conditioning that fragmentation and clearing destroy.
 
 <!-- nl -->
+
+Stap op een hete dag vanuit een zonovergoten akker een bos in en je merkt het verschil meteen: de lucht koelt af, het licht wordt zachter, de luchtvochtigheid stijgt. Een bos staat niet zomaar in zijn klimaat; het maakt onder zijn kronendak actief een eigen klimaat, een microklimaat dat het zelf schept.
+
+Deze zelfgemaakte omstandigheden kunnen sterk verschillen van het open land eromheen, vaak met enkele graden, en ze zijn een belangrijke reden waarom bossen zoveel rijk en gespecialiseerd leven herbergen.
+
+## Het kronendak als thermostaat
+
+Het bladerdak vangt zonlicht op, geeft de grond schaduw en houdt de temperatuur eronder overdag laag, terwijl het 's nachts de kou van boven tempert. Het remt ook de wind af, zodat het uitdrogen en afkoelen dat open grond te verduren krijgt, trager gaat.
+
+Het resultaat is een gebufferd binnenklimaat waarin temperatuur en luchtvochtigheid veel minder schommelen dan buiten. Voor de planten, schimmels en dieren van de bosbodem, waarvan er veel slecht tegen uitersten kunnen, is die stabiliteit het verschil tussen een leefgebied en een plek waar ze het zwaar hebben.
+
+## Bomen maken regen
+
+Bossen zijn natter, deels omdat ze zichzelf zo maken. Verdamping uit miljoenen bladeren laadt de lucht met vocht, en het ruwe kronendak vangt mist op en bevordert condensatie. Zo komt er water bij dat open land nooit krijgt.
+
+Dit vochtige, schaduwrijke binnenklimaat remt de verdamping uit de bodem. Zo houden bossen het water vast dat ze verzamelen, en blijven bronnen en beken tot ver in droge seizoenen gevoed.
+
+## Een toevluchtsoord in een opwarmende wereld
+
+Nu het klimaat opwarmt, worden bosmicroklimaten belangrijker als koele toevluchtsoorden. Onder een intact kronendak kan de temperatuur ver achterblijven bij de opwarming van open land, zodat soorten die aan koelte zijn aangepast er kunnen blijven bestaan.
+
+Deze buffering is nog een reden om bossen met een gesloten kronendak te beschermen, en om voedselbossen en windsingels te ontwerpen die hun beschuttende werking nabootsen: een levende airconditioning die door versnippering en kap verloren gaat.

@@ -4,11 +4,11 @@ type: concept
 domain: animals-biodiversity
 title:
   en: Keystone Species
-  nl: ''
+  nl: 'Sleutelsoorten'
 summary:
   en: Some species hold their entire ecosystem together far out of proportion to their numbers. Remove
     the keystone and the whole structure can collapse.
-  nl: ''
+  nl: 'Sommige soorten houden hun hele ecosysteem bij elkaar, veel meer dan hun aantal doet vermoeden. Haal de sleutelsoort weg en het hele bouwwerk kan instorten.'
 status: draft
 level: foundational
 tags:
@@ -23,7 +23,7 @@ relations:
   verb: part-of
   why:
     en: A few generalist pollinators hold a disproportionate share of the network together.
-    nl: ''
+    nl: 'Een paar generalistische bestuivers houden een onevenredig groot deel van het netwerk bij elkaar.'
   grade: supported
   sources: []
   was: contains
@@ -32,7 +32,7 @@ relations:
   why:
     en: Beavers, salmon and large grazers physically move nutrients across a landscape that would otherwise
       stay put.
-    nl: ''
+    nl: 'Bevers, zalm en grote grazers verplaatsen voedingsstoffen letterlijk door een landschap; zonder hen zouden die blijven liggen waar ze zijn.'
   grade: established
   sources: []
   was: influences
@@ -41,7 +41,7 @@ relations:
   verb: part-of
   why:
     en: A small number of native genera support the overwhelming majority of local insect herbivores.
-    nl: ''
+    nl: 'Een klein aantal inheemse geslachten ondersteunt het overgrote deel van de plaatselijke plantenetende insecten.'
   grade: established
   sources: []
   was: contains
@@ -77,3 +77,25 @@ Identifying keystone species helps conservationists prioritise: protecting or re
 It is also a warning. The quiet loss of a keystone, often a large predator hunted to scarcity, can silently destabilise an ecosystem, its full consequences becoming clear only once the arch has already fallen.
 
 <!-- nl -->
+
+Een sleutelsoort is een soort waarvan de invloed op haar ecosysteem onevenredig groot is in verhouding tot haar aantal. Net als de wigvormige sluitsteen boven in een boog kan ze klein zijn, maar haal haar weg en het bouwwerk dat ze draagt, valt uiteen.
+
+Het idee, bedacht door de ecoloog Robert Paine, veranderde hoe biologen naar ecosystemen kijken. Het liet zien dat niet alle soorten even veel effect hebben, en dat een paar soorten een buitensporig grote rol spelen in het bijeenhouden van levensgemeenschappen.
+
+## Paines zeester
+
+In Paines klassieke experiment werd één roofdier, de okergele zeester, weggehaald uit stukken rotskust aan de Grote Oceaan. Bevrijd van hun belager overwoekerden mosselen de rots en verdrongen ze de vijftien andere soorten die daar naast elkaar hadden geleefd.
+
+De zeester was nooit talrijk, maar had de diversiteit van de hele gemeenschap in stand gehouden door haar dominante concurrent in toom te houden. Toen ze werd weggehaald, stortte een rijke gemeenschap in tot een eentonige vlakte vol mosselen.
+
+## Roofdieren, ingenieurs en mutualisten
+
+Er zijn verschillende typen sleutelsoorten. Roofdieren zoals wolven en zeeotters reguleren hun prooien en voorkomen overbegrazing. Ecosysteemingenieurs zoals bevers vormen het leefgebied letterlijk om; hun dammen maken moerasgebieden die talloze andere soorten ondersteunen.
+
+Andere zijn mutualisten, zoals vijgenbomen die het hele jaar door vrucht dragen en vruchteneters door magere seizoenen helpen, of de bestuivers zonder wie hele plantengemeenschappen zich niet meer zouden kunnen voortplanten.
+
+## Waarom het ertoe doet
+
+Sleutelsoorten herkennen helpt natuurbeschermers om prioriteiten te stellen: één cruciale soort beschermen of terugbrengen kan een hele gemeenschap veiligstellen met minder moeite dan elke soort afzonderlijk verdedigen.
+
+Het is ook een waarschuwing. Het stille verlies van een sleutelsoort, vaak een groot roofdier dat tot zeldzaamheid is bejaagd, kan een ecosysteem ongemerkt uit balans brengen; de volle gevolgen worden pas duidelijk als de boog al is ingestort.
