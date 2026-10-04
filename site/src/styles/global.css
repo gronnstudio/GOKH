@@ -407,6 +407,9 @@
     .bento { grid-template-columns: repeat(3, 1fr); }
     .bento li:first-child { grid-column: span 2; grid-row: span 2; }
     .bento li:first-child .tile-count { font-size: clamp(120px, 12vw, 200px); }
+    /* the last row fills up: a lone last tile spans three columns, a pair's last tile two */
+    .bento li:last-child:nth-child(3n + 4) { grid-column: span 3; }
+    .bento li:last-child:nth-child(3n + 5) { grid-column: span 2; }
   }
   .tile a {
     position: relative; isolation: isolate; overflow: clip;
