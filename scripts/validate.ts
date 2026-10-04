@@ -63,8 +63,8 @@ for (const { file, data: e, body } of entries) {
   const verifiedCount = e.sources.filter((k) => sources.find((s) => s.key === k)?.verified).length
   if (e.status === "verified" && verifiedCount < 2) err(file, `verified entries need at least 2 verified sources (has ${verifiedCount})`)
 
-  // languages
-  for (const lang of ["en", "nl"] as const) {
+  // languages: Dutch is required once an entry leaves draft (decision 0003); English is optional for now
+  for (const lang of ["nl"] as const) {
     const missing = [!e.title[lang] && "title", !e.summary[lang] && "summary", !body[lang] && "body"].filter(Boolean)
     if (missing.length === 0) continue
     const msg = `${lang.toUpperCase()} missing: ${missing.join(", ")}`
@@ -94,7 +94,7 @@ const stats = {
   relationsToReview: entries.reduce((n, e) => n + e.data.relations.filter((r) => r.review).length, 0),
   sources: sources.length,
   sourcesVerified: sources.filter((s) => s.verified).length,
-  bothLanguages: entries.filter((e) => e.data.title.nl && e.data.title.en && e.body.nl && e.body.en).length,
+  inDutch: entries.filter((e) => e.data.title.nl && e.data.summary.nl && e.body.nl).length,
   errors: errors.length,
   warnings: warnings.length,
 }
@@ -108,7 +108,7 @@ if (process.argv.includes("--json")) {
   console.log(
     `\n${stats.entries} entries (${stats.byStatus.draft} draft, ${stats.byStatus.reviewed} reviewed, ${stats.byStatus.verified} verified) · ` +
       `${stats.relations} relations (${stats.relationsToReview} to review) · ` +
-      `${stats.sources} sources (${stats.sourcesVerified} verified) · ${stats.bothLanguages} in both languages`,
+      `${stats.sources} sources (${stats.sourcesVerified} verified) · ${stats.inDutch} complete in Dutch`,
   )
   console.log(`${errors.length} errors, ${warnings.length} warnings${warnings.length && !process.argv.includes("--warnings") ? " (show them with --warnings)" : ""}`)
 }

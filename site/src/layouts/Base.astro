@@ -6,7 +6,7 @@ import "@fontsource-variable/montserrat/wght.css"
 import "@fontsource/geist-mono/latin-500.css"
 import "@fontsource/geist-mono/latin-ext-500.css"
 import "../styles/global.css"
-import { DOMAINS, t, type Lang } from "../lib/i18n.ts"
+import { DOMAINS, LANGS, t, type Lang } from "../lib/i18n.ts"
 import { entries } from "../lib/content.ts"
 
 interface Props {
@@ -21,7 +21,9 @@ interface Props {
 }
 const { lang, title, description, path, current, full = false } = Astro.props
 const ui = t(lang)
-const other: Lang = lang === "nl" ? "en" : "nl"
+// The other published language, if there is one (Dutch only for now).
+const other = LANGS.find((l) => l !== lang)
+const keyGroups = ui.keys.groups.map(([g, rows]) => [g, rows.filter(([k]) => other || k !== "l")] as const)
 const REPO = "https://github.com/gronnstudio/GOKH"
 const domainCounts = Object.keys(DOMAINS).map((d) => ({ d, n: entries.filter((e) => e.data.domain === d && e.data.type !== "problem").length })).filter((x) => x.n)
 const problemCount = entries.filter((e) => e.data.type === "problem").length
@@ -44,7 +46,7 @@ const speculation = JSON.stringify({
 <meta name="description" content={description}>
 <meta name="robots" content="noindex">
 <link rel="alternate" hreflang={lang} href={`/${lang}/${path}`}>
-<link rel="alternate" hreflang={other} href={`/${other}/${path}`}>
+{other && <link rel="alternate" hreflang={other} href={`/${other}/${path}`}>}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script is:inline data-themes={JSON.stringify(ui.themes)}>
   // Theme: system, light or dark. Set before first paint so there is no flash; the button cycles it.
@@ -93,7 +95,7 @@ const speculation = JSON.stringify({
         <span data-theme-name>{ui.themes.system}</span>
       </button>
       <button type="button" class="tool icon keys-btn" data-open-keys aria-label={ui.keys.open} aria-keyshortcuts="?"><kbd>?</kbd></button>
-      <a class="tool icon" href={`/${other}/${path}`} hreflang={other} lang={other} data-lang-switch>{other.toUpperCase()}<span class="sr-only"> {ui.other}</span></a>
+      {other && <a class="tool icon" href={`/${other}/${path}`} hreflang={other} lang={other} data-lang-switch>{other.toUpperCase()}<span class="sr-only"> {t(lang).other}</span></a>}
       <button type="button" class="tool icon menu-btn" popovertarget="site-menu" aria-label={ui.menu}>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg>
       </button>
@@ -127,7 +129,7 @@ const speculation = JSON.stringify({
   </nav>
   <div class="sheet-tools">
     <button type="button" class="tool" data-open-palette><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 4.1 4.1" /></svg>{ui.search}</button>
-    <a class="tool" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>
+    {other && <a class="tool" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>}
     <button type="button" class="tool" data-open-keys>{ui.keys.open}</button>
   </div>
 </div>
@@ -171,7 +173,7 @@ const speculation = JSON.stringify({
     <h2 id="keys-title">{ui.keys.title}</h2>
     <form method="dialog"><button class="tool icon" aria-label={ui.keys.close}>✕</button></form>
   </div>
-  {ui.keys.groups.map(([group, rows]) => (
+  {keyGroups.map(([group, rows]) => (
     <section>
       <h3 class="label">{group}</h3>
       <dl>{rows.map(([k, what]) => <div><dt>{what}</dt><dd>{k.split(" ").map((x) => <kbd>{x}</kbd>)}</dd></div>)}</dl>

@@ -8,6 +8,11 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/en/:path*",
+      "destination": "/nl/:path*",
+      "permanent": false
+    },
+    {
       "source": "/e/:id/",
       "destination": "/nl/e/:id/",
       "permanent": false

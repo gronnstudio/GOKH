@@ -2,7 +2,7 @@
 
 **The open reference for designing with living systems in the Low Countries: why things work, how sure we are, and what to do this month.**
 
-Equilibrium is an open knowledge hub on ponds, water, soil, native plants, food forests and the systems that tie them together, in Dutch and English. Every connection between two ideas says *why* it holds and *how sure* we are. Every claim traces to a source you can check, or is marked unverified. Stewarded by [GRØNN Studio](https://gronn.studio).
+Equilibrium is an open knowledge hub on ponds, water, soil, native plants, food forests, vegetable gardens, bread and self-reliance, and the systems that tie them together. It is in Dutch for now; more languages follow ([decision 0003](docs/decisions/0003-dutch-first-wider-scope.md)). Every connection between two ideas says *why* it holds and *how sure* we are. Every claim traces to a source you can check, or is marked unverified. Stewarded by [GRØNN Studio](https://gronn.studio).
 
 ## What is in this repository
 
@@ -13,7 +13,7 @@ content/
 site/src/         the public site (Astro, static): pages, layout, one stylesheet with the GRØNN tokens
 docs/decisions/   why things are the way they are, one record per decision
 design/tokens.json  colours, type, space and motion (W3C Design Tokens format); the CSS is generated from it
-tests/            Playwright + axe: every page, both languages, desktop and phone
+tests/            Playwright + axe: every page, desktop and phone
 schema/
   content.ts      the rules every entry and source must follow
 scripts/
@@ -24,7 +24,7 @@ scripts/
 .github/workflows/  checks on every PR, a manual source resolver, dataset releases
 ```
 
-`npm run build:site` turns the content into a static site in Dutch and English (`dist/site/`, `/nl/…` and `/en/…`), with Pagefind search, deployed on Vercel and portable to any static host. It shows what exists and nothing more. The stack and the reasons for it are in [docs/decisions/0001-site-stack.md](docs/decisions/0001-site-stack.md).
+`npm run build:site` turns the content into a static Dutch site (`dist/site/`, under `/nl/…`), with Pagefind search, deployed on Vercel and portable to any static host. It shows what exists and nothing more. The stack and the reasons for it are in [docs/decisions/0001-site-stack.md](docs/decisions/0001-site-stack.md).
 
 ## An entry
 
@@ -47,7 +47,7 @@ updated: 2026-10-03
 ---
 
 <!-- en -->
-The English text, with ## headings.
+(English text, optional for now.)
 
 <!-- nl -->
 De Nederlandse tekst.
@@ -72,7 +72,7 @@ npm run budget                # JavaScript and CSS weight of every built page ag
 npm run tokens                # regenerate site/src/styles/tokens.css after editing design/tokens.json
 ```
 
-`npm run validate` prints the current state of the corpus: entries per status, relations still to review, verified sources, and how many entries exist in both languages.
+`npm run validate` prints the current state of the corpus: entries per status, relations still to review, verified sources, and how many entries are complete in Dutch.
 
 ## Contributing
 

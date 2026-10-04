@@ -146,6 +146,7 @@
     & .d-plants-fungi { --d: var(--color-domein-plants-fungi-nacht); }
     & .d-animals-biodiversity { --d: var(--color-domein-animals-biodiversity-nacht); }
     & .d-design-practice { --d: var(--color-domein-design-practice-nacht); }
+    & .d-food-self-reliance { --d: var(--color-domein-food-self-reliance-nacht); }
     & .d-systems { --d: var(--color-domein-systems-nacht); }
     & .brand { color: var(--on-band); }
     & .brand-outer { fill: var(--on-band); }
@@ -211,6 +212,7 @@
   .d-plants-fungi { --d: var(--domain-plants-fungi); --d-tint: var(--domain-plants-fungi-tint); }
   .d-animals-biodiversity { --d: var(--domain-animals-biodiversity); --d-tint: var(--domain-animals-biodiversity-tint); }
   .d-design-practice { --d: var(--domain-design-practice); --d-tint: var(--domain-design-practice-tint); }
+  .d-food-self-reliance { --d: var(--domain-food-self-reliance); --d-tint: var(--domain-food-self-reliance-tint); }
   .d-systems { --d: var(--domain-systems); --d-tint: var(--domain-systems-tint); }
   .ddot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--d, var(--muted)); flex: none; }
 
@@ -224,6 +226,7 @@
     & .d-plants-fungi { --d: var(--color-domein-plants-fungi-nacht); }
     & .d-animals-biodiversity { --d: var(--color-domein-animals-biodiversity-nacht); }
     & .d-design-practice { --d: var(--color-domein-design-practice-nacht); }
+    & .d-food-self-reliance { --d: var(--color-domein-food-self-reliance-nacht); }
     & .d-systems { --d: var(--color-domein-systems-nacht); }
   }
   /* The hero runs edge to edge and up behind the floating bar, so the bar sits on the green. */

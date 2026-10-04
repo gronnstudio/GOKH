@@ -1,6 +1,12 @@
 /** Interface text in both languages. Content text lives in content/, never here. */
-export const LANGS = ["nl", "en"] as const
-export type Lang = (typeof LANGS)[number]
+export const ALL_LANGS = ["nl", "en"] as const
+export type Lang = (typeof ALL_LANGS)[number]
+/**
+ * The languages the site publishes now. Dutch first (owner, 4 Oct 2026): more languages
+ * follow once the Dutch audience is reached. The schema and the interface text keep
+ * English, so adding a language is adding it here.
+ */
+export const LANGS: readonly Lang[] = ["nl"]
 
 export const langPaths = () => LANGS.map((lang) => ({ params: { lang } }))
 
@@ -14,7 +20,7 @@ const ui = {
     main: "Hoofdmenu",
     skip: "Naar de inhoud",
     other: "English",
-    preview: "Voorproef. Alles is nog concept; veel tekst is nog alleen Engelstalig.",
+    preview: "Voorproef. Alles is nog concept: teksten en verbindingen worden nog nagekeken.",
     palette: {
       label: "Zoek in Equilibrium",
       placeholder: "Zoek onderwerpen, problemen, bronnen…",
@@ -53,7 +59,7 @@ const ui = {
     entriesWord: "onderwerpen", connectionsWord: "verbindingen", sourcesWord: "bronnen",
     verifiedOf: (v: number, s: number) => `${v} van ${s} bronnen geverifieerd`,
     gradeMix: "Graden van alle verbindingen",
-    domainsTitle: "Zes domeinen",
+    domainsTitle: "Zeven domeinen",
     domainsLead: "Van de grond onder je voeten tot de ideeën eronder.",
     seeAll: "Alles in dit domein",
     search: "Zoeken",
@@ -144,7 +150,7 @@ const ui = {
     entriesWord: "entries", connectionsWord: "connections", sourcesWord: "sources",
     verifiedOf: (v: number, s: number) => `${v} of ${s} sources verified`,
     gradeMix: "Grades across all connections",
-    domainsTitle: "Six domains",
+    domainsTitle: "Seven domains",
     domainsLead: "From the ground under your feet to the ideas underneath.",
     seeAll: "Everything in this domain",
     search: "Search",
@@ -196,6 +202,7 @@ export const DOMAINS: Record<string, { nl: [string, string]; en: [string, string
   "plants-fungi": { nl: ["Planten en schimmels", "Wat groeit, en de schimmels die dat mogelijk maken."], en: ["Plants and fungi", "What grows, and the fungi that make it possible."] },
   "animals-biodiversity": { nl: ["Dieren en biodiversiteit", "Het leven dat een tuin draagt, en waarom variatie telt."], en: ["Animals and biodiversity", "The life a garden supports, and why variety matters."] },
   "design-practice": { nl: ["Ontwerp en praktijk", "Wat mensen op echte grond doen: patronen en technieken."], en: ["Design and practice", "What people do on real ground: patterns and techniques."] },
+  "food-self-reliance": { nl: ["Voedsel en zelfredzaamheid", "Zelf telen, bewaren en bereiden: van moestuin tot brood."], en: ["Food and self-reliance", "Growing, keeping and making your own: from vegetable garden to bread."] },
   systems: { nl: ["Systemen", "De ideeën eronder: ecologie, klimaat, economie, ethiek."], en: ["Systems", "The ideas underneath: ecology, climate, economics, ethics."] },
 }
 
