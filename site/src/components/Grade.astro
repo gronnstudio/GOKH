@@ -1,7 +1,29 @@
 ---
-import { GRADES, type Lang } from "../lib/i18n.ts"
-interface Props { grade: string; lang: Lang }
-const { grade, lang } = Astro.props
+/**
+ * An evidence grade: a four-step glyph plus its word. With an `id`, it is a
+ * button that opens a popover explaining the grade, anchored to the button
+ * where the browser supports anchor positioning (centred otherwise).
+ */
+import { GRADES, t, type Lang } from "../lib/i18n.ts"
+interface Props { grade: string; lang: Lang; id?: string }
+const { grade, lang, id } = Astro.props
 const [label, note] = GRADES[grade][lang]
+const ui = t(lang)
+const STEPS: Record<string, number> = { established: 4, supported: 3, emerging: 2, contested: 0 }
+const glyph = [0, 1, 2, 3].map((i) => (grade === "contested" ? i % 2 === 0 : i < STEPS[grade]))
+const anchor = id ? `--grade-${id}` : undefined
 ---
-<span class={`chip chip-${grade}`} title={note}>{label}</span>
+{id ? (
+  <>
+    <button type="button" class={`grade grade-${grade}`} popovertarget={`pop-${id}`} style={`anchor-name: ${anchor}`} aria-label={`${label}: ${note}`}>
+      <span class="glyph" aria-hidden="true">{glyph.map((on) => <i class={on ? "on" : undefined} />)}</span>{label}
+    </button>
+    <div id={`pop-${id}`} popover class="pop" style={`position-anchor: ${anchor}`}>
+      <p class="label">{ui.gradeTitle}</p>
+      <p><strong class={`grade-${grade}`}>{label}</strong>: {note}.</p>
+      <p><a href={`/${lang}/contribute/#grades`}>{ui.gradesLink}</a></p>
+    </div>
+  </>
+) : (
+  <span class={`grade grade-${grade}`}><span class="glyph" aria-hidden="true">{glyph.map((on) => <i class={on ? "on" : undefined} />)}</span>{label}</span>
+)}

@@ -1,0 +1,73 @@
+/* Generated from design/tokens.json by `npm run tokens`. Do not edit by hand. */
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    --color-aarde-oranje: oklch(0.6476 0.1625 47.35);
+    --color-aarde-oranje-sterk: oklch(0.502 0.1373 43.48);
+    --color-aarde-oranje-nacht: oklch(0.6875 0.1486 49.45);
+    --color-gebroken-wit: oklch(0.9488 0.0054 95.1);
+    --color-papier-licht: oklch(0.9761 0.0041 91.45);
+    --color-antraciet: oklch(0.2435 0 0);
+    --color-antraciet-licht: oklch(0.285 0 0);
+    --color-bosgroen: oklch(0.3694 0.0495 167.01);
+    --color-mosgroen: oklch(0.5496 0.0584 139.09);
+    --color-mosgroen-tekst: oklch(0.4943 0.0585 139.79);
+    --color-salie: oklch(0.8055 0.0423 127.05);
+    --color-salie-nacht: oklch(0.7457 0.0469 137.05);
+    --color-steen: oklch(0.4675 0.0098 91.58);
+    --color-steen-nacht: oklch(0.7309 0.0116 95.21);
+    --color-lijn: oklch(0.8693 0.0111 95.18);
+    --color-lijn-nacht: oklch(0.359 0.0051 106.65);
+    --color-groei: oklch(0.4769 0.0881 153.61);
+    --color-groei-nacht: oklch(0.7995 0.0894 154.52);
+    --color-oker: oklch(0.5078 0.108 73.3);
+    --color-oker-nacht: oklch(0.8072 0.1135 80.48);
+    --paper: light-dark(var(--color-gebroken-wit), var(--color-antraciet)); /* Page background. */
+    --surface: light-dark(var(--color-papier-licht), var(--color-antraciet-licht)); /* Cards, inputs, popovers. */
+    --ink: light-dark(var(--color-antraciet), var(--color-gebroken-wit)); /* Body text. */
+    --muted: light-dark(var(--color-steen), var(--color-steen-nacht)); /* Secondary text and metadata. */
+    --line: light-dark(var(--color-lijn), var(--color-lijn-nacht)); /* Hairlines and borders. */
+    --heading: light-dark(var(--color-bosgroen), var(--color-salie)); /* Headings. */
+    --link: light-dark(var(--color-aarde-oranje-sterk), var(--color-aarde-oranje-nacht)); /* Links, focus ring, current page. */
+    --accent-fill: light-dark(var(--color-aarde-oranje), var(--color-aarde-oranje)); /* Orange fills; text on them is antraciet. */
+    --on-accent: light-dark(var(--color-antraciet), var(--color-antraciet)); /* Text on an orange fill. */
+    --established: light-dark(var(--color-groei), var(--color-groei-nacht)); /* Grade: established. Also verified sources. */
+    --supported: light-dark(var(--color-mosgroen-tekst), var(--color-salie-nacht)); /* Grade: supported. */
+    --emerging: light-dark(var(--color-steen), var(--color-steen-nacht)); /* Grade: emerging. */
+    --contested: light-dark(var(--color-oker), var(--color-oker-nacht)); /* Grade: contested. Also unverified sources and drafts. */
+    --rule: light-dark(var(--color-salie), var(--color-mosgroen)); /* The left rule on relations. */
+    --font-display: Syne, system-ui, sans-serif;
+    --font-body: "Montserrat Variable", Montserrat, system-ui, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, monospace;
+    --text-display: clamp(44px, 1.5449rem + 4.9438vw, 88px);
+    --text-h1: clamp(36px, 1.4831rem + 3.1461vw, 64px);
+    --text-h2: clamp(26px, 1.3511rem + 1.1236vw, 36px);
+    --text-h3: clamp(20px, 1.1404rem + 0.4494vw, 24px);
+    --text-lead: clamp(18px, 1.0428rem + 0.3371vw, 21px);
+    --text-body: clamp(16px, 0.9452rem + 0.2247vw, 18px);
+    --text-small: clamp(14px, 0.8476rem + 0.1124vw, 15px);
+    --text-annotation: 12px;
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-48: 48px;
+    --space-64: 64px;
+    --space-96: 96px;
+    --radius-small: 8px;
+    --radius-card: 16px;
+    --radius-pill: 999px;
+    --layout-page: 1280px;
+    --layout-gutter-min: 16px;
+    --layout-gutter-max: 64px;
+    --duration-tap: 150ms;
+    --duration-dock: 240ms;
+    --duration-layer: 450ms;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+  :root[data-theme="dark"] { color-scheme: dark; }
+}

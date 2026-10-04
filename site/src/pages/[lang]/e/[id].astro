@@ -23,10 +23,10 @@ const fallbackNote = (x: { fallback: boolean; lang: Lang }) => (x.fallback ? x.l
 <Base lang={lang} title={`${title.text} · Equilibrium`} description={summary.text} path={`e/${e.data.id}/`}>
   <article class="entry" data-pagefind-body>
     <p class="label" data-pagefind-ignore><a href={`/${lang}/`}>{ui.nav.entries}</a> / {DOMAINS[e.data.domain][lang][0]}</p>
-    <h1 lang={fallbackNote(title)}>{title.text}</h1>
+    <h1 lang={fallbackNote(title)} style={`view-transition-name: entry-${e.data.id}`}>{title.text}</h1>
     <p class="lead" lang={fallbackNote(summary)}>{summary.text}</p>
     <p class="label" data-pagefind-ignore>
-      <span class="chip chip-warn">{ui.status[e.data.status]}</span>
+      <span class="chip chip-contested">{ui.status[e.data.status]}</span>
       {e.data.level && <> · {ui.level[e.data.level]}</>} · {ui.updated} {e.data.updated} · <a href={`${REPO}/blob/main/content/entries/${e.file}`}>{ui.edit}</a>
     </p>
     {body.text && (
@@ -58,7 +58,7 @@ const fallbackNote = (x: { fallback: boolean; lang: Lang }) => (x.fallback ? x.l
               <li class="rel">
                 <p><span class="verb">{VERB_OUT[r.verb][lang]}</span> <a href={entryHref(lang, to.data.id)} lang={fallbackNote(n)}>{n.text}</a></p>
                 <p lang={fallbackNote(why)}>{why.text}</p>
-                <p class="label"><Grade grade={r.grade} lang={lang} />{r.review && <> <span class="chip chip-warn" title={ui.verbNotReviewedNote}>{ui.verbNotReviewed}</span></>}</p>
+                <div class="label"><Grade grade={r.grade} lang={lang} id={`out-${r.to}`} />{r.review && <> <span class="chip chip-contested" title={ui.verbNotReviewedNote}>{ui.verbNotReviewed}</span></>}</div>
               </li>
             )
           })}
@@ -76,7 +76,7 @@ const fallbackNote = (x: { fallback: boolean; lang: Lang }) => (x.fallback ? x.l
               <li class="rel">
                 <p><span class="verb">{VERB_IN[r.verb][lang]}</span> <a href={entryHref(lang, from.data.id)} lang={fallbackNote(n)}>{n.text}</a></p>
                 <p lang={fallbackNote(why)}>{why.text}</p>
-                <p class="label"><Grade grade={r.grade} lang={lang} /></p>
+                <div class="label"><Grade grade={r.grade} lang={lang} id={`in-${from.data.id}`} /></div>
               </li>
             )
           })}

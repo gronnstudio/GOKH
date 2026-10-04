@@ -11,11 +11,6 @@ const problems = entries.filter((e) => e.data.type === "problem")
 const rest = entries.filter((e) => e.data.type !== "problem")
 ---
 <Base lang={lang} title={`Equilibrium: ${ui.tagline.toLowerCase()}`} description={ui.description} path="" current="entries">
-  <Fragment slot="head">
-    <!-- Pagefind's index exists only after `npm run build:site`; in `astro dev` the box stays inert. -->
-    <link rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
-    <script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>
-  </Fragment>
   <section class="hero">
     <h1>{ui.tagline}</h1>
     <p class="lead">{ui.lead}</p>

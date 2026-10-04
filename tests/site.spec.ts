@@ -55,3 +55,53 @@ test.describe("dark (Blauwe Uur)", () => {
     })
   }
 })
+
+test("the theme switch cycles and survives a reload without a flash", async ({ page }) => {
+  await page.goto("/nl/")
+  const html = page.locator("html")
+  await expect(html).not.toHaveAttribute("data-theme")
+  await page.locator("[data-theme-toggle]").click()
+  await expect(html).toHaveAttribute("data-theme", "light")
+  await page.locator("[data-theme-toggle]").click()
+  await expect(html).toHaveAttribute("data-theme", "dark")
+  await expect(page.locator("[data-theme-toggle]")).toHaveAttribute("aria-label", "Thema: donker")
+  // The theme is set by a script in <head>, before the body exists.
+  await page.goto("/en/sources/", { waitUntil: "commit" })
+  await page.waitForSelector("html[data-theme]", { state: "attached" })
+  await expect(html).toHaveAttribute("data-theme", "dark")
+})
+
+test("a grade explains itself in a popover", async ({ page }) => {
+  await page.goto("/en/e/soil-food-web/")
+  const grade = page.locator("button.grade").first()
+  await grade.click()
+  const pop = page.locator(".pop:popover-open")
+  await expect(pop).toBeVisible()
+  await expect(pop).toContainText("How sure are we?")
+  await page.keyboard.press("Escape")
+  await expect(pop).toHaveCount(0)
+})
+
+test("search opens from the keyboard on any page", async ({ page }) => {
+  await page.goto("/nl/sources/")
+  await page.keyboard.press("Control+k")
+  const input = page.locator("pagefind-modal input")
+  await expect(input).toBeFocused()
+  await input.fill("compost")
+  await expect(page.locator("pagefind-modal").getByRole("link", { name: "The Science of Compost" })).toBeVisible()
+})
+
+test("a card and its entry share a view-transition name", async ({ page }) => {
+  await page.goto("/nl/")
+  const card = page.locator(".card-title").first()
+  const name = await card.evaluate((el) => getComputedStyle(el).viewTransitionName)
+  expect(name).toMatch(/^entry-/)
+  await card.click()
+  expect(await page.locator("h1").evaluate((el) => getComputedStyle(el).viewTransitionName)).toBe(name)
+})
+
+test("speculation rules are valid JSON", async ({ page }) => {
+  await page.goto("/en/")
+  const rules = await page.locator('script[type="speculationrules"]').textContent()
+  expect(JSON.parse(rules!).prerender[0].eagerness).toBe("moderate")
+})

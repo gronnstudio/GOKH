@@ -12,6 +12,7 @@ content/
   sources.yaml    every source cited, with its DOI, ISBN or URL once verified
 site/src/         the public site (Astro, static): pages, layout, one stylesheet with the GRØNN tokens
 docs/decisions/   why things are the way they are, one record per decision
+design/tokens.json  colours, type, space and motion (W3C Design Tokens format); the CSS is generated from it
 tests/            Playwright + axe: every page, both languages, desktop and phone
 schema/
   content.ts      the rules every entry and source must follow
@@ -61,12 +62,14 @@ Entries have no author field. An entry is trusted for its sources and its review
 ```sh
 npm install
 npm run validate              # the content checks; add --warnings to see every gap
-npm run check                 # typecheck + validate, as CI runs it
+npm run check                 # types, content, tokens and contrast, CSS Baseline lint, as CI runs it
 npm run export                # dist/equilibrium.json, graph.json and CSVs
 npm run resolve               # look up identifiers for unverified sources (needs internet)
 npm run dev                   # the site at localhost:4321 (search works only after a build)
 npm run build                 # validate, build the site and its search index
 npm run test:site             # every built page through Playwright and axe (after a build)
+npm run budget                # JavaScript and CSS weight of every built page against its budget
+npm run tokens                # regenerate site/src/styles/tokens.css after editing design/tokens.json
 ```
 
 `npm run validate` prints the current state of the corpus: entries per status, relations still to review, verified sources, and how many entries exist in both languages.

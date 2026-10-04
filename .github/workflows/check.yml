@@ -8,6 +8,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   check:
+    # Types, content rules, tokens in sync with contrast at AA, CSS inside the Baseline floor.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,8 +19,11 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run validate -- --warnings
+      - run: npm run tokens -- --check
+      - run: npm run lint:css
   site:
-    # Builds the static site and runs every page through Playwright and axe, in both languages, on desktop and phone.
+    # Builds the static site, weighs every page, and runs every page through Playwright and axe,
+    # in both languages, on desktop and phone, plus visual regression against the committed screenshots.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,4 +34,12 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run build
+      - run: npm run budget
       - run: npm run test:site
+        env:
+          VISUAL: "1"
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: test-results/

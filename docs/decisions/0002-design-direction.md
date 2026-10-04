@@ -70,7 +70,7 @@ All of these are build-time or platform features. None is a runtime service.
 What keeps it future-proof once it is built:
 
 - **Budgets, enforced in CI** (adapted from paddenstoelenbos):
-  - content pages ship 0 KB of our own JavaScript
+  - our own JavaScript is at most 2 KB gzipped per page (today only the theme switch, about 0.5 KB)
   - no page ships more than 50 KB gzipped JavaScript in total, including search
   - CSS is at most 30 KB gzipped
   - LCP is under 1.5 s on a mid-range phone
@@ -83,12 +83,12 @@ What keeps it future-proof once it is built:
 ## What we deliberately do not do
 
 - **No WebGL or three.js, GSAP, Lenis, framer-motion or custom cursors.** They are what the earlier attempts spent their effort on. gronn-studio V5 dropped them too: "small and precise beats big and decorative".
-- **No Tailwind.** It is a strong tool, and the studio's other sites use it. But for one stylesheet built on platform features it adds a build dependency and replaces nothing we lack. If the studio prefers one way of styling across all its sites, Tailwind v4 reads the same DTCG tokens; that is the owner's call (see Open questions).
+- **No Tailwind.** It is a strong tool, and the studio's other sites use it. But for one stylesheet built on platform features, it adds a build dependency and replaces nothing we lack. The owner chose plain CSS on 4 Oct 2026.
 - **No client-side router or SPA.**
 - **No AI chat on the page** until the ROADMAP trigger fires (80% of claims have a verified source).
 
 ## Open questions for the owner
 
-1. **Styling across sites:** plain modern CSS here (recommended) or Tailwind v4, for consistency with the studio's other sites?
+1. ~~**Styling across sites:** plain modern CSS or Tailwind v4?~~ **Answered (owner, 4 Oct 2026): plain CSS.**
 2. **The grade glyph:** four steps on one axis (today's grades), or two axes (effect × certainty) like Conservation Evidence? Two axes would need a schema change.
 3. **Domain hues:** derived from the botanical palette as proposed, or should GRØNN's brand guide fix six colours?

@@ -32,15 +32,17 @@ The site's design direction is decision [0002](docs/decisions/0002-design-direct
 
 ### Step A · Foundation (Phase 0, no new content needed)
 
-- [ ] Tokens in `design/tokens.json` (W3C Design Tokens format 2025.10), with colours in OKLCH. A script turns them into CSS custom properties, using `light-dark()`.
-- [ ] Contrast audit read from the tokens: every colour pair, in both themes, run in CI.
-- [ ] Rewrite the stylesheet as native CSS: `@layer`, nesting, container queries, `text-wrap`. Lightning CSS with `baseline widely available` targets, and Stylelint with `use-baseline`.
-- [ ] Cross-document view transitions: the card title morphs into the entry title. Speculation Rules prerender on hover.
-- [ ] Grade glyph and source seal. Grade explanations open in a native `popover` with anchor positioning.
-- [ ] Theme toggle (Golden Hour / Blauwe Uur) with no flash on load.
-- [ ] Pagefind modal on ⌘K or /, available from every page.
-- [ ] Budgets in CI: 0 KB of our own JavaScript on content pages, at most 50 KB in total, CSS at most 30 KB. Playwright visual-regression screenshots of every template.
-- [ ] Renovate: weekly grouped dependency updates, with Astro majors as separate PRs.
+- [x] Tokens in `design/tokens.json` (W3C Design Tokens format 2025.10), with colours in OKLCH. A script turns them into CSS custom properties, using `light-dark()`.
+- [x] Contrast audit read from the tokens: every colour pair, in both themes, run in CI.
+- [x] Rewrite the stylesheet as native CSS: `@layer`, nesting, container queries, `text-wrap`. Lightning CSS with `baseline widely available` targets, and Stylelint with `use-baseline`.
+- [x] Cross-document view transitions: the card title morphs into the entry title. Speculation Rules prerender on hover.
+- [x] Grade glyph and source seal. Grade explanations open in a native `popover` with anchor positioning.
+- [x] Theme toggle (Golden Hour / Blauwe Uur) with no flash on load.
+- [x] Pagefind modal on ⌘K (Ctrl K), available from every page.
+- [x] Budgets in CI: at most 2 KB of our own JavaScript, 50 KB in total and 30 KB of CSS per page, all gzipped. Playwright visual-regression screenshots of every template.
+- [ ] Make the first screenshot baselines: Actions → Update screenshots, then merge its PR.
+- [x] Renovate config: weekly grouped dependency updates, with Astro majors as separate PRs.
+- [ ] Install the Renovate GitHub app on the repository (owner).
 
 ### Step B · Character (opens at the Phase 0 gate: 50 reviewed entries)
 

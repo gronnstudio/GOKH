@@ -1,7 +1,10 @@
 ---
-import "@fontsource/syne/600.css"
+// Latin and Latin Extended cover Dutch, English and the author names in our sources.
+import "@fontsource/syne/latin-600.css"
+import "@fontsource/syne/latin-ext-600.css"
 import "@fontsource-variable/montserrat/wght.css"
-import "@fontsource/geist-mono/500.css"
+import "@fontsource/geist-mono/latin-500.css"
+import "@fontsource/geist-mono/latin-ext-500.css"
 import "../styles/global.css"
 import { t, type Lang } from "../lib/i18n.ts"
 
@@ -22,6 +25,10 @@ const navItems = [
   ["sources", "sources/"],
   ["contribute", "contribute/"],
 ] as const
+// Prerender a same-site page when the pointer rests on its link. Browsers without the API ignore this.
+const speculation = JSON.stringify({
+  prerender: [{ where: { and: [{ href_matches: "/*" }, { not: { href_matches: "/pagefind/*" } }] }, eagerness: "moderate" }],
+})
 ---
 <!doctype html>
 <html lang={lang}>
@@ -34,6 +41,31 @@ const navItems = [
 <link rel="alternate" hreflang={lang} href={`/${lang}/${path}`}>
 <link rel="alternate" hreflang={other} href={`/${other}/${path}`}>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script is:inline data-themes={JSON.stringify(ui.themes)}>
+  // Theme: system, light or dark. Set before first paint so there is no flash; the button cycles it.
+  (() => {
+    const root = document.documentElement, names = JSON.parse(document.currentScript.dataset.themes), order = ["system", "light", "dark"]
+    const read = () => { try { return localStorage.getItem("theme") || "system" } catch { return "system" } }
+    const apply = (mode) => {
+      if (mode === "system") root.removeAttribute("data-theme"); else root.dataset.theme = mode
+      for (const b of document.querySelectorAll("[data-theme-toggle]")) {
+        b.querySelector("[data-theme-name]").textContent = names[mode]
+        b.setAttribute("aria-label", `${b.dataset.label}: ${names[mode]}`)
+      }
+    }
+    apply(read())
+    document.addEventListener("DOMContentLoaded", () => apply(read()))
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("[data-theme-toggle]")) return
+      const next = order[(order.indexOf(read()) + 1) % order.length]
+      try { localStorage.setItem("theme", next) } catch {}
+      apply(next)
+    })
+  })()
+</script>
+<script type="speculationrules" is:inline set:html={speculation} />
+<link rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
+<script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>
 <slot name="head" />
 </head>
 <body>
@@ -44,9 +76,17 @@ const navItems = [
     {navItems.map(([key, p]) => (
       <a href={`/${lang}/${p}`} aria-current={current === key ? "page" : undefined}>{ui.nav[key]}</a>
     ))}
-    <a class="lang" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>
   </nav>
+  <div class="tools">
+    <pagefind-modal-trigger class="search-trigger" placeholder={ui.searchShort}></pagefind-modal-trigger>
+    <button type="button" class="tool theme" data-theme-toggle data-label={ui.theme} aria-label={`${ui.theme}: ${ui.themes.system}`}>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" /><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" /></svg>
+      <span data-theme-name>{ui.themes.system}</span>
+    </button>
+    <a class="tool" href={`/${other}/${path}`} hreflang={other} lang={other}>{ui.other}</a>
+  </div>
 </header>
+<pagefind-modal></pagefind-modal>
 <p class="preview">{ui.preview}</p>
 <main id="main">
 <slot />

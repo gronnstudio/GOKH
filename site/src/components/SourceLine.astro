@@ -8,5 +8,5 @@ const ui = t(lang)
 {s.authors} ({s.year}). <cite lang="en">{s.title}</cite>{s.container && <>. {s.container}</>}.{" "}
 {s.doi ? <a href={`https://doi.org/${s.doi}`}>doi:{s.doi}</a> : s.isbn ? <>ISBN {s.isbn}</> : s.url ? <a href={s.url}>{s.url}</a> : null}{" "}
 {s.verified
-  ? <span class="chip chip-ok" title={ui.verifiedNote}>{ui.verified}</span>
-  : <span class="chip chip-warn" title={ui.unverifiedNote}>{ui.unverified}</span>}
+  ? <span class="seal seal-verified" title={ui.verifiedNote}><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" /><path d="M4.5 8.2 7 10.5l4.5-5" /></svg>{ui.verified}</span>
+  : <span class="seal seal-unverified" title={ui.unverifiedNote}>{ui.unverified}</span>}

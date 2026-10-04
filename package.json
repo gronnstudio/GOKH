@@ -5,12 +5,15 @@
   "scripts": {
     "validate": "tsx scripts/validate.ts",
     "typecheck": "tsc --noEmit && astro check",
-    "check": "npm run typecheck && npm run validate",
+    "tokens": "tsx scripts/tokens.ts",
+    "lint:css": "stylelint \"site/src/**/*.css\"",
+    "check": "npm run typecheck && npm run validate && npm run tokens -- --check && npm run lint:css",
     "export": "tsx scripts/export.ts",
     "resolve": "tsx scripts/resolve-sources.ts",
     "dev": "astro dev",
     "build:site": "astro build && pagefind --site dist/site",
     "build": "npm run validate && npm run build:site",
+    "budget": "tsx scripts/budget.ts",
     "preview": "astro preview",
     "test:site": "playwright test"
   },
@@ -20,7 +23,11 @@
     "@axe-core/playwright": "4.13.0",
     "@playwright/test": "1.63.0",
     "@types/node": "^22.20.5",
+    "browserslist": "4.29.3",
+    "lightningcss": "1.33.0",
     "pagefind": "1.5.2",
+    "stylelint": "17.16.0",
+    "stylelint-plugin-use-baseline": "1.4.6",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3"
   },
