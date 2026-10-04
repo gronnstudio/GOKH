@@ -212,10 +212,13 @@
     & .d-design-practice { --d: var(--color-domein-design-practice-nacht); }
     & .d-systems { --d: var(--color-domein-systems-nacht); }
   }
+  /* The hero runs edge to edge and up behind the floating bar, so the bar sits on the green. */
   .hero {
+    --behind-bar: 66px; /* the bar: 10px offset + 56px pill */
     position: relative; isolation: isolate; overflow: clip;
-    margin: 0 clamp(8px, 1.2vw, 20px); border-radius: 0 0 clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px);
-    padding-block: clamp(32px, 6vw, 88px) var(--space-32);
+    margin-top: calc(-1 * var(--behind-bar));
+    border-radius: 0 0 clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px);
+    padding-block: calc(var(--behind-bar) + clamp(32px, 6vw, 88px)) var(--space-32);
   }
   /* a soft glow and paper grain: depth without a photograph */
   .hero::before {
