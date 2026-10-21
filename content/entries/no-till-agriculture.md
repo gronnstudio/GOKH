@@ -4,11 +4,11 @@ type: concept
 domain: soil
 title:
   en: No-Till Agriculture
-  nl: ''
+  nl: 'Niet-kerende landbouw'
 summary:
   en: By growing food without ploughing, no-till farming keeps soil structure, fungal networks and stored
     carbon intact — feeding crops through biology rather than disturbance.
-  nl: ''
+  nl: 'Door voedsel te telen zonder te ploegen of te spitten, houdt niet-kerende landbouw bodemstructuur, schimmelnetwerken en opgeslagen koolstof intact, en voedt het gewassen via biologie in plaats van verstoring.'
 status: draft
 level: intermediate
 tags:
@@ -71,7 +71,7 @@ sources:
 - fao-2015-status-of-the-worlds
 - lal-2004-soil-carbon-sequestration-impacts
 - montgomery-2017-growing-a-revolution-bringing
-updated: '2026-10-03'
+updated: '2026-10-21'
 origin: G-eog articles.ts, last updated 2026-02-02
 ---
 
@@ -100,3 +100,25 @@ The transition is not frictionless. Many farmers lean on herbicides to terminate
 The evidence is nonetheless clear that, paired with continuous cover and living roots, reduced disturbance rebuilds organic matter, sequesters carbon and cuts erosion dramatically. The plough's clean field was always borrowed against the soil's future; no-till is one way of beginning to pay it back.
 
 <!-- nl -->
+
+Het grootste deel van de landbouwgeschiedenis betekende een akker klaarmaken: de grond omkeren. De ploeg begraaft onkruid, verwarmt het zaaibed en maakt een schoon, kruimelig bed, en om die winst op korte termijn werd hij het kenmerkende gereedschap van de beschaving. Maar elke gang verbrijzelt ook de levende bouw van de bodem, en steeds meer boeren telen nu meer voedsel door de grond niet om te keren.
+
+Bij niet-kerende teelt zaai je direct in de resten van het vorige gewas, door een smalle sleuf in plaats van een omgekeerde voor. Wat eruitziet als minder doen, is eigenlijk een andere opvatting van vruchtbaarheid: de bodem als levend systeem dat je beschermt, niet als medium dat je elk seizoen opnieuw opbouwt.
+
+## Waarom de ploeg meer kost dan hij oplevert
+
+Grondbewerking snijdt de schimmeldraden en kruimelstructuur kapot die een gezonde bodem zijn sponsachtige vermogen geven om lucht en water vast te houden. Ze stelt ook begraven organische stof bloot aan een golf zuurstof, waardoor microben de opgeslagen koolstof verbranden en in de atmosfeer laten verdwijnen: een grote, onzichtbare uitstoot van landbouwgrond wereldwijd.
+
+Het kale, losgemaakte oppervlak erodeert daarna. Wind en regen voeren de fijnste, vruchtbaarste fractie af, slibben rivieren dicht en dwingen boeren verloren voeding te vervangen met gekochte mest. Veel van het bodemverlies van de twintigste eeuw is te lezen als de rente op rente van de ploeg.
+
+## Telen via biologie
+
+Ongestoord herbouwt het bodemvoedselweb de structuur die grondbewerking vroeger leverde. Wortels en schimmels openen kanalen voor water; regenwormen en microben kitten kruimels aan elkaar; en een blijvende laag gewasresten houdt het oppervlak koel en vochtig. Water zakt beter weg, er spoelt minder af, en het land wordt seizoen na seizoen beter bestand tegen droogte.
+
+Niet-kerende teelt staat zelden alleen. Ze werkt het best samen met groenbemesters die het hele jaar levende wortels in de grond houden, en met gevarieerde rotaties die plagen uithongeren en het bodemleven voeden: de bredere gereedschapskist van regeneratieve landbouw.
+
+## De eerlijke keerzijde
+
+De omschakeling gaat niet zonder wrijving. Veel boeren gebruiken onkruidbestrijdingsmiddelen om groenbemesters te beëindigen in plaats van grondbewerking, en niet-kerende teelt zonder de bijbehorende diversiteit kan de ene afhankelijkheid gewoon inruilen voor een andere. Koude, natte grond kan onder gewasresten ook trager opwarmen, waardoor het voorjaarszaaien later begint.
+
+Toch is het bewijs duidelijk dat minder verstoring, samen met permanente bedekking en levende wortels, organische stof herstelt, koolstof vastlegt en erosie sterk vermindert. Het schone veld van de ploeg was altijd geleend op de toekomst van de bodem; niet-kerende teelt is een manier om die lening af te lossen.

@@ -29,7 +29,7 @@
     &:hover { text-decoration-thickness: 2px; }
   }
   :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 4px; }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; color: var(--heading); text-wrap: balance; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; color: var(--heading); text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
   /* Every heading in the living-systems gradient: earth, orange, ochre, moss, water.
      The stops are theme tokens, so light ground gets the deep tones and Blauwe Uur the light ones;
      each stop passes AA as plain text on its ground (scripts/tokens.ts audits them). */
@@ -483,6 +483,10 @@
     border-radius: clamp(24px, 3vw, 40px); background: var(--d-tint, var(--surface));
     & h1 { font-size: clamp(44px, 1.4rem + 4.6vw, 104px); line-height: 0.95; letter-spacing: -0.045em; max-width: 14ch; }
     & .lead { font-size: var(--text-h3); color: var(--ink); max-width: 44ch; margin: 0; }
+  }
+  /* Long Dutch compounds (Groenbemesters, Natuurlijke plaagbeheersing) must fit a phone without clipping. */
+  @container main (max-width: 480px) {
+    .entry-head h1 { font-size: clamp(30px, 8.5vw, 44px); max-width: none; }
   }
   @container main (min-width: 1000px) {
     .entry-head:has(.entry-graph) { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
