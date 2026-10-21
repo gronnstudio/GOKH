@@ -591,3 +591,46 @@
   title: The Challenge of Landscape
   container: Keyline Publishing
   verified: false
+- key: landis-2000-habitat-management-to-conserve
+  type: paper
+  authors: Landis, D. A., Wratten, S. D. & Gurr, G. M.
+  year: 2000
+  title: Habitat management to conserve natural enemies of arthropod pests in agriculture
+  container: Annual Review of Entomology 45
+  verified: false
+  doi: 10.1146/annurev.ento.45.1.175
+- key: letourneau-2011-does-plant-diversity-benefit
+  type: paper
+  authors: Letourneau, D. K. et al.
+  year: 2011
+  title: "Does plant diversity benefit agroecosystems? A synthetic review"
+  container: Ecological Applications 21
+  verified: false
+- key: poeplau-2015-carbon-sequestration-in-agricultural
+  type: paper
+  authors: Poeplau, C. & Don, A.
+  year: 2015
+  title: Carbon sequestration in agricultural soils via cultivation of cover crops – A meta-analysis
+  container: Agriculture, Ecosystems & Environment 200
+  verified: false
+- key: blanco-canqui-2015-cover-crops-and-ecosystem
+  type: paper
+  authors: Blanco-Canqui, H. et al.
+  year: 2015
+  title: "Cover crops and ecosystem services: Insights from studies in temperate soils"
+  container: Agronomy Journal 107
+  verified: false
+- key: tiemann-2015-crop-rotational-diversity-enhances
+  type: paper
+  authors: Tiemann, L. K., Grandy, A. S., Atkinson, E. E., Marin-Spiotta, E. & McDaniel, M. D.
+  year: 2015
+  title: Crop rotational diversity enhances belowground communities and functions in an agroecosystem
+  container: Ecology Letters 18
+  verified: false
+- key: ashworth-2002-seed-to-seed
+  type: book
+  authors: Ashworth, S.
+  year: 2002
+  title: "Seed to Seed: Seed Saving and Growing Techniques for Vegetable Gardeners"
+  container: Seed Savers Exchange
+  verified: false

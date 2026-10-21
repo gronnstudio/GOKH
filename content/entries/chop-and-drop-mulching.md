@@ -4,11 +4,11 @@ type: concept
 domain: design-practice
 title:
   en: Chop-and-Drop Mulching
-  nl: ''
+  nl: 'Maaien en laten liggen'
 summary:
   en: 'The simplest regenerative act there is: cut a plant and let it fall where it grew, turning standing
     greenery into the mulch and fertility the soil beneath it lives on.'
-  nl: ''
+  nl: 'De eenvoudigste regeneratieve handeling die er is: een plant afknippen en laten vallen waar hij groeide, zodat staand groen de mulch en vruchtbaarheid wordt waarvan de bodem eronder leeft.'
 status: draft
 level: foundational
 tags:
@@ -58,7 +58,7 @@ sources:
 - holmgren-2002-permaculture-principles-and-pathways
 - magdoff-2009-building-soils-for-better
 - mollison-1988-permaculture-a-designers-manual
-updated: '2026-10-03'
+updated: '2026-10-21'
 origin: G-eog articles.ts, last updated 2026-08-05
 ---
 
@@ -87,3 +87,25 @@ The technique rewards a light touch. Cut before a support plant sets seed to avo
 Done through the season, chop-and-drop closes a small nutrient loop entirely on site: the garden feeds itself with what it grows, and the soil beneath it gets a little deeper every year.
 
 <!-- nl -->
+
+Maaien en laten liggen is precies wat het zegt: je knipt een plant terug en laat het snoeisel op de grond liggen waar het viel, in plaats van het naar een composthoop of container te brengen. In één beweging wordt levend groen een deken van mulch en, terwijl die mulch verteert, vruchtbaarheid voor wat er in de buurt groeit.
+
+Het is misschien de regeneratieve praktijk met de minste moeite: geen omzetten, geen sjouwen, geen machines. En het bootst het ene na wat elk natuurlijk bos voortdurend doet: bladeren en stengels op de eigen bodem laten vallen.
+
+## De bosbodem voeden
+
+Een bos wordt nooit bemest, en toch wordt de bodem jaar na jaar dieper. De reden is de strooisellaag: bladeren, takjes en gevallen materiaal die afbrekers verwerken, waarbij langzaam voedingsstoffen vrijkomen en de sponsachtige, donkere humus ontstaat die water en leven vasthoudt. Maaien en laten liggen maakt die strooisellaag op verzoek na.
+
+Het neergelegde materiaal beschaduwt de grond, houdt hem koel en vochtig en onderdrukt onkruid. Terwijl het verteert, voedt het het bodemvoedselweb: de bacteriën, schimmels en hun grazers die dood plantmateriaal omzetten in voeding voor planten, precies waar wortels erbij kunnen. Er verlaat niets het systeem, dus vruchtbaarheid stapelt zich op in plaats van te worden afgevoerd.
+
+## Planten die hun werk doen
+
+De praktijk past vanzelf bij ondersteunende soorten die voor die taak gekozen zijn. Stikstofbindende planten halen bemesting uit de lucht; diepwortelende verzamelaars zoals smeerwortel halen mineralen van ver beneden en concentreren ze in snelgroeiend blad dat je meerdere keren per seizoen kunt knippen.
+
+In een voedselbos of tuin worden deze planten juist tussen de gewassen geteeld om ze daarover te maaien en te laten liggen: levende kunstmestfabrieken die zonlicht, lucht en ondergrond omzetten in mulch aan de oppervlakte. Knip weinig en vaak, en dezelfde plant voedt zijn buren keer op keer.
+
+## Goed aanpakken
+
+De techniek beloont een lichte hand. Knip voordat een ondersteunende plant zaad zet, zodat hij zich niet verspreidt, leg het materiaal in een laag in plaats van een verstikkende hoop, en houd houtige stengels dun genoeg om binnen een seizoen te verteren. Op kale of verdichte grond is een eerste laag gemaaid materiaal vaak de snelste manier om structuur en leven terug te brengen.
+
+Doe je het door het seizoen heen, dan sluit maaien en laten liggen een kleine voedingskringloop helemaal op de plek zelf: de tuin voedt zichzelf met wat hij voortbrengt, en de bodem eronder wordt elk jaar een beetje dieper.

@@ -4,11 +4,11 @@ type: concept
 domain: soil
 title:
   en: The Science of Compost
-  nl: ''
+  nl: 'De wetenschap van compost'
 summary:
   en: Composting is controlled decomposition, a microbial fire that turns waste into humus. Understanding
     its biology and chemistry turns a compost heap into a precision instrument.
-  nl: ''
+  nl: 'Composteren is gecontroleerde vertering, een microbieel vuur dat afval omzet in humus. Wie de biologie en chemie ervan begrijpt, maakt van een composthoop een precisie-instrument.'
 status: draft
 level: foundational
 tags:
@@ -42,7 +42,7 @@ sources:
 - howard-1943-an-agricultural-testament
 - ingham-2000-the-compost-tea-brewing
 - rynk-1992-onfarm-composting-handbook
-updated: '2026-10-03'
+updated: '2026-10-21'
 origin: G-eog articles.ts, last updated 2026-01-19
 ---
 
@@ -71,3 +71,25 @@ As the readily available food is consumed, the pile cools and a slower cast of f
 The finished product does more than feed plants; it improves soil structure, holds water, buffers pH and delivers a diverse community of soil organisms, seeding the very food web that sustains long-term fertility.
 
 <!-- nl -->
+
+Compost is het donkere, kruimelige, zoet ruikende materiaal dat ontstaat als micro-organismen organisch afval onder gecontroleerde omstandigheden afbreken. Het is getemde vertering: hetzelfde proces dat een bosbodem laat rotten, maar zo gestuurd dat het schoon, snel en in ons voordeel verloopt.
+
+Composteren is veel meer dan een manier om afval kwijt te raken. Het sluit voedingskringlopen: het geeft de koolstof en mineralen die planten en keukens aan de bodem ontleenden terug, en het levert een levend entmateriaal vol nuttige biologie.
+
+## De koolstof-stikstofverhouding
+
+De belangrijkste knop bij composteren is de balans tussen koolstofrijk bruin materiaal (stro, houtsnippers, droge bladeren) en stikstofrijk groen materiaal (mest, keukenresten, vers gras). Microben hebben beide nodig: koolstof voor energie en structuur, stikstof om hun lichaam op te bouwen.
+
+Een verhouding van ongeveer dertig delen koolstof op één deel stikstof houdt het proces op gang. Te veel stikstof en de hoop wordt stinkende drab die ammoniak afgeeft; te veel koolstof en hij wordt nauwelijks warm en verteert slakkengang.
+
+## Warmte, lucht en water
+
+In een actieve, hete composthoop vermenigvuldigen bacteriën zich zo snel dat hun gezamenlijke stofwisseling de hoop opwarmt tot zestig graden of meer, heet genoeg om onkruidzaden en ziekteverwekkers te doden. Die thermofiele fase is het microbiële vuur in het hart van goede compost.
+
+Die fase vraagt zuurstof en vocht in evenwicht. Een goed opgezette hoop wordt omgezet om lucht binnen te laten en zo vochtig gehouden als een uitgeknepen spons; ontneem hem een van beide en de nuttige zuurstofminnende microben maken plaats voor stinkende zuurstofmijdende.
+
+## Van warmte naar humus
+
+Als het makkelijk verteerbare voedsel op is, koelt de hoop af en neemt een tragere bezetting van schimmels, actinomyceten, regenwormen en geleedpotigen de rijpingsfase over, die het ruwe materiaal verfijnt tot stabiele humus.
+
+Het eindproduct doet meer dan planten voeden: het verbetert de bodemstructuur, houdt water vast, buffert de pH en brengt een gevarieerde gemeenschap van bodemorganismen mee, die precies het voedselweb aanzaait dat de vruchtbaarheid op lange termijn draagt.
